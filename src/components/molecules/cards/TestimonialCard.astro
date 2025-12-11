@@ -28,7 +28,12 @@ const {
         class="w-full max-w-20 max-h-20 rounded-lg"
       />
       <div class="flex flex-col mt-4 mb-6">
-        <Paragraph size="md" text={name} weight="regular" color="text-neutral-100" />
+        <Paragraph
+          size="md"
+          text={name}
+          weight="regular"
+          color="text-neutral-100"
+        />
         <Paragraph size="sm" text={service} weight="light" />
         <div class="flex gap-2 items-center">
           <StarsRanking rating={rating} />
@@ -46,11 +51,6 @@ const {
     </div>
   </header>
   <main>
-    <Paragraph
-      size="md"
-      text={quote}
-      weight="light"
-      classes="line-clamp-5"
-    />
+    <Paragraph size="md" text={quote} weight="light" classes="line-clamp-5" color="text-neutral-200" />
   </main>
 </article>

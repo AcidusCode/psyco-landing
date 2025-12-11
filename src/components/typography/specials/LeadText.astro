@@ -12,7 +12,7 @@ const {
   align = "left",
   size = "md",
   weight = "regular",
-  color = "primary-400",
+  color = "text-primary-400",
 }: TextProps = Astro.props;
 
 // Mapas de clases
@@ -30,12 +30,10 @@ const weightClasses = {
   bold: "font-bold",
 };
 
-// Color dinámico
-const colorClass = `text-${color}`;
 ---
 
 <p
-  class={`${sizeClasses[size]} ${weightClasses[weight]} ${colorClass} whitespace-pre-line text-${align}`}
+  class={`${sizeClasses[size]} ${weightClasses[weight]} ${color} whitespace-pre-line text-${align}`}
 >
   {text}
 </p>
