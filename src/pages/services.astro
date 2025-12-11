@@ -6,6 +6,7 @@ import ServiceCardExtended from "../components/molecules/cards/ServiceCardExtend
 import BenefitsSection from "../components/sections/BenefitsSection.astro";
 import SuscribeSection from "../components/sections/SuscribeSection.astro";
 import Footer from "../components/Footer.astro";
+import servicesData from "../data/services/servicesData.json";
 ---
 
 <Layout>
@@ -17,14 +18,17 @@ import Footer from "../components/Footer.astro";
     align="center"
     classes="mt-30"
   />
-  <ServiceCardExtended />
-  <ServiceCardExtended />
-  <ServiceCardExtended />
-  <ServiceCardExtended />
-  <ServiceCardExtended />
-  <BenefitsSection />
-  <div>
-    <SuscribeSection />
-    <Footer />
-  </div>
+  {
+    servicesData.map((map) => (
+      <ServiceCardExtended
+        title={map.title}
+        lead={map.lead}
+        description={map.longDescription}
+        cta={map.cta}
+        image={map.image}
+      />
+    ))
+  }
+  <BenefitsSection map.longDescriptionuscribeSection />
+  <Footer />
 </Layout>

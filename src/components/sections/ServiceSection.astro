@@ -4,20 +4,6 @@ import PageSubtitle from "../molecules/PageSubtitle.astro";
 import Section from "./Section.astro";
 import Button from "../atoms/Button.astro";
 
-import team from "../../assets/image/services/team.png";
-import consultoria from "../../assets/image/services/consultoria.png";
-import tutoria from "../../assets/image/services/tutoria.png";
-import individual from "../../assets/image/services/individual.png";
-import formulacion from "../../assets/image/services/formulacion.png";
-
-const imageMap = {
-    individual,
-    team,
-    tutoria,
-    consultoria,
-    formulacion
-}
-
 import serviceData from "../../data/services/servicesData.json";
 ---
 
@@ -32,7 +18,7 @@ import serviceData from "../../data/services/servicesData.json";
     {
       serviceData.map((service) => (
         <ServiceCard
-          image={imageMap[service.image]}
+          image={service.image}
           title={service.title}
           lead={service.lead}
           description={service.description}

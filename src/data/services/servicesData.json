@@ -1,32 +1,42 @@
 [
   {
-    "image": "individual",
+    "image": "/services/individual.png",
     "title": "Acompañamiento psicológico individual",
     "lead": "Ideal para quienes buscan claridad emocional.",
-    "description": "Un espacio seguro para entenderte y sanar. Te acompaño con enfoque humano y personalizado."
+    "description": "Un espacio seguro para entenderte y sanar. Te acompaño con enfoque humano y personalizado.",
+    "longDescription": "Un espacio seguro y confidencial para explorar tus emociones, comprender tus procesos y construir caminos de bienestar. A través de sesiones personalizadas, te acompaño en tus retos personales, emocionales, relacionales y profesionales, desde un enfoque humano y orientado al crecimiento.",
+    "cta": "Quiero iniciar mi proceso"
   },
   {
-    "image": "team",
+    "image": "/services/team.png",
     "title": "Acompañamiento psicológico grupal",
     "lead": "Ideal para crecer con otros.",
-    "description": "Procesos colectivos para compartir y crecer. Construimos apoyo, autenticidad y aprendizaje mutuo."
+    "description": "Procesos colectivos para compartir y crecer. Construimos apoyo, autenticidad y aprendizaje mutuo.",
+    "longDescription": "Un escenario para compartir, escuchar y crecer colectivamente. En cada grupo, facilitamos el encuentro entre experiencias diversas, promoviendo el autoconocimiento, apoyo mutuo, la autenticidad y la construcción conjunta de nuevas formas de comprenderte y relacionarte. Por ejemplo: mejora de rendimiento de equipos de trabajo, asociaciones, colectivos, terapia de grupo, entre otros.",
+    "cta": "Quiero unirme en grupo"
   },
   {
-    "image": "tutoria",
+    "image": "/services/tutoria.png",
     "title": "Tutorías",
     "lead": "Ideal para avanzar con guía experta.",
-    "description": "Formación personalizada para profundizar en salud mental y metodologías. Te guío en trabajos e investigaciones."
+    "description": "Formación personalizada para profundizar en salud mental y metodologías. Te guío en trabajos e investigaciones.",
+    "longDescription": "Espacios formativos diseñados para estudiantes, profesionales y personas interesadas en profundizar en temas de salud mental, metodologías participativas y vivenciales, investigación acción participativa, facilitación, filosofía e interculturalidad. Ofrezco orientación en investigaciones, revisión de trabajos y un acompañamiento académico personalizado que se ajusta a tus necesidades y procesos.",
+    "cta": "Solicita una tutoría"
   },
   {
-    "image": "consultoria",
+    "image": "/services/consultoria.png",
     "title": "Consultorías",
     "lead": "Ideal para fortalecer proyectos institucionales.",
-    "description": "Asesoría psicosocial y metodológica para organizaciones. Soluciones estratégicas adaptadas a tu contexto."
+    "description": "Asesoría psicosocial y metodológica para organizaciones. Soluciones estratégicas adaptadas a tu contexto.",
+    "longDescription": "Asesoría especializada para instituciones, organizaciones y equipos que buscan integrar perspectivas psicosociales, interculturales, comunitarias y participativas en sus proyectos. Brindo análisis de contexto, diseño metodológico y pedagógico, así como soluciones estratégicas ajustadas a cada realidad, potenciando la pertinencia y el impacto de sus iniciativas.",
+    "cta": "Agendar una consultoría"
   },
   {
-    "image": "formulacion",
+    "image": "/services/formulacion.png",
     "title": "Formulación de proyectos",
     "lead": "Ideal para diseñar proyectos sólidos.",
-    "description": "Diseño integral de proyectos sociales y psicosociales. Creamos propuestas sólidas y contextualizadas."
+    "description": "Diseño integral de proyectos sociales y psicosociales. Creamos propuestas sólidas y contextualizadas.",
+    "longDescription": "Acompaño el diseño integral de proyectos sociales, comunitarios y psicosociales, desde la identificación de necesidades hasta la estructuración técnica y metodológica. Trabajo contigo para construir propuestas sólidas, coherentes y contextualizadas, capaces de generar impacto, movilizar recursos y fortalecer las capacidades de los equipos y territorios involucrados.",
+    "cta": "Quiero asesoría para mi proyecto"
   }
 ]
