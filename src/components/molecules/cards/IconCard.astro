@@ -1,0 +1,14 @@
+---
+import Paragraph from "../../typography/body/Paragraph.astro";
+import IconSvg from "../../atoms/IconSvg.astro";
+
+const { heading = "Heading", body = "Paragraph", nameIcon = "icon-alert" } = Astro.props;
+---
+
+<div class="flex items-center gap-8 ">
+  <IconSvg size="48" class="text-primary-500" name={nameIcon}/>
+  <div>
+    <Paragraph size="lg" text={heading} color="primary-400"/>
+    <Paragraph size="md" text={body} weight="light"/>
+  </div>
+</div>

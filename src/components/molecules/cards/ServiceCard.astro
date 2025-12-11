@@ -1,0 +1,26 @@
+---
+import Image from "astro/components/Image.astro";
+import individual from "../../../assets/image/services/individual.png";
+import LeadText from "../../typography/specials/LeadText.astro";
+import Paragraph from "../../typography/body/Paragraph.astro";
+
+const {
+  image = individual,
+  title = "Acompañamiento psicológico individual",
+  lead = "Ideal para quienes buscan claridad emocional.",
+  description = "Un espacio seguro para entenderte y sanar. Te acompaño con enfoque humano y personalizado.",
+} = Astro.props;
+---
+
+<article class="flex flex-col bg-neutral-800 rounded-lg overflow-hidden shadow-lg shadow-neutral-900"> 
+  <Image
+    src={image}
+    alt="Imagen de consultoría psicológica"
+    class="max-h-[210px] object-cover object-center"
+  />
+  <div class="flex flex-col px-6 py-4">
+    <Paragraph size="lg" text={title} />
+    <LeadText text={lead} />
+    <Paragraph size="sm" text={description} />
+  </div>
+</article>

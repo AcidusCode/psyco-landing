@@ -1,0 +1,7 @@
+---
+const { text = "No setting text", align = "left" } = Astro.props
+---
+
+<h1 class={`text-h1 leading-h1 font-bold title-gradient whitespace-pre-line text-${align}`}>
+    { text }
+</h1>

@@ -1,0 +1,48 @@
+---
+import ServiceCard from "../molecules/cards/ServiceCard.astro";
+import PageSubtitle from "../molecules/PageSubtitle.astro";
+import Section from "./Section.astro";
+import Button from "../atoms/Button.astro";
+
+import team from "../../assets/image/services/team.png";
+import consultoria from "../../assets/image/services/consultoria.png";
+import tutoria from "../../assets/image/services/tutoria.png";
+import individual from "../../assets/image/services/individual.png";
+import formulacion from "../../assets/image/services/formulacion.png";
+
+const imageMap = {
+    individual,
+    team,
+    tutoria,
+    consultoria,
+    formulacion
+}
+
+import serviceData from "../../data/services/servicesData.json";
+---
+
+<Section>
+  <PageSubtitle
+    lead="Atención psicológica personalizada"
+    heading="Elige el servicio adecuado para ti"
+    body="Cada proceso es único. Mi objetivo es ayudarte a comprenderte, \n sanar y crecer con herramientas adaptadas a ti."
+    align="left"
+  />
+  <div class="grid grid-cols-3 gap-10">
+    {
+      serviceData.map((service) => (
+        <ServiceCard
+          image={imageMap[service.image]}
+          title={service.title}
+          lead={service.lead}
+          description={service.description}
+        />
+      ))
+    }
+  </div>
+  <Button
+    label="Conoce más acerca de mis servicios"
+    iconRight="icon-right-arrow"
+    type="button"
+  />
+</Section>

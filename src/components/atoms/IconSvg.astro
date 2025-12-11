@@ -1,0 +1,13 @@
+---
+const { name = "icon-alert", set = "icons", size = 24, class: cls = "", stroke = "currentColor" } = Astro.props;
+---
+
+<svg 
+  width={size} 
+  height={size}
+  class={cls}
+  stroke={stroke}
+  aria-hidden="true"
+>
+  <use href={`/${set}.svg#${name}`} />
+</svg>

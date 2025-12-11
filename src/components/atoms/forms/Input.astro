@@ -1,0 +1,26 @@
+---
+const {
+  placeholder = "Escribe aquí...",
+  type = "text",
+  name = "input",
+  value = "",
+  classes = "",
+  iconRight = null,
+  iconLeft = null,
+} = Astro.props;
+import IconSvg from "../IconSvg.astro";
+---
+
+<div
+  class="flex items-center bg-neutral-800 text-neutral-200 placeholder:text-neutral-500 border border-neutral-700 focus:border-primary-500 px-4 py-4 w-full gap-2 rounded-full"
+>
+  { iconLeft && <IconSvg name={iconLeft} size="24" />}
+  <input
+    class={`focus:ring-2 focus:ring-primary-500 focus:outline-none  ${classes}`}
+    type={type}
+    name={name}
+    placeholder={placeholder}
+    value={value}
+  />
+  { iconRight && <IconSvg name={iconRight} size="24" />}
+</div>

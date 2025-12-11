@@ -1,0 +1,136 @@
+---
+import Footer from "../components/Footer.astro";
+import PageTitle from "../components/molecules/PageTitle.astro";
+import Navigation from "../components/Navigation.astro";
+import BenefitsSection from "../components/sections/BenefitsSection.astro";
+import TestimonialSection from "../components/sections/TestimonialSection.astro";
+import Paragraph from "../components/typography/body/Paragraph.astro";
+import LeadText from "../components/typography/specials/LeadText.astro";
+import Layout from "../layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+import Section from "../components/sections/Section.astro";
+import Heading2 from "../components/typography/headings/Heading2.astro";
+import PageSubtitle from "../components/molecules/PageSubtitle.astro";
+import IconSvg from "../components/atoms/IconSvg.astro";
+import myFocusData from "../data/about/myFocusData.json";
+import certificatedData from "../data/about/certificatedData.json";
+import achievesData from "../data/about/achievesData.json";
+import SuscribeSection from "../components/sections/SuscribeSection.astro";
+---
+
+<Layout>
+  <Navigation />
+  <PageTitle
+    lead="Mi recorrido en la psicología"
+    heading="Cómo me formé para \n acompañarte con excelencia"
+    body="Cada paso de mi camino ha fortalecido mi capacidad para escuchar, \n comprender y guiar procesos reales de cambio."
+    classes="mt-30"
+    align="center"
+  />
+  <section class="flex flex-col gap-40 w-full max-w-[1100px] mx-auto">
+    <div class="flex gap-20">
+      <div class="flex flex-col gap-2">
+        <LeadText text="Psicólogo | Magister en Filosofía" />
+        <Paragraph
+          size="lg"
+          color="text-neutral-100"
+          text="Acompaño procesos de sanación profunda desde una mirada humana, integral y culturalmente consciente."
+        />
+        <Paragraph
+          color="text-neutral-300"
+          text="Durante más de una década he trabajado con personas, familias y comunidades en situaciones complejas: duelo, crisis, ansiedad, depresión, violencia, conflictos familiares, diversidad cultural, migración y reconstrucción emocional tras experiencias difíciles."
+        />
+        <Paragraph
+          text="Mi camino profesional ha estado guiado por una convicción profunda: la sanación verdadera ocurre cuando somos vistos, escuchados y comprendidos en toda nuestra historia, nuestra identidad y nuestro contexto."
+        />
+      </div>
+      <img src="./about/about.png" />
+    </div>
+    <div class="flex gap-20">
+      <img src="./about/about2.png" />
+      <div class="flex flex-col gap-2">
+        <Paragraph
+          color="text-neutral-300"
+          text="He liderado procesos de transformación social en territorios indígenas, afrocolombianos y rurales, así como espacios clínicos individuales. Esa mezcla entre ciencia, humanidad y diálogo intercultural define mi práctica psicológica de hoy."
+        />
+        <Paragraph
+          text="Mi compromiso es acompañarte desde un lugar seguro, cálido y profesional, donde puedas comprender lo que te sucede, recuperar tu equilibrio y avanzar hacia la vida que deseas."
+        />
+      </div>
+    </div>
+  </section>
+  <Section>
+    <PageSubtitle
+      heading="Mi enfoque de acompañamiento"
+      body="Combino psicología clínica, filosofía y metodologías participativas para crear \n un espacio seguro, culturalmente sensible y orientado a la acción."
+    />
+    <main class="flex gap-30">
+      {
+        myFocusData.map((myFocus) => (
+          <div class="text-center flex flex-col items-center max-w-[220px]">
+            <IconSvg
+              set={myFocus.icon.set}
+              name={myFocus.icon.name}
+              class="text-primary-500"
+              size={myFocus.icon.size}
+            />
+            <Paragraph
+              size="lg"
+              text={myFocus.title}
+              align="center"
+              color="text-neutral-100"
+            />
+            <Paragraph size="sm" text={myFocus.description} align="center" />
+          </div>
+        ))
+      }
+    </main>
+  </Section>
+  <Section>
+    <Heading2 text="Mi trayectoria y experiencia" />
+    <main class="flex gap-20">
+      <img src="./about/about3.png" />
+      <div>
+        <Paragraph
+          text="+10 años de experiencia en salud mental y procesos psicosociales, trabajando con:"
+          size="lg"
+        />
+        <div class="grid grid-cols-3">
+          {
+            certificatedData.map((certificated) => (
+              <IconSvg
+                set={certificated.icon.set}
+                name={certificated.icon.name}
+                size={200}
+                stroke={certificated.icon.stroke}
+              />
+            ))
+          }
+        </div>
+      </div>
+    </main>
+  </Section>
+  <Section>
+    <Heading2 text="Logros destacados " />
+    <main class="grid grid-cols-4 justify-center gap-16">
+      {
+        achievesData.map((achieve) => (
+          <div class="flex flex-col max-w-[220px] items-center">
+            <IconSvg
+              set={achieve.icon.set}
+              name={achieve.icon.name}
+              size={achieve.icon.size}
+            />
+            <Paragraph text={achieve.text} align="center" />
+          </div>
+        ))
+      }
+    </main>
+  </Section>
+  <TestimonialSection />
+  <div>
+    <BenefitsSection />
+    <SuscribeSection />
+    <Footer />
+  </div>
+</Layout>

@@ -1,0 +1,46 @@
+[
+  {
+    "icon": {
+      "set": "my-focus-icons",
+      "name": "icon-ear-outline",
+      "class": "text-primary-500",
+      "size": 64
+    },
+    "title": "Escucha profunda",
+    "description": "Un espacio sin juicios para poner en palabras lo que te pasa y comenzar a ordenar tu experiencia.",
+    "align": "center"
+  },
+  {
+    "icon": {
+      "set": "my-focus-icons",
+      "name": "icon-scan-outline",
+      "class": "text-primary-500",
+      "size": 64
+    },
+    "title": "Mirada integral",
+    "description": "Trabajo emocional, corporal y relacional: no solo hablamos, también intervenimos para generar cambios sostenibles.",
+    "align": "center"
+  },
+  {
+    "icon": {
+      "set": "my-focus-icons",
+      "name": "icon-globe-outline",
+      "class": "text-primary-500",
+      "size": 64
+    },
+    "title": "Sensibilidad intercultural",
+    "description": "Respeto tu cosmovisión y particularidades culturales, experiencia con pueblos vulnerables.",
+    "align": "center"
+  },
+  {
+    "icon": {
+      "set": "my-focus-icons",
+      "name": "icon-sync-circle-outline",
+      "class": "text-primary-500",
+      "size": 64
+    },
+    "title": "Transformación práctica",
+    "description": "Herramientas concretas para regular emociones, tomar decisiones y construir un camino hacia la estabilidad.",
+    "align": "center"
+  }
+]

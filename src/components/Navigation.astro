@@ -1,0 +1,30 @@
+---
+import navigationData from "../data/navigationData.json";
+import TextLink from "./atoms/TextLink.astro";
+import Button from "./atoms/Button.astro";
+---
+
+<nav
+  class="fixed w-full flex justify-between items-center px-8 py-4 bg-[rgb(3,15,27)]/90 backdrop-blur-md z-50"
+>
+  <p class="text-[rgb(250,248,245)]">DIEGO MORENO</p>
+  <ul class="absolute left-0 right-0 flex gap-8 justify-center align-center">
+    {
+      navigationData.map((link) => (
+        <li>
+          <TextLink
+            href={link.url}
+            content={link.title}
+            classes="text-[rgb(250,248,245)] font-light"
+          />
+        </li>
+      ))
+    }
+  </ul>
+  <Button
+    label="Reserva tu sesión"
+    variant="outline"
+    iconRight="icon-right-arrow"
+    size="md"
+  />
+</nav>

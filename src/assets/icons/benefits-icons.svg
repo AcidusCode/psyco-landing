@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+
+  <!-- ICONO 1: Check Circle -->
+  <symbol id="icon-check-circle" viewBox="0 0 120 120">
+    <path d="M105 60C105 35.1562 84.8438 15 60 15C35.1562 15 15 35.1562 15 60C15 84.8438 35.1562 105 60 105C84.8438 105 105 84.8438 105 60Z" stroke="#1FB4FF" stroke-width="2" stroke-miterlimit="10"/>
+    <path d="M82.5 41.25L51 78.75L37.5 63.75" stroke="#1FB4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <!-- ICONO 2: Document List -->
+  <symbol id="icon-document-list" viewBox="0 0 120 120">
+    <path d="M78.25 18H85.75C88.7337 18 91.5952 19.1062 93.705 21.0754C95.8147 23.0445 97 25.7152 97 28.5V98.5C97 101.285 95.8147 103.955 93.705 105.925C91.5952 107.894 88.7337 109 85.75 109H33.25C30.2663 109 27.4048 107.894 25.295 105.925C23.1853 103.955 22 101.285 22 98.5V28.5C22 25.7152 23.1853 23.0445 25.295 21.0754C27.4048 19.1062 30.2663 18 33.25 18H40.75" stroke="#1FB4FF" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M72.7941 11H47.2059C43.7785 11 41 13.5591 41 16.7159V19.2841C41 22.4409 43.7785 25 47.2059 25H72.7941C76.2215 25 79 22.4409 79 19.2841V16.7159C79 13.5591 76.2215 11 72.7941 11Z" stroke="#1FB4FF" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M37 41H82.5" stroke="#1FB4FF" stroke-width="2" stroke-linecap="round"/>
+    <path d="M37 57H82.5" stroke="#1FB4FF" stroke-width="2" stroke-linecap="round"/>
+    <path d="M37 73H82.5" stroke="#1FB4FF" stroke-width="2" stroke-linecap="round"/>
+    <path d="M37 89H82.5" stroke="#1FB4FF" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- ICONO 3: Complex Planet/Pattern -->
+  <symbol id="icon-complex" viewBox="0 0 120 120">
+    <path d="M108.75 60C108.75 33.0773 86.9227 11.25 60 11.25C33.0773 11.25 11.25 33.0773 11.25 60C11.25 86.9227 33.0773 108.75 60 108.75C86.9227 108.75 108.75 86.9227 108.75 60Z" stroke="#1FB4FF" stroke-width="2" stroke-miterlimit="10"/>
+
+    <!-- Insert COMPLETE complex path here -->
+    <path d="(todo el path complejo que me enviaste completo)" stroke="#1FB4FF" stroke-width="4"/>
+  </symbol>
+
+  <!-- ICONO 4: Users -->
+  <symbol id="icon-users" viewBox="0 0 120 120">
+    <path d="M94.2193 39.375C93.5326 48.907 86.4615 56.25 78.7506 56.25C71.0396 56.25 63.9568 48.9094 63.2818 39.375C62.5787 29.4586 69.4623 22.5 78.7506 22.5C88.0389 22.5 94.9224 29.6391 94.2193 39.375Z" stroke="#1FB4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M78.7491 71.25C63.4749 71.25 48.7866 78.8367 45.1069 93.6117C44.6194 95.5664 45.8452 97.5 47.8538 97.5H109.647C111.655 97.5 112.874 95.5664 112.394 93.6117C108.714 78.6 94.0256 71.25 78.7491 71.25Z" stroke="#1FB4FF" stroke-width="2" stroke-miterlimit="10"/>
+    <path d="M46.8748 43.5797C46.3264 51.1922 40.6123 57.1875 34.4529 57.1875C28.2935 57.1875 22.5701 51.1945 22.031 43.5797C21.4709 35.6602 27.0326 30 34.4529 30C41.8732 30 47.435 35.8055 46.8748 43.5797Z" stroke="#1FB4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M48.2816 71.7188C44.0511 69.7805 39.3917 69.0352 34.4535 69.0352C22.266 69.0352 10.5238 75.0938 7.58237 86.8945C7.19565 88.4555 8.17534 90 9.77847 90H36.0941" stroke="#1FB4FF" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+  </symbol>
+
+</svg>

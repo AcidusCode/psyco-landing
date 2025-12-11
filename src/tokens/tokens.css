@@ -1,0 +1,197 @@
+/* This tokens represent FOUNDATIONS TOKENS on Figma */
+
+:root {
+  /* ============================================
+     COLOR TOKENS
+  ============================================ */
+  --color-black: #111;
+  --color-white: #fafafa;
+
+  /* Brand Colors */
+  --color-brand-1-100: #D2F0FF;
+  --color-brand-1-200: #A5E1FF;
+  --color-brand-1-300: #78D2FF;
+  --color-brand-1-400: #4CC3FF;
+  --color-brand-1-500: #1FB4FF;
+  --color-brand-1-600: #1F97D3;
+  --color-brand-1-700: #207AA7;
+  --color-brand-1-800: #215C7A;
+  --color-brand-1-900: #213F4E;
+
+  --color-brand-2-100: #fff0e0;
+  --color-brand-2-200: #ffd9b3;
+  --color-brand-2-300: #ffbf80;
+  --color-brand-2-400: #ffa64d;
+  --color-brand-2-500: #ff8c1a;
+  --color-brand-2-600: #e67300;
+  --color-brand-2-700: #b35b00;
+  --color-brand-2-800: #804000;
+  --color-brand-2-900: #4d2600;
+
+  --color-brand-3-100: #f0f5ff;
+  --color-brand-3-200: #d9e0ff;
+  --color-brand-3-300: #bfbfff;
+  --color-brand-3-400: #a64dff;
+  --color-brand-3-500: #8c1aff;
+  --color-brand-3-600: #7300e6;
+  --color-brand-3-700: #5b00b3;
+  --color-brand-3-800: #400080;
+  --color-brand-3-900: #26004d;
+
+  /* Status Colors */
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e0e0e0;
+  --color-gray-300: #cccccc;
+  --color-gray-400: #999999;
+  --color-gray-500: #777777;
+  --color-gray-600: #555555;
+  --color-gray-700: #444444;
+  --color-gray-800: #333333;
+  --color-gray-900: #111111;
+
+  --color-green-100: #e6f4ea;
+  --color-green-200: #c0e6c3;
+  --color-green-300: #99d799;
+  --color-green-400: #70c96f;
+  --color-green-500: #4dbf4d;
+  --color-green-600: #399b39;
+  --color-green-700: #2d7d2d;
+  --color-green-800: #1f551f;
+  --color-green-900: #113011;
+
+  --color-orange-100: #fff4e6;
+  --color-orange-200: #ffe0b3;
+  --color-orange-300: #ffc180;
+  --color-orange-400: #ffa64d;
+  --color-orange-500: #ff8c1a;
+  --color-orange-600: #e67300;
+  --color-orange-700: #b35900;
+  --color-orange-800: #804000;
+  --color-orange-900: #4d2600;
+
+  --color-red-100: #ffe6e6;
+  --color-red-200: #ffb3b3;
+  --color-red-300: #ff8080;
+  --color-red-400: #ff4d4d;
+  --color-red-500: #ff1a1a;
+  --color-red-600: #e60000;
+  --color-red-700: #b30000;
+  --color-red-800: #800000;
+  --color-red-900: #4d0000;
+
+  --color-blue-100: #e6f0ff;
+  --color-blue-200: #b3d1ff;
+  --color-blue-300: #80b3ff;
+  --color-blue-400: #4d94ff;
+  --color-blue-500: #1a75ff;
+  --color-blue-600: #005ce6;
+  --color-blue-700: #0047b3;
+  --color-blue-800: #003180;
+  --color-blue-900: #001a4d;
+
+  /* ============================================
+     TYPOGRAPHY TOKENS
+  ============================================ */
+
+  --typography-family-sans: "Inter", sans-serif;
+  --typography-family-serif: "Georgia", serif;
+
+  --typography-size-5xl: 4rem;
+  --typography-size-4xl: 3rem;
+  --typography-size-3xl: 2.5rem;
+  --typography-size-2xl: 2rem;
+  --typography-size-xl: 1.5rem;
+  --typography-size-lg: 1.25rem;
+  --typography-size-md: 1rem;
+  --typography-size-sm: 0.9.25rem;
+  --typography-size-xs: 0.875rem;
+
+  --typography-line-height-tight: 1.1;
+  --typography-line-height-normal: 1.5;
+
+  --typography-weight-thin: 300;
+  --typography-weight-regular: 400;
+  --typography-weight-semibold: 600;
+  --typography-weight-bold: 700;
+
+  --typography-letter-spacing-tight: -0.015rem;
+  --typography-letter-spacing-normal: 0;
+  --typography-letter-spacing-wide: 0.025;
+
+  /* ============================================
+     SPACING TOKENS (spacing)
+  ============================================ */
+  --space-0: 0rem; /* 0px */
+  --space-0-25: 0.0625rem; /* 1px */
+  --space-0-5: 0.125rem; /* 2px */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem; /* 24px */
+  --space-7: 1.75rem; /* 28px */
+  --space-8: 2rem; /* 32px */
+  --space-9: 2.5rem; /* 40px */
+  --space-10: 3rem; /* 48px */
+  --space-11: 3.5rem; /* 56px */
+  --space-12: 4rem; /* 64px */
+
+  /* ============================================
+     SIZING TOKENS (sizing)
+  ============================================ */
+  --size-icon-sm: 16px;
+  --size-icon-md: 24px;
+  --size-icon-lg: 48px;
+  --size-container-max: 1440px;
+
+  /* ============================================
+     BORDER TOKENS (border)
+  ============================================ */
+
+  --border-style-default: solid;
+
+  /* ============================================
+     SHADOW TOKENS (shadow)
+  ============================================ */
+  --shadow-sm: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0px 4px 6px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0px 10px 15px rgba(0, 0, 0, 0.15);
+
+  /* ============================================
+     OPACITY TOKENS (opacity)
+  ============================================ */
+  --opacity-disabled: 0.4;
+  --opacity-overlay: 0.8;
+
+  /* ============================================
+     Z-INDEX TOKENS (z-index)
+  ============================================ */
+  --z-tooltip: 9000;
+  --z-modal: 9500;
+  --z-toast: 9999;
+
+  /* ============================================
+     MOTION TOKENS (motion: duration, easing)
+  ============================================ */
+  --motion-duration-fast: 150ms;
+  --motion-duration-normal: 250ms;
+  --motion-duration-slow: 400ms;
+
+  --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ============================================
+     BREAKPOINT TOKENS (media / breakpoints)
+  ============================================ */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  /* ============================================
+     GRID / LAYOUT TOKENS (custom category)
+  ============================================ */
+  --grid-gutter: 24px;
+  --grid-columns: 12;
+}

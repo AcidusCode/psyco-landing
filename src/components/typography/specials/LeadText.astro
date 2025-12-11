@@ -1,0 +1,41 @@
+---
+export interface TextProps {
+  text?: string;
+  align?: "left" | "center" | "right";
+  size?: "sm" | "md" | "lg";
+  weight?: "light" | "regular" | "medium" | "semibold" | "bold";
+  color?: string; // Ej: "primary-400"
+}
+
+const {
+  text = "No setting text",
+  align = "left",
+  size = "md",
+  weight = "regular",
+  color = "primary-400",
+}: TextProps = Astro.props;
+
+// Mapas de clases
+const sizeClasses = {
+  sm: "text-paragraph-sm leading-paragraph-sm",
+  md: "text-paragraph-md leading-paragraph-md",
+  lg: "text-paragraph-lg leading-paragraph-lg",
+};
+
+const weightClasses = {
+  light: "font-light",
+  regular: "font-normal",
+  medium: "font-medium",
+  semibold: "font-semibold",
+  bold: "font-bold",
+};
+
+// Color dinámico
+const colorClass = `text-${color}`;
+---
+
+<p
+  class={`${sizeClasses[size]} ${weightClasses[weight]} ${colorClass} whitespace-pre-line text-${align}`}
+>
+  {text}
+</p>

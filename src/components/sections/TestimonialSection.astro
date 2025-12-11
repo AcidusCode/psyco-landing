@@ -1,0 +1,40 @@
+---
+import TestimonialCard from "../molecules/cards/TestimonialCard.astro";
+import PageSubtitle from "../molecules/PageSubtitle.astro";
+import Section from "./Section.astro";
+import Button from "../atoms/Button.astro";
+import Paragraph from "../typography/body/Paragraph.astro";
+
+import testimonialData from "../../data/testimonials/testimonialData.json";
+---
+
+<Section>
+  <PageSubtitle
+    lead="Testimonios"
+    heading="Lo que dicen mis pacientes"
+    body="Historias reales de personas que transformaron su bienestar emocional."
+    align="center"
+  />
+  <div class="grid grid-cols-3 gap-8">
+    {
+      testimonialData.map((testimonial) => (
+        <TestimonialCard
+          image={testimonial.testimonialImage}
+          name={testimonial.name}
+          service={testimonial.service}
+          rating={testimonial.rating}
+          countryIcon={testimonial.countryIcon}
+          quote={testimonial.quote}
+        />
+      ))
+    }
+  </div>
+  <div class="flex flex-col gap-8">
+    <Paragraph size="lg" text=" ¡TÚ PODRÍAS SER EL SIGUIENTE!" align="center" />
+    <Button
+      label="Ver más opiniones"
+      iconRight="icon-right-arrow"
+      type="button"
+    />
+  </div>
+</Section>

@@ -1,0 +1,42 @@
+[
+  {
+    "icon": {
+      "set": "working-icons",
+      "name": "icon-cruz-roja",
+      "size": 300,
+      "stroke": "none"
+    }
+  },
+  {
+    "icon": {
+      "set": "working-icons",
+      "name": "icon-somos-capaces",
+      "size": 300,
+      "stroke": "none"
+    }
+  },
+  {
+    "icon": {
+      "set": "working-icons",
+      "name": "icon-lab-paz",
+      "size": 300,
+      "stroke": "none"
+    }
+  },
+  {
+    "icon": {
+      "set": "working-icons",
+      "name": "icon-colegio-psicologos",
+      "size": 300,
+      "stroke": "none"
+    }
+  },
+  {
+    "icon": {
+      "set": "working-icons",
+      "name": "icon-pnud",
+      "size": 300,
+      "stroke": "none"
+    }
+  }
+]

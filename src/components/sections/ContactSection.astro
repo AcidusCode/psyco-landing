@@ -1,0 +1,73 @@
+---
+import Section from "./Section.astro";
+import PageSubtitle from "../molecules/PageSubtitle.astro";
+import Input from "../atoms/forms/Input.astro";
+import Button from "../atoms/Button.astro";
+import Paragraph from "../typography/body/Paragraph.astro";
+---
+
+<Section>
+  <PageSubtitle
+    lead="Contacto"
+    heading="Estoy aquí para ayudarte"
+    body="No necesitas tenerlo todo claro para empezar, lo importante \n es decidirte a cuidar de ti. +90% de mis pacientes reportan \n mejoras en las primeras semanas."
+    align="center"
+  />
+  <form class="flex flex-col gap-12 w-full max-w-xl">
+    <div class="flex flex-col gap-8">
+      <div class="flex flex-col items-start gap-2">
+        <label class="text-center text-lg text-neutral-100 font-medium"
+          >Tú nombre</label
+        >
+        <Input
+          placeholder="Escribe tu nombre"
+          type="text"
+          iconLeft="icon-folder"
+          name="name"
+          required
+        />
+      </div>
+      <div class="flex flex-col items-start gap-2">
+        <label class="text-center text-lg text-neutral-100 font-medium"
+          >Tú nombre</label
+        >
+        <Input
+          placeholder="Nombre completo"
+          type="text"
+          iconLeft="icon-document"
+          name="email"
+          required
+        />
+      </div>
+      <div class="flex flex-col items-start gap-2">
+        <label class="text-center text-lg text-neutral-100 font-medium"
+          >Tú nombre</label
+        >
+        <Input
+          placeholder="Nombre completo"
+          type="text"
+          iconLeft="icon-folder"
+          name="message"
+          required
+        />
+      </div>
+    </div>
+    <div class="flex flex-col items-center gap-12">
+      <Button
+        label="Quiero empezar mi proceso"
+        iconRight="icon-right-arrow"
+        type="submit"
+      />
+      <div class="flex flex-col gap-1 items-center">
+        <Paragraph
+          size="md"
+          text="Te responderé en menos de 24 horas para coordinar tu sesión."
+        />
+        <Paragraph
+          size="md"
+          text="Tu mensaje es confidencial y está protegido."
+        />
+      </div>
+    </div>
+  </form>
+</Section>

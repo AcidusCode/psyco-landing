@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Inicio",
+        "url": "/"
+    },
+    {
+        "title": "Servicios",
+        "url": "/services"
+    },
+    {
+        "title": "Blog",
+        "url": "/blog"
+    },
+    {
+        "title": "Sobre mi",
+        "url": "/about"
+    }
+]

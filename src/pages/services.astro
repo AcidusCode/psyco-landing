@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import PageTitle from "../components/molecules/PageTitle.astro";
+import ServiceCardExtended from "../components/molecules/cards/ServiceCardExtended.astro";
+import BenefitsSection from "../components/sections/BenefitsSection.astro";
+import SuscribeSection from "../components/sections/SuscribeSection.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout>
+  <Navigation />
+  <PageTitle
+    lead="Tu bienestar primero"
+    heading="Elige el servicio \n adecuado para ti"
+    body="Cada proceso es único. Mi objetivo es ayudarte a comprenderte, \n sanar y crecer con herramientas adaptadas a ti."
+    align="center"
+    classes="mt-30"
+  />
+  <ServiceCardExtended />
+  <ServiceCardExtended />
+  <ServiceCardExtended />
+  <ServiceCardExtended />
+  <ServiceCardExtended />
+  <BenefitsSection />
+  <div>
+    <SuscribeSection />
+    <Footer />
+  </div>
+</Layout>

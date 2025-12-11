@@ -1,0 +1,72 @@
+[
+  {
+    "icon": {
+      "set": "achieves-icons",
+      "name": "icon-heart-circle",
+      "size": 100
+    },
+    "text": "Creación de la primera sala de partos intercultural de Colombia.",
+    "align": "center",
+    "maxWidth": 220
+  },
+  {
+    "icon": {
+      "set": "achieves-icons",
+      "name": "icon-help-buoy",
+      "size": 100
+    },
+    "text": "Creación de la primera sala de partos intercultural de Colombia.",
+    "align": "center",
+    "maxWidth": 200
+  },
+  {
+    "icon": {
+      "set": "achieves-icons",
+      "name": "icon-ribbon",
+      "size": 100
+    },
+    "text": "Fellow de Acumen 2021, reconocido por su liderazgo social.",
+    "align": "center",
+    "maxWidth": 200
+  },
+  {
+    "icon": {
+      "set": "achieves-icons",
+      "name": "icon-80",
+      "size": 100
+    },
+    "text": "inserción laboral lograda en proyectos con mujeres en vulnerabilidad.",
+    "align": "center",
+    "maxWidth": 200
+  },
+  {
+    "icon": {
+      "set": "achieves-icons",
+      "name": "icon-75",
+      "size": 100
+    },
+    "text": "jóvenes afrocolombianos formados en liderazgo para la paz.",
+    "align": "center",
+    "maxWidth": 200
+  },
+  {
+    "icon": {
+      "set": "achieves-icons",
+      "name": "icon-heart-circle",
+      "size": 100
+    },
+    "text": "Mención Honorífica 2024 por desempeño sobresaliente en psicología.",
+    "align": "center",
+    "maxWidth": 200
+  },
+  {
+    "icon": {
+      "set": "achieves-icons",
+      "name": "icon-leaf",
+      "size": 100
+    },
+    "text": "Facilitador de procesos de diálogo, reconciliación y trauma colectivo.",
+    "align": "center",
+    "maxWidth": 200
+  }
+]

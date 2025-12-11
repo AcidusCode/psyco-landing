@@ -1,0 +1,32 @@
+[
+  {
+    "image": "individual",
+    "title": "Acompañamiento psicológico individual",
+    "lead": "Ideal para quienes buscan claridad emocional.",
+    "description": "Un espacio seguro para entenderte y sanar. Te acompaño con enfoque humano y personalizado."
+  },
+  {
+    "image": "team",
+    "title": "Acompañamiento psicológico grupal",
+    "lead": "Ideal para crecer con otros.",
+    "description": "Procesos colectivos para compartir y crecer. Construimos apoyo, autenticidad y aprendizaje mutuo."
+  },
+  {
+    "image": "tutoria",
+    "title": "Tutorías",
+    "lead": "Ideal para avanzar con guía experta.",
+    "description": "Formación personalizada para profundizar en salud mental y metodologías. Te guío en trabajos e investigaciones."
+  },
+  {
+    "image": "consultoria",
+    "title": "Consultorías",
+    "lead": "Ideal para fortalecer proyectos institucionales.",
+    "description": "Asesoría psicosocial y metodológica para organizaciones. Soluciones estratégicas adaptadas a tu contexto."
+  },
+  {
+    "image": "formulacion",
+    "title": "Formulación de proyectos",
+    "lead": "Ideal para diseñar proyectos sólidos.",
+    "description": "Diseño integral de proyectos sociales y psicosociales. Creamos propuestas sólidas y contextualizadas."
+  }
+]

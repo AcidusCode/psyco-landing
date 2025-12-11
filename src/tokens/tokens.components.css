@@ -1,0 +1,460 @@
+/* This tokens represent ALIAS TOKENS on Figma */
+@theme inline {
+  /* ============================================
+      BUTTON TOKENS
+  ============================================ */
+  --button-font-size-sm: var(--text-paragraph-sm);
+  --button-font-size-md: var(--text-paragraph-md);
+  --button-font-size-lg: var(--text-paragraph-lg);
+
+  --button-font-weight: var(--font-weight-regular);
+  --button-radius: var(--radius-full);
+
+  --button-padding-x-sm: var(--space-4);
+  --button-padding-x-md: var(--space-6);
+  --button-padding-x-lg: var(--space-8);
+
+  --button-padding-y-sm: var(--space-2);
+  --button-padding-y-md: var(--space-4);
+  --button-padding-y-lg: var(--space-6);
+
+  --button-icon-size: var(--size-icon-sm);
+  --button-gap: var(--space-2);
+
+  /* ============================================
+      PRIMARY
+  ============================================ */
+
+  /* PRIMARY */
+  --button-primary-bg: var(--color-surface-action);
+  --button-primary-bg-hover: var(--color-surface-action-hover);
+  --button-primary-bg-press: var(--color-surface-press);
+  --button-primary-bg-focus: var(--color-surface-focus);
+  --button-primary-bg-focus-weak: var(--color-surface-focus-weak);
+  --button-primary-bg-disabled: var(--color-surface-disabled);
+  --button-primary-bg-loading: var(--color-surface-loading);
+
+  --button-primary-text: var(--color-text-primary);
+  --button-primary-text-hover: var(--color-text-primary);
+  --button-primary-text-press: var(--color-text-link-hover);
+  --button-primary-text-focus: var(--color-text-primary);
+  --button-primary-text-disabled: var(--color-text-disabled);
+  --button-primary-text-loading: var(--color-text-disabled);
+
+  --button-primary-border: var(--color-primary-500);
+  --button-primary-border-hover: var(--color-border-primary-hover);
+  --button-primary-border-press: var(--color-border-link-hover);
+  --button-primary-border-focus: var(--color-border-link-hover);
+  --button-primary-border-disabled: var(--color-border-disabled);
+  --button-primary-border-loading: var(--color-border-disabled);
+
+  --button-primary-focus-ring: var(--color-border-primary-focus);
+
+  /* OUTLINE */
+  --button-primary-outline-bg: transparent;
+  --button-primary-outline-bg-hover: var(--color-surface-primary);
+  --button-primary-outline-bg-press: var(--color-surface-press-weak);
+  --button-primary-outline-bg-focus: transparent;
+  --button-primary-outline-bg-disabled: var(--color-surface-disabled-weak);
+  --button-primary-outline-bg-loading: var(--color-surface-loading);
+
+  --button-primary-outline-text: var(--color-text-link);
+  --button-primary-outline-text-hover: var(--color-text-primary);
+  --button-primary-outline-text-press: var(--color-text-link-hover);
+  --button-primary-outline-text-focus: var(--color-text-link);
+  --button-primary-outline-text-disabled: var(--color-text-disabled);
+  --button-primary-outline-text-loading: var(--color-text-disabled);
+
+  --button-primary-outline-border: var(--color-border-primary);
+  --button-primary-outline-border-hover: var(--color-border-primary-hover);
+  --button-primary-outline-border-press: var(--color-border-primary-press);
+  --button-primary-outline-border-focus: var(--color-border-primary-focus);
+  --button-primary-outline-border-disabled: var(--color-border-disabled);
+  --button-primary-outline-border-loading: var(--color-border-disabled);
+
+  /* GHOST */
+  --button-primary-ghost-bg: transparent;
+  --button-primary-ghost-bg-hover: var(--color-surface-action-hover-weak);
+  --button-primary-ghost-bg-press: var(--color-surface-press-weak);
+  --button-primary-ghost-bg-focus: transparent;
+  --button-primary-ghost-bg-disabled: transparent;
+  --button-primary-ghost-bg-loading: transparent;
+
+  --button-primary-ghost-text: var(--color-text-link);
+  --button-primary-ghost-text-hover: var(--color-text-link-hover);
+  --button-primary-ghost-text-press: var(--color-text-link-hover);
+  --button-primary-ghost-text-focus: var(--color-text-link-hover);
+  --button-primary-ghost-text-disabled: var(--color-text-disabled);
+  --button-primary-ghost-text-loading: var(--color-text-disabled);
+
+  --button-primary-ghost-border: transparent;
+  --button-primary-ghost-border-hover: transparent;
+  --button-primary-ghost-border-press: transparent;
+  --button-primary-ghost-border-focus: transparent;
+  --button-primary-ghost-border-disabled: transparent;
+  --button-primary-ghost-border-loading: transparent;
+  /* ============================================
+      SUCCESS
+  ============================================ */
+
+  /* SOLID */
+  --button-success-bg: var(--color-surface-success-weak);
+  --button-success-bg-hover: var(--color-surface-success-weak);
+  --button-success-bg-press: var(--color-surface-press);
+  --button-success-bg-focus: var(--color-surface-success);
+  --button-success-bg-focus-weak: var(--color-surface-focus-weak);
+  --button-success-bg-disabled: var(--color-surface-disabled);
+  --button-success-bg-loading: var(--color-surface-loading);
+
+  --button-success-text: var(--color-text-success);
+  --button-success-text-hover: var(--color-text-success);
+  --button-success-text-press: var(--color-text-success);
+  --button-success-text-focus: var(--color-text-on-color);
+  --button-success-text-disabled: var(--color-text-disabled);
+  --button-success-text-loading: var(--color-text-disabled);
+
+  --button-success-border: var(--color-success-500);
+  --button-success-border-hover: var(--color-border-success-hover);
+  --button-success-border-press: var(--color-border-success);
+  --button-success-border-focus: var(--color-border-success);
+  --button-success-border-disabled: var(--color-border-disabled);
+  --button-success-border-loading: var(--color-border-disabled);
+
+  --button-success-focus-ring: var(--color-border-success);
+
+  /* OUTLINE */
+  --button-success-outline-bg: transparent;
+  --button-success-outline-bg-hover: var(--color-surface-success);
+  --button-success-outline-bg-press: var(--color-surface-success-weak);
+  --button-success-outline-bg-focus: transparent;
+  --button-success-outline-bg-disabled: var(--color-surface-disabled-weak);
+  --button-success-outline-bg-loading: var(--color-surface-loading);
+
+  --button-success-outline-text: var(--color-text-success);
+  --button-success-outline-text-hover: var(--color-text-success);
+  --button-success-outline-text-press: var(--color-text-success);
+  --button-success-outline-text-focus: var(--color-text-success);
+  --button-success-outline-text-disabled: var(--color-text-disabled);
+  --button-success-outline-text-loading: var(--color-text-disabled);
+
+  --button-success-outline-border: var(--color-border-success);
+  --button-success-outline-border-hover: var(--color-border-success-hover);
+  --button-success-outline-border-press: var(--color-border-success-press);
+  --button-success-outline-border-focus: var(--color-border-success);
+  --button-success-outline-border-disabled: var(--color-border-disabled);
+  --button-success-outline-border-loading: var(--color-border-disabled);
+
+  /* GHOST */
+  --button-success-ghost-bg: transparent;
+  --button-success-ghost-bg-hover: var(--color-surface-success-weak);
+  --button-success-ghost-bg-press: var(--color-surface-success-weak);
+  --button-success-ghost-bg-focus: transparent;
+  --button-success-ghost-bg-disabled: transparent;
+  --button-success-ghost-bg-loading: transparent;
+
+  --button-success-ghost-text: var(--color-text-success);
+  --button-success-ghost-text-hover: var(--color-text-success-hover);
+  --button-success-ghost-text-press: var(--color-text-success);
+  --button-success-ghost-text-focus: var(--color-text-success);
+  --button-success-ghost-text-disabled: var(--color-text-disabled);
+  --button-success-ghost-text-loading: var(--color-text-disabled);
+
+  --button-success-ghost-border: transparent;
+  --button-success-ghost-border-hover: transparent;
+  --button-success-ghost-border-press: transparent;
+  --button-success-ghost-border-focus: transparent;
+  --button-success-ghost-border-disabled: transparent;
+  --button-success-ghost-border-loading: transparent;
+
+  /* ============================================
+      warning
+  ============================================ */
+
+  /* warning */
+  --button-warning-bg: var(--color-surface-warning-weak);
+  --button-warning-bg-hover: var(--color-surface-warning-weak);
+  --button-warning-bg-press: var(--color-surface-warning);
+  --button-warning-bg-focus: var(--color-surface-warning);
+  --button-warning-bg-disabled: var(--color-surface-disabled);
+  --button-warning-bg-loading: var(--color-surface-loading);
+
+  --button-warning-text: var(--color-text-warning);
+  --button-warning-text-hover: var(--color-text-warning);
+  --button-warning-text-press: var(--color-text-warning);
+  --button-warning-text-focus: var(--color-text-on-color);
+  --button-warning-text-disabled: var(--color-text-disabled);
+  --button-warning-text-loading: var(--color-text-disabled);
+
+  --button-warning-border: var(--color-border-warning);
+  --button-warning-border-hover: var(--color-border-warning-hover);
+  --button-warning-border-press: var(--color-border-warning-press);
+  --button-warning-border-focus: var(--color-border-warning);
+  --button-warning-border-disabled: var(--color-border-disabled);
+  --button-warning-border-loading: var(--color-border-disabled);
+
+  --button-warning-focus-ring: var(--color-border-warning);
+
+  /* OUTLINE */
+  --button-warning-outline-bg: transparent;
+  --button-warning-outline-bg-hover: var(--color-surface-action-hover-weak);
+  --button-warning-outline-bg-press: var(--color-surface-press-weak);
+  --button-warning-outline-bg-focus: transparent;
+  --button-warning-outline-bg-disabled: var(--color-surface-disabled-weak);
+  --button-warning-outline-bg-loading: var(--color-surface-loading);
+
+  --button-warning-outline-text: var(--color-text-warning);
+  --button-warning-outline-text-reverse: var(--color-text-warning-weak);
+  --button-warning-outline-text-hover: var(--color-text-warning);
+  --button-warning-outline-text-press: var(--color-text-warning);
+  --button-warning-outline-text-focus: var(--color-text-warning);
+  --button-warning-outline-text-disabled: var(--color-text-disabled);
+  --button-warning-outline-text-loading: var(--color-text-disabled);
+
+  --button-warning-outline-border: var(--color-border-warning);
+  --button-warning-outline-border-hover: var(--color-border-warning-hover);
+  --button-warning-outline-border-press: var(--color-border-warning-press);
+  --button-warning-outline-border-focus: var(--color-border-warning);
+  --button-warning-outline-border-disabled: var(--color-border-disabled);
+  --button-warning-outline-border-loading: var(--color-border-disabled);
+
+  /* GHOST */
+  --button-warning-ghost-bg: transparent;
+  --button-warning-ghost-bg-hover: var(--color-surface-action-hover-weak);
+  --button-warning-ghost-bg-press: var(--color-surface-press-weak);
+  --button-warning-ghost-bg-focus: transparent;
+  --button-warning-ghost-bg-disabled: transparent;
+  --button-warning-ghost-bg-loading: transparent;
+
+  --button-warning-ghost-text: var(--color-text-warning);
+  --button-warning-ghost-text-hover: var(--color-text-warning);
+  --button-warning-ghost-text-press: var(--color-text-warning);
+  --button-warning-ghost-text-focus: var(--color-text-warning);
+  --button-warning-ghost-text-disabled: var(--color-text-disabled);
+  --button-warning-ghost-text-loading: var(--color-text-disabled);
+
+  --button-warning-ghost-border: transparent;
+  --button-warning-ghost-border-hover: transparent;
+  --button-warning-ghost-border-press: transparent;
+  --button-warning-ghost-border-focus: transparent;
+  --button-warning-ghost-border-disabled: transparent;
+  --button-warning-ghost-border-loading: transparent;
+
+  /* ============================================
+      error
+  ============================================ */
+
+  /* error */
+  --button-error-bg: var(--color-surface-error-weak);
+  --button-error-bg-hover: var(--color-surface-error-weak);
+  --button-error-bg-press: var(--color-surface-error);
+  --button-error-bg-focus: var(--color-surface-error);
+  --button-error-bg-disabled: var(--color-surface-disabled);
+  --button-error-bg-loading: var(--color-surface-loading);
+
+  --button-error-text: var(--color-text-error);
+  --button-error-text-hover: var(--color-text-error);
+  --button-error-text-press: var(--color-text-error);
+  --button-error-text-focus: var(--color-text-on-color);
+  --button-error-text-disabled: var(--color-text-disabled);
+  --button-error-text-loading: var(--color-text-disabled);
+
+  --button-error-border: var(--color-border-error);
+  --button-error-border-hover: var(--color-border-error-hover);
+  --button-error-border-press: var(--color-border-error-press);
+  --button-error-border-focus: var(--color-border-error);
+  --button-error-border-disabled: var(--color-border-disabled);
+  --button-error-border-loading: var(--color-border-disabled);
+
+  --button-error-focus-ring: var(--color-border-error);
+
+  /* OUTLINE */
+  --button-error-outline-bg: transparent;
+  --button-error-outline-bg-hover: var(--color-surface-action-hover-weak);
+  --button-error-outline-bg-press: var(--color-surface-press-weak);
+  --button-error-outline-bg-focus: transparent;
+  --button-error-outline-bg-disabled: var(--color-surface-disabled-weak);
+  --button-error-outline-bg-loading: var(--color-surface-loading);
+
+  --button-error-outline-text: var(--color-text-error);
+  --button-error-outline-text-reverse: var(--color-text-error-weak);
+  --button-error-outline-text-hover: var(--color-text-error);
+  --button-error-outline-text-press: var(--color-text-error);
+  --button-error-outline-text-focus: var(--color-text-error);
+  --button-error-outline-text-disabled: var(--color-text-disabled);
+  --button-error-outline-text-loading: var(--color-text-disabled);
+
+  --button-error-outline-border: var(--color-border-error);
+  --button-error-outline-border-hover: var(--color-border-error-hover);
+  --button-error-outline-border-press: var(--color-border-error-press);
+  --button-error-outline-border-focus: var(--color-border-error);
+  --button-error-outline-border-disabled: var(--color-border-disabled);
+  --button-error-outline-border-loading: var(--color-border-disabled);
+
+  /* GHOST */
+  --button-error-ghost-bg: transparent;
+  --button-error-ghost-bg-hover: var(--color-surface-action-hover-weak);
+  --button-error-ghost-bg-press: var(--color-surface-press-weak);
+  --button-error-ghost-bg-focus: transparent;
+  --button-error-ghost-bg-disabled: transparent;
+  --button-error-ghost-bg-loading: transparent;
+
+  --button-error-ghost-text: var(--color-text-error);
+  --button-error-ghost-text-hover: var(--color-text-error);
+  --button-error-ghost-text-press: var(--color-text-error);
+  --button-error-ghost-text-focus: var(--color-text-error);
+  --button-error-ghost-text-disabled: var(--color-text-disabled);
+  --button-error-ghost-text-loading: var(--color-text-disabled);
+
+  --button-error-ghost-border: transparent;
+  --button-error-ghost-border-hover: transparent;
+  --button-error-ghost-border-press: transparent;
+  --button-error-ghost-border-focus: transparent;
+  --button-error-ghost-border-disabled: transparent;
+  --button-error-ghost-border-loading: transparent;
+
+  /* ============================================
+      info
+  ============================================ */
+
+  /* info */
+  --button-info-bg: var(--color-surface-info-weak);
+  --button-info-bg-hover: var(--color-surface-info-weak);
+  --button-info-bg-press: var(--color-surface-info);
+  --button-info-bg-focus: var(--color-surface-info);
+  --button-info-bg-disabled: var(--color-surface-disabled);
+  --button-info-bg-loading: var(--color-surface-loading);
+
+  --button-info-text: var(--color-text-info);
+  --button-info-text-hover: var(--color-text-info);
+  --button-info-text-press: var(--color-text-info);
+  --button-info-text-focus: var(--color-text-on-color);
+  --button-info-text-disabled: var(--color-text-disabled);
+  --button-info-text-loading: var(--color-text-disabled);
+
+  --button-info-border: var(--color-border-info);
+  --button-info-border-hover: var(--color-border-info-hover);
+  --button-info-border-press: var(--color-border-info-press);
+  --button-info-border-focus: var(--color-border-info);
+  --button-info-border-disabled: var(--color-border-disabled);
+  --button-info-border-loading: var(--color-border-disabled);
+
+  --button-info-focus-ring: var(--color-border-info);
+
+  /* OUTLINE */
+  --button-info-outline-bg: transparent;
+  --button-info-outline-bg-hover: var(--color-surface-action-hover-weak);
+  --button-info-outline-bg-press: var(--color-surface-press-weak);
+  --button-info-outline-bg-focus: transparent;
+  --button-info-outline-bg-disabled: var(--color-surface-disabled-weak);
+  --button-info-outline-bg-loading: var(--color-surface-loading);
+
+  --button-info-outline-text: var(--color-text-info);
+  --button-info-outline-text-reverse: var(--color-text-info-weak);
+  --button-info-outline-text-hover: var(--color-text-info);
+  --button-info-outline-text-press: var(--color-text-info);
+  --button-info-outline-text-focus: var(--color-text-info);
+  --button-info-outline-text-disabled: var(--color-text-disabled);
+  --button-info-outline-text-loading: var(--color-text-disabled);
+
+  --button-info-outline-border: var(--color-border-info);
+  --button-info-outline-border-hover: var(--color-border-info-hover);
+  --button-info-outline-border-press: var(--color-border-info-press);
+  --button-info-outline-border-focus: var(--color-border-info);
+  --button-info-outline-border-disabled: var(--color-border-disabled);
+  --button-info-outline-border-loading: var(--color-border-disabled);
+
+  /* GHOST */
+  --button-info-ghost-bg: transparent;
+  --button-info-ghost-bg-hover: var(--color-surface-action-hover-weak);
+  --button-info-ghost-bg-press: var(--color-surface-press-weak);
+  --button-info-ghost-bg-focus: transparent;
+  --button-info-ghost-bg-disabled: transparent;
+  --button-info-ghost-bg-loading: transparent;
+
+  --button-info-ghost-text: var(--color-text-info);
+  --button-info-ghost-text-hover: var(--color-text-info);
+  --button-info-ghost-text-press: var(--color-text-info);
+  --button-info-ghost-text-focus: var(--color-text-info);
+  --button-info-ghost-text-disabled: var(--color-text-disabled);
+  --button-info-ghost-text-loading: var(--color-text-disabled);
+
+  --button-info-ghost-border: transparent;
+  --button-info-ghost-border-hover: transparent;
+  --button-info-ghost-border-press: transparent;
+  --button-info-ghost-border-focus: transparent;
+  --button-info-ghost-border-disabled: transparent;
+  --button-info-ghost-border-loading: transparent;
+
+  /* ============================================
+      neutral
+  ============================================ */
+
+  /* neutral */
+  --button-neutral-bg: var(--color-surface-neutral-weak);
+  --button-neutral-bg-hover: var(--color-surface-neutral-weak);
+  --button-neutral-bg-press: var(--color-surface-neutral);
+  --button-neutral-bg-focus: var(--color-surface-neutral-weak);
+  --button-neutral-bg-disabled: var(--color-surface-disabled);
+  --button-neutral-bg-loading: var(--color-surface-loading);
+
+  --button-neutral-text: var(--color-text-neutral);
+  --button-neutral-text-hover: var(--color-text-neutral);
+  --button-neutral-text-press: var(--color-text-neutral);
+  --button-neutral-text-focus: var(--color-text-on-color);
+  --button-neutral-text-disabled: var(--color-text-disabled);
+  --button-neutral-text-loading: var(--color-text-disabled);
+
+  --button-neutral-border: var(--color-border-neutral);
+  --button-neutral-border-hover: var(--color-border-neutral-hover);
+  --button-neutral-border-press: var(--color-border-neutral-press);
+  --button-neutral-border-focus: var(--color-border-neutral);
+  --button-neutral-border-disabled: var(--color-border-disabled);
+  --button-neutral-border-loading: var(--color-border-disabled);
+
+  --button-neutral-focus-ring: var(--color-border-neutral);
+
+  /* OUTLINE */
+  --button-neutral-outline-bg: transparent;
+  --button-neutral-outline-bg-hover: var(--color-surface-neutral);
+  --button-neutral-outline-bg-press: var(--color-surface-press-weak);
+  --button-neutral-outline-bg-focus: transparent;
+  --button-neutral-outline-bg-disabled: var(--color-surface-disabled-weak);
+  --button-neutral-outline-bg-loading: var(--color-surface-loading);
+
+  --button-neutral-outline-text: var(--color-text-neutral);
+  --button-neutral-outline-text-reverse: var(--color-text-neutral-weak);
+  --button-neutral-outline-text-hover: var(--color-text-neutral);
+  --button-neutral-outline-text-press: var(--color-text-neutral);
+  --button-neutral-outline-text-focus: var(--color-text-neutral);
+  --button-neutral-outline-text-disabled: var(--color-text-disabled);
+  --button-neutral-outline-text-loading: var(--color-text-disabled);
+
+  --button-neutral-outline-border: var(--color-border-neutral);
+  --button-neutral-outline-border-hover: var(--color-border-neutral-hover);
+  --button-neutral-outline-border-press: var(--color-border-neutral-press);
+  --button-neutral-outline-border-focus: var(--color-border-neutral);
+  --button-neutral-outline-border-disabled: var(--color-border-disabled);
+  --button-neutral-outline-border-loading: var(--color-border-disabled);
+
+  /* GHOST */
+  --button-neutral-ghost-bg: transparent;
+  --button-neutral-ghost-bg-hover: var(--color-surface-action-hover-weak);
+  --button-neutral-ghost-bg-press: var(--color-surface-press-weak);
+  --button-neutral-ghost-bg-focus: transparent;
+  --button-neutral-ghost-bg-disabled: transparent;
+  --button-neutral-ghost-bg-loading: transparent;
+
+  --button-neutral-ghost-text: var(--color-text-neutral);
+  --button-neutral-ghost-text-hover: var(--color-text-neutral);
+  --button-neutral-ghost-text-press: var(--color-text-neutral);
+  --button-neutral-ghost-text-focus: var(--color-text-neutral);
+  --button-neutral-ghost-text-disabled: var(--color-text-disabled);
+  --button-neutral-ghost-text-loading: var(--color-text-disabled);
+
+  --button-neutral-ghost-border: transparent;
+  --button-neutral-ghost-border-hover: transparent;
+  --button-neutral-ghost-border-press: transparent;
+  --button-neutral-ghost-border-focus: transparent;
+  --button-neutral-ghost-border-disabled: transparent;
+  --button-neutral-ghost-border-loading: transparent;
+}

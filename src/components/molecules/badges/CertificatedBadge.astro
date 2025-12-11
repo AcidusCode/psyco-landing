@@ -1,0 +1,11 @@
+---
+import Paragraph from "../../typography/body/Paragraph.astro";
+import EnterpreiseLogos from "../../../assets/logos/enterprise-logos.svg"
+import Image from "astro/components/Image.astro";
+---
+
+<div class="flex flex-col gap-8 z-1 py-10">
+    <Paragraph size="md" text="CERTIFICADOS OFICIALES E IMPACTOS LABORALES" align="center" />
+    <Image src={EnterpreiseLogos} alt="Logos de empresas" class="mx-auto"/>
+    <Paragraph size="sm" text="No son solo logos, estas empresas demuestran el alcance y valor aportado" align="center" />
+</div>

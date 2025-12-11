@@ -1,0 +1,7 @@
+---
+const { text = "No setting text", align = "center" } = Astro.props
+---
+
+<h2 class={`text-h2 leading-h2 font-bold title-gradient bg-red-400 whitespace-pre-line text-${align}`}>
+    { text }
+</h2>

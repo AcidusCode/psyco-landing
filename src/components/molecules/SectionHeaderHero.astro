@@ -1,0 +1,13 @@
+---
+import LeadText from "../typography/specials/LeadText.astro";
+import Heading1 from "../typography/headings/Heading1.astro";
+import Paragraph from "../typography/body/Paragraph.astro";
+
+const { lead, heading, body, align } = Astro.props;
+---
+
+<div class="flex flex-col gap-4">
+  <LeadText text={lead} align={align} />
+  <Heading1 text={heading} align={align}/>
+  <Paragraph size="lg" text={body} align={align}/>
+</div>
