@@ -2,25 +2,36 @@
 import Paragraph from "./typography/body/Paragraph.astro";
 import navigationData from "../data/navigationData.json";
 import TextLink from "./atoms/TextLink.astro";
+import IconSvg from "./atoms/IconSvg.astro";
 ---
 
-<footer class="relative flex flex-col w-full max-w-[1420px] mx-auto text-white py-8 mb-10 gap-8">
+<footer
+  class="relative flex flex-col w-full max-w-[1420px] mx-auto text-white py-8 mb-10 gap-8"
+>
   <div class="relative flex justify-between">
     <p>Logo</p>
-    <ul class="absolute left-0 right-0 flex gap-8 justify-center align-center">
+    <ul class="absolute left-0 right-0 flex gap-8 justify-center align-center text-neutral-400 ">
       {
         navigationData.map((link) => (
           <li>
             <TextLink
               href={link.url}
               content={link.title}
-              classes="text-[rgb(250,248,245)] font-light"
+              classes="text-neutral-300 font-light"
             />
           </li>
         ))
       }
     </ul>
-    <p>Redes Sociales</p>
+    <div class="flex flex-col items-center gap-4 text-neutral-400 ">
+      <p> Puedes sergirme en mis redes sociales! </p>
+      <div class="flex gap-8 text-neutral-500">
+        <IconSvg set="social-icons" name="icon-instagram" size="32" stroke="none" />
+        <IconSvg set="social-icons" name="icon-twitter" size="32" stroke="none" />
+        <IconSvg set="social-icons" name="icon-youtube" size="32" stroke="none"/>
+        <IconSvg set="social-icons" name="icon-tiktok" size="32" stroke="none"/>
+      </div>
+    </div>
   </div>
   <div class="container mx-auto px-4 text-center">
     <Paragraph

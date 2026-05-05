@@ -3,7 +3,7 @@
     "testimonialImage": "/testimonials/avatar.png",
     "name": "Francisca Martínez",
     "service": "Acompañamiento grupal",
-    "rating": 5,
+    "rating": "5.0",
     "countryIcon": "icon-flag-chile",
     "quote": "Tuve una muy buena experiencia con un profesional sólido en su rol, que me ayudó a ver mi autenticidad y mi capacidad de entrega desde una sanidad individual."
   },
@@ -11,7 +11,7 @@
     "testimonialImage": "/testimonials/avatar2.png",
     "name": "Yei Rentería ",
     "service": "Formulación de proyectos",
-    "rating": 5,
+    "rating": "5.0",
     "countryIcon": "icon-flag-mexico",
     "quote": "Excelencia en los procesos."
   },
@@ -19,7 +19,7 @@
     "testimonialImage": "/testimonials/avatar3.png",
     "name": "Helena Piacenza",
     "service": "Consultorías",
-    "rating": 5,
+    "rating": "5.0",
     "countryIcon": "icon-flag-uruguay",
     "quote": "Diego es una persona serena, muy cálida con enormes valores de colaboración, comunidad, equipo. Tiene una mirada muy responsable de sí mismo y del entorno que lo rodea, haciéndose cargo, aún en situaciones incómodas. Me ha encantado su mirada conciliadora, de búsqueda de lo común y del bien común."
   },
@@ -27,7 +27,7 @@
     "testimonialImage": "/testimonials/avatar4.png",
     "name": "Jorge A Manchola",
     "service": "Consultorías",
-    "rating": 5,
+    "rating": "5.0",
     "countryIcon": "icon-flag-colombia",
     "quote": "Más que un proceso terapéutico fue una jornada en la cual buscaba abrir caminos para abordar lo mental desde una perspectiva intercultural."
   },
@@ -35,7 +35,7 @@
     "testimonialImage": "/testimonials/avatar5.png",
     "name": "Camilo Mahecha Ramírez ",
     "service": "Acompañamiento grupal",
-    "rating": 5,
+    "rating": "5.0",
     "countryIcon": "icon-flag-colombia",
     "quote": "La mirada critica en el acompañamiento grupal ha sido fundamental para cuestionar estructuras , practicas y conductas que de manera inconsciente son reproducidas, bien por que son social y culturalmente aceptadas y se han normalizado o bien porque remiten a una conducta individual que al hacer consciente puede ser abordada. "
   },
@@ -43,7 +43,7 @@
     "testimonialImage": "/testimonials/avatar6.png",
     "name": "Paz Papic",
     "service": "Formulación de proyectos",
-    "rating": 5,
+    "rating": "5.0",
     "countryIcon": "icon-flag-chile",
     "quote": "Aprendimos herramientas para comunicarnos mejor y construir acuerdos sin conflicto."
   },
@@ -51,7 +51,7 @@
     "testimonialImage": "/testimonials/avatar7.png",
     "name": "Olga Paredes",
     "service": "Consultorías",
-    "rating": 5,
+    "rating": "5.0",
     "countryIcon": "icon-flag-colombia",
     "quote": "Diego compartió con nuestros estudiantes de Medicina una valiosa sesión sobre interculturalidad en el cuidado de la salud. Su experiencia abrió espacios de reflexión sobre el respeto, la comunicación y la comprensión de las diversas realidades culturales de nuestros pacientes. Sus relatos dejaron en los estudiantes herramientas fundamentales para su futura práctica clínica. Agradecemos el aporte a la formación de profesionales de la salud más sensibles, empáticos e integrales."
   },
@@ -59,7 +59,7 @@
     "testimonialImage": "/testimonials/avatar8.png",
     "name": "N*** W***",
     "service": "Acompañamiento grupal",
-    "rating": 5,
+    "rating": "5.0",
     "countryIcon": "icon-flag-colombia",
     "quote": "Demasiado significativa, de gran impacto, participar de aquel proceso donde tuve la oportunidad de conocerle me ayudó a autoreconocerme y apostarle a la mentalidad e crecimiento que hoy se ve reflejado tanto en lo profesional como en lo personal."
   },
@@ -67,7 +67,7 @@
     "testimonialImage": "/testimonials/avatar9.png",
     "name": "Carolina ",
     "service": "Consultorías",
-    "rating": 5,
+    "rating": "5.0",
     "countryIcon": "icon-flag-colombia",
     "quote": "Diego es una persona que piensa de manera crítica y aporta su saber en cada proyecto y en cada trabajo con comunidades. Además de estar presto a escuchar diferentes opiniones y perspectivas con el objetivo de construir nuevas narrativas. "
   }

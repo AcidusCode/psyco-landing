@@ -34,7 +34,12 @@ const {
           weight="regular"
           color="text-neutral-100"
         />
-        <Paragraph size="sm" text={service} weight="light" />
+        <Paragraph
+          size="sm"
+          text={service}
+          weight="light"
+          color="text-neutral-200"
+        />
         <div class="flex gap-2 items-center">
           <StarsRanking rating={rating} />
           <Paragraph size="sm" text={rating} class="inline-block ml-2" />
@@ -46,11 +51,17 @@ const {
       <div
         class="flex items-center justify-center w-8 h-8 bg-neutral-700 rounded-full"
       >
-        <IconSvg name="icon-quotes" size={16} />
+        <IconSvg name="icon-quotes" size={16} stroke="none" />
       </div>
     </div>
   </header>
   <main>
-    <Paragraph size="md" text={quote} weight="light" classes="line-clamp-5" color="text-neutral-200" />
+    <Paragraph
+      size="md"
+      text={quote}
+      weight="light"
+      classes="line-clamp-5"
+      color="text-neutral-200"
+    />
   </main>
 </article>

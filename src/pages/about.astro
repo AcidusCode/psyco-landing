@@ -44,10 +44,10 @@ import SuscribeSection from "../components/sections/SuscribeSection.astro";
           text="Mi camino profesional ha estado guiado por una convicción profunda: la sanación verdadera ocurre cuando somos vistos, escuchados y comprendidos en toda nuestra historia, nuestra identidad y nuestro contexto."
         />
       </div>
-      <img src="./about/about.png" />
+      <img src="./about/about.png" alt="Imagen del psicologo con un nativo" />
     </div>
     <div class="flex gap-20">
-      <img src="./about/about2.png" />
+      <img src="./about/about2.png" alt="Imagen del psicologo exponiendo" />
       <div class="flex flex-col gap-2">
         <Paragraph
           color="text-neutral-300"
@@ -64,7 +64,7 @@ import SuscribeSection from "../components/sections/SuscribeSection.astro";
       heading="Mi enfoque de acompañamiento"
       body="Combino psicología clínica, filosofía y metodologías participativas para crear \n un espacio seguro, culturalmente sensible y orientado a la acción."
     />
-    <main class="flex gap-30">
+    <main class="grid sm:grid-cols-1 gap-30 md:grid-cols-2 lg:grid-cols-4 justify-center">
       {
         myFocusData.map((myFocus) => (
           <div class="text-center flex flex-col items-center max-w-[220px]">
@@ -89,7 +89,7 @@ import SuscribeSection from "../components/sections/SuscribeSection.astro";
   <Section>
     <Heading2 text="Mi trayectoria y experiencia" />
     <main class="flex gap-20">
-      <img src="./about/about3.png" />
+      <img src="./about/about3.png" alt="imagen del psicologo pensando" />
       <div>
         <Paragraph
           text="+10 años de experiencia en salud mental y procesos psicosociales, trabajando con:"
@@ -112,7 +112,7 @@ import SuscribeSection from "../components/sections/SuscribeSection.astro";
   </Section>
   <Section>
     <Heading2 text="Logros destacados " />
-    <main class="grid grid-cols-4 justify-center gap-16">
+    <main class="grid lg:grid-cols-4 sm:grid-cols-1 md:grid-cols-2 justify-center gap-16">
       {
         achievesData.map((achieve) => (
           <div class="flex flex-col max-w-[220px] items-center">
