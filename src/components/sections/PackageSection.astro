@@ -1,0 +1,334 @@
+---
+import Section from "./Section.astro";
+import Paragraph from "../typography/body/Paragraph.astro";
+import PageSubtitle from "../molecules/PageSubtitle.astro";
+import Button from "../atoms/Button.astro";
+
+const PACKAGES = [
+  {
+    name: "Paquete Básico",
+    price: "$150",
+    variant: "normal",
+    discount: "$200",
+    cta: "Reservar ahora",
+    time: "50 minutos",
+    features: [
+      "Sesiones de terapia uno a uno",
+      "En persona o en línea",
+      "Agenda flexible para adaptarse a tu horario",
+      "Seguridad y confidencialidad garantizadas",
+    ],
+  },
+  {
+    name: "Paquete Premium",
+    price: "$540",
+    variant: "popular",
+    discount: "$600",
+    cta: "Reservar ahora",
+    time: "4 sesiones",
+    features: [
+      "Cuatro sesiones de 50 minutos",
+      "En persona o en línea",
+      "Agenda prioritaria",
+      "Soporte por correo electrónico entre sesiones",
+      "Ahorras $50.000 COP",
+    ],
+  },
+  {
+    name: "Paquete Completo",
+    price: "$1260",
+    variant: "normal",
+    discount: "$1500",
+    cta: "Reservar ahora",
+    time: "10 sesiones",
+    features: [
+      "Diez sesiones de 50 minutos",
+      "En persona o en línea",
+      "Agenda prioritaria",
+      "Soporte por correo electrónico entre sesiones",
+      "Herramientas para medir el progreso",
+      "Ahorras $250.000 COP",
+    ],
+  },
+];
+---
+
+<Section>
+  <div class="flex flex-col max-w-[1280px] gap-16">
+    <PageSubtitle
+      lead="Precios Transparentes"
+      heading="Invierte en tu"
+      body="Opciones flexibles que se adaptan a tus necesidades"
+      align="center"
+      highlight="Salud Mental"
+    />
+    <div class="package-section">
+      {
+        PACKAGES.map((packageCard) => (
+          <div
+            class="package-card"
+            style={{
+              borderColor:
+                packageCard.variant === "popular"
+                  ? "var(--border-action, #266aff)"
+                  : "var(--border-color, #e5e7eb)",
+              boxShadow:
+                packageCard.variant === "popular"
+                  ? "0 0 0 4.2px #dbeafe, 0 10.5px 15.75px -3.15px rgba(0, 0, 0, 0.1), 0 4.2px 6.3px -4.2px rgba(0, 0, 0, 0.1)"
+                  : "0 0 0 4.2px transparent, 0 10.5px 15.75px -3.15px rgba(0, 0, 0, 0.1), 0 4.2px 6.3px -4.2px rgba(0, 0, 0, 0.1)",
+
+              transform:
+                packageCard.variant === "popular"
+                  ? "scale(1.05)"
+                  : "scale(.95)",
+            }}
+          >
+            <div class="package-card-content">
+              <p class="package-card-name">{packageCard.name}</p>
+
+              <div class="flex items-end gap-2">
+                <p
+                  class="package-card-price"
+                  style={{
+                    color:
+                      packageCard.variant === "popular"
+                        ? "var(--color-primary-400, #266aff)"
+                        : "var(--text-headings, #1a212e)",
+                    background:
+                      packageCard.variant === "popular"
+                        ? "linear-gradient(90deg, #155dfc 0%, #9810fa 100%)"
+                        : "none",
+                    backgroundClip:
+                      packageCard.variant === "popular" ? "text" : "none",
+                    WebkitBackgroundClip:
+                      packageCard.variant === "popular" ? "text" : "none",
+                    WebkitTextFillColor:
+                      packageCard.variant === "popular"
+                        ? "transparent"
+                        : "none",
+                  }}
+                >
+                  {packageCard.price}
+                </p>
+                <p class="package-card-discount">{packageCard.discount}</p>
+              </div>
+
+              <div class="package-card-time-container">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="19"
+                  height="19"
+                  viewBox="0 0 19 19"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_292_5355)">
+                    <path
+                      d="M9.45019 17.3247C13.7994 17.3247 17.3252 13.7989 17.3252 9.44971C17.3252 5.10046 13.7994 1.57471 9.45019 1.57471C5.10095 1.57471 1.5752 5.10046 1.5752 9.44971C1.5752 13.7989 5.10095 17.3247 9.45019 17.3247Z"
+                      stroke="#2F3239"
+                      stroke-width="1.575"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M9.4502 4.7251V9.4501L12.6002 11.0251"
+                      stroke="#2F3239"
+                      stroke-width="1.575"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_292_5355">
+                      <rect width="18.9" height="18.9" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <p>{packageCard.time}</p>
+              </div>
+
+              <div class="flex justify-center mt-2 w-full">
+                <Button
+                  label={packageCard.cta}
+                  variant={
+                    packageCard.variant === "popular" ? "solid" : "ghost"
+                  }
+                  size="lg"
+                  intent="primary"
+                />
+              </div>
+
+              <ul class="flex flex-col gap-4">
+                {packageCard.features.map((feature) => (
+                  <li class="flex items-center gap-2">
+                    <div class="package-card-features-item-icon-container">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="17"
+                        height="17"
+                        viewBox="0 0 17 17"
+                        fill="none"
+                      >
+                        <path
+                          d="M13.9998 4.20068L6.2998 11.9007L2.7998 8.40068"
+                          stroke="#22C55E"
+                          stroke-width="1.4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <p class="package-card-features-item-text">{feature}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {packageCard.variant === "popular" && (
+              <div class="package-card-tag">
+                <span>⭐ Más Popular</span>
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </div>
+    <div class="package-card-final-message">
+      <p>✓ Seguro aceptado • ✓ HSA/FSA elegible • ✓ Escala móvil disponible</p>
+      <a href="#" class="text-primary-500 font-medium">
+        ¿Preguntas sobre precios? Contáctanos
+      </a>
+    </div>
+  </div>
+
+  <style>
+    .package-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--spacing-800, 32px);
+    }
+
+    .package-card {
+      position: relative;
+      display: flex;
+      width: 380px;
+      height: 620px;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-radius: var(--spacing-600, 24px);
+      border: var(--border-width-md, 2px) solid;
+      background: var(--surface-glass, rgba(16, 24, 40, 0.03));
+      box-shadow:
+        0 0 0 4.2px #dbeafe,
+        0 10.5px 15.75px -3.15px rgba(0, 0, 0, 0.1),
+        0 4.2px 6.3px -4.2px rgba(0, 0, 0, 0.1);
+    }
+
+    .package-card-content {
+      display: flex;
+      padding: 34px 33px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 21px;
+      flex: 1 0 0;
+      align-self: stretch;
+    }
+
+    .package-card-tag {
+      display: flex;
+      padding: var(--spacing-200, 8px) var(--spacing-600, 24px);
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: 107px;
+      top: -18.75px;
+      border-radius: var(--border-radius-full, 64px);
+      background: linear-gradient(90deg, #155dfc 0%, #9810fa 100%);
+      box-shadow:
+        0 10.5px 15.75px -3.15px rgba(0, 0, 0, 0.1),
+        0 4.2px 6.3px -4.2px rgba(0, 0, 0, 0.1);
+    }
+    .package-card-tag span {
+      color: #fff;
+      font-size: var(--fontsize-body-md, 16px);
+      font-style: normal;
+      font-weight: 500;
+      line-height: var(--line-height-body-md, 24px); /* 150% */
+    }
+
+    .package-card-name {
+      color: var(--text-headings, #1a212e);
+      font-size: var(--text-paragraph-lg, 20px);
+      font-style: normal;
+      font-weight: 700;
+      line-height: var(--line-height-heading-h5, 28px); /* 116.667% */
+      letter-spacing: 0.4px;
+    }
+
+    .package-card-price {
+      font-size: var(--spacing-1200, 48px);
+      font-style: normal;
+      font-weight: 700;
+      line-height: var(--spacing-1600, 64px); /* 133.333% */
+    }
+    .package-card-discount {
+      color: var(--text-disabled, #b4b4b4);
+      font-size: var(--text-paragraph-lg, 16px);
+      font-style: normal;
+      font-weight: 300;
+      line-height: var(--spacing-1000); /* 150% */
+      text-decoration-line: line-through;
+    }
+
+    .package-card-time-container {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-200, 8px);
+      align-self: stretch;
+    }
+
+    .package-card-features-item-icon-container {
+      display: flex;
+      width: 25.2px;
+      height: 25.2px;
+      padding: 0 4.2px;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      border-radius: 999px;
+      background: var(--surface-success, #d2f3de);
+    }
+
+    .package-card-features-item-text {
+      color: var(--text-body, #2f3239);
+      font-size: var(--fontsize-body-md, 16px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: var(--line-height-body-md, 24px); /* 150% */
+    }
+
+    .package-card-final-message {
+      color: var(--text-body, #2f3239);
+      font-size: var(--fontsize-body-md, 16px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: var(--line-height-body-md, 24px); /* 150% */
+      text-align: center;
+      width: fit-content;
+      margin: 0 auto;
+      display: flex;
+      padding: 32px 64px;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      align-self: stretch;
+      border-radius: 16px;
+      border: 1px solid rgba(229, 231, 235, 0.5);
+      background: rgba(255, 255, 255, 0.6);
+      box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</Section>
