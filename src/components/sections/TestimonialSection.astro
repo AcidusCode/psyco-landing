@@ -11,11 +11,12 @@ import testimonialData from "../../data/testimonials/testimonialData.json";
 <Section>
   <PageSubtitle
     lead="Testimonios"
-    heading="Lo que dicen mis pacientes"
-    body="Historias reales de personas que transformaron su bienestar emocional."
+    heading="Lo que dicen"
+    body="Experiencia real de personas que encontraron claridad y paz mental."
     align="center"
+    highlight="mis clientes"
   />
-  <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 auto-cols-max justify-center gap-8">
+  <div class="grid lg:grid-cols-5 md:grid-cols-2 sm:grid-cols-1 auto-cols-max justify-center gap-8">
     {
       testimonialData.map((testimonial) => (
         <TestimonialCard
@@ -24,7 +25,7 @@ import testimonialData from "../../data/testimonials/testimonialData.json";
           service={testimonial.service}
           rating={testimonial.rating}
           countryIcon={testimonial.countryIcon}
-          quote={testimonial.quote}
+          quote={testimonial.quote.slice(0, 120)}
         />
       ))
     }
@@ -37,9 +38,11 @@ import testimonialData from "../../data/testimonials/testimonialData.json";
       color="text-neutral-100"
     />
     <Button
-      label="Ver más opiniones"
+      label="Conoce más tertimonios"
       iconRight="icon-right-arrow"
-      type="button"
+      variant="solid"
+      size="lg"
+      intent="primary"
     />
   </div>
 </Section>

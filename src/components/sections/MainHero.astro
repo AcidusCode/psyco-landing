@@ -1,25 +1,28 @@
 ---
 import MainHeroData from "../../data/MainHeroData.json";
 import Image from "astro/components/Image.astro";
-import coverImage from "../../assets/image/Cover-Image.png";
+import coverImage from "../../assets/image/hero-bg.jpg";
 import TestimonialsBadge from "../molecules/TestimonialsBadge.astro";
 import Button from "../atoms/Button.astro";
 
 import SectionHeaderHero from "../molecules/SectionHeaderHero.astro";
 import Paragraph from "../typography/body/Paragraph.astro";
+import CertificatedBadge from "../molecules/badges/CertificatedBadge.astro";
 ---
 <section class="flex relative flex-col items-center">
   <Image
     src={coverImage}
     alt="Cover Image"
-    class="absolute bottom-0 z-0 h-full w-full object-cover object-center select-none pointer-events-none"
+    class="absolute bottom-0 left-1/2 z-0 h-full w-auto max-w-none -translate-x-1/2 object-center select-none pointer-events-none"
   />
 
-  <div class="flex flex-col z-10 gap-12 pt-40 pb-20 w-full max-w-[1420px]">
+  <div class="flex flex-col z-10 gap-12 pt-40 pb-20 w-full max-w-[1600px]">
     <SectionHeaderHero
       lead={MainHeroData.Lead}
       heading={MainHeroData.Title}
       body={MainHeroData.Description}
+      highlight={MainHeroData.Highlight}
+      align="left"
     />
 
     <div class="flex flex-col gap-4">
@@ -28,14 +31,21 @@ import Paragraph from "../typography/body/Paragraph.astro";
           intent="primary"
           variant="solid"
           iconRight="icon-right-arrow"
-          size="md"
+          size="lg"
           label={MainHeroData.Cta}
           area-disabled="true"
         />
-        <Paragraph size="md" text={MainHeroData.AuxCta} />
+        <Button
+          intent="primary"
+          variant="ghost"
+          size="lg"
+          label={MainHeroData.AuxCta}
+          area-disabled="true"
+        />
       </div>
 
       <TestimonialsBadge />
+      <CertificatedBadge />
     </div>
   </div>
 </section>

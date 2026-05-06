@@ -1,6 +1,5 @@
-
 .title-gradient {
-  background: linear-gradient(to bottom, #ffffff, #8c8c8c);
+  background: linear-gradient(to right, var(--color-primary-500), var(--color-secondary-500));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

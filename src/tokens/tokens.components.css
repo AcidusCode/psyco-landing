@@ -10,13 +10,13 @@
   --button-font-weight: var(--font-weight-regular);
   --button-radius: var(--radius-full);
 
-  --button-padding-x-sm: var(--space-4);
-  --button-padding-x-md: var(--space-6);
-  --button-padding-x-lg: var(--space-8);
+  --button-padding-x-sm: var(--space-400);
+  --button-padding-x-md: var(--spacing-800);
+  --button-padding-x-lg: var(--spacing-1200);
 
-  --button-padding-y-sm: var(--space-2);
-  --button-padding-y-md: var(--space-4);
-  --button-padding-y-lg: var(--space-6);
+  --button-padding-y-sm: var(--space-100);
+  --button-padding-y-md: var(--spacing-200);
+  --button-padding-y-lg: var(--spacing-600);
 
   --button-icon-size: var(--size-icon-sm);
   --button-gap: var(--space-2);

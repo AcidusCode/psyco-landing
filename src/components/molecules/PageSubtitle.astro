@@ -3,11 +3,11 @@ import LeadText from "../typography/specials/LeadText.astro";
 import Heading2 from "../typography/headings/Heading2.astro";
 import Paragraph from "../typography/body/Paragraph.astro";
 
-const { lead, heading, body, align = "center" } = Astro.props;
+const { lead, heading, highlight, body, align = "center" } = Astro.props;
 ---
 
-<div class={`flex flex-col gap-4 text-${align} w-full`}>
+<div class={`flex flex-col gap-4 items-${align} text-${align} w-full`}>
   { lead && <LeadText text={lead} align={align} /> }
-  <Heading2 text={heading} align={align} />
+  <Heading2 text={heading} align={align} highlight={highlight} />
   <Paragraph size="lg" text={body} align={align} weight="light" />
 </div>

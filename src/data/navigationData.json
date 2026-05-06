@@ -1,18 +1,22 @@
 [
     {
-        "title": "Inicio",
-        "url": "/"
+        "title": "Acerca de",
+        "url": "/about"
     },
     {
         "title": "Servicios",
         "url": "/services"
     },
     {
+        "title": "Precios",
+        "url": "/pricing"
+    },
+    {
         "title": "Blog",
         "url": "/blog"
     },
     {
-        "title": "Sobre mi",
-        "url": "/about"
+        "title": "FAQ",
+        "url": "/faq"
     }
 ]

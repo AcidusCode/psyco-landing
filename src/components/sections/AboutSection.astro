@@ -4,27 +4,222 @@ import Heading2 from "../typography/headings/Heading2.astro";
 import Button from "../atoms/Button.astro";
 import Image from "astro/components/Image.astro";
 import AboutPhoto from "../../assets/image/about-photo.png";
+import LeadText from "../typography/specials/LeadText.astro";
+import IconSvg from "../atoms/IconSvg.astro";
+
+const ABOUT_HIGHLIGHTS = [
+  {
+    title: "Psicóloga Clínica Licenciada",
+    description: "Doctorado en Psicología Clínica, Universidad de Stanford",
+    iconBg: "var(--scales-color-blue-500)",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M15.4768 12.8901L16.9918 21.4161C17.0087 21.5165 16.9946 21.6197 16.9514 21.7119C16.9081 21.8041 16.8377 21.8808 16.7497 21.9319C16.6616 21.983 16.56 22.006 16.4586 21.9978C16.3571 21.9897 16.2605 21.9507 16.1818 21.8861L12.6018 19.1991C12.4289 19.07 12.219 19.0003 12.0033 19.0003C11.7875 19.0003 11.5776 19.07 11.4048 19.1991L7.81875 21.8851C7.74007 21.9496 7.64361 21.9885 7.54225 21.9967C7.44088 22.0049 7.33942 21.982 7.25141 21.931C7.16341 21.88 7.09303 21.8035 7.04967 21.7115C7.00631 21.6195 6.99204 21.5165 7.00875 21.4161L8.52275 12.8901" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M12 14C15.3137 14 18 11.3137 18 8C18 4.68629 15.3137 2 12 2C8.68629 2 6 4.68629 6 8C6 11.3137 8.68629 14 12 14Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`,
+  },
+  {
+    title: "Entrenamiento Especializado",
+    description: "TCC, TDC y Reducción del Estrés Basada en Mindfulness",
+    iconBg: "var(--scales-color-purple-500)",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 7V21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M3 18C2.73478 18 2.48043 17.8946 2.29289 17.7071C2.10536 17.5196 2 17.2652 2 17V4C2 3.73478 2.10536 3.48043 2.29289 3.29289C2.48043 3.10536 2.73478 3 3 3H8C9.06087 3 10.0783 3.42143 10.8284 4.17157C11.5786 4.92172 12 5.93913 12 7C12 5.93913 12.4214 4.92172 13.1716 4.17157C13.9217 3.42143 14.9391 3 16 3H21C21.2652 3 21.5196 3.10536 21.7071 3.29289C21.8946 3.48043 22 3.73478 22 4V17C22 17.2652 21.8946 17.5196 21.7071 17.7071C21.5196 17.8946 21.2652 18 21 18H15C14.2044 18 13.4413 18.3161 12.8787 18.8787C12.3161 19.4413 12 20.2044 12 21C12 20.2044 11.6839 19.4413 11.1213 18.8787C10.5587 18.3161 9.79565 18 9 18H3Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`,
+  },
+  {
+    title: "Amplia Experiencia",
+    description: "10+ años ayudando a 500+ clientes a alcanzar sus metas",
+    iconBg: "var(--scales-color-green-500)",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H6C4.93913 15 3.92172 15.4214 3.17157 16.1716C2.42143 16.9217 2 17.9391 2 19V21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M22 20.9999V18.9999C21.9993 18.1136 21.7044 17.2527 21.1614 16.5522C20.6184 15.8517 19.8581 15.3515 19 15.1299" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M16 3.12988C16.8604 3.35018 17.623 3.85058 18.1676 4.55219C18.7122 5.2538 19.0078 6.11671 19.0078 7.00488C19.0078 7.89305 18.7122 8.75596 18.1676 9.45757C17.623 10.1592 16.8604 10.6596 16 10.8799" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`,
+  },
+  {
+    title: "Miembro Programa Fellow 2023",
+    description: "Asociación Americana de Psicología (APA)",
+    iconBg: "var(--scales-color-orange-500)",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M21.8006 9.99999C22.2573 12.2413 21.9318 14.5714 20.8785 16.6018C19.8251 18.6322 18.1075 20.24 16.0121 21.1573C13.9167 22.0746 11.5702 22.2458 9.36391 21.6424C7.15758 21.0389 5.2248 19.6974 3.88789 17.8414C2.55097 15.9854 1.89073 13.7272 2.01728 11.4434C2.14382 9.15952 3.04949 6.98808 4.58326 5.29116C6.11703 3.59424 8.18619 2.47442 10.4457 2.11844C12.7052 1.76247 15.0184 2.19185 16.9996 3.33499" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 11L12 14L22 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`,
+  },
+];
 ---
 
-<section class="bg-[linear-gradient(to_bottom,#1261AF,#04274B)] my-25">
-  <div class="max-w-[1220px] mx-auto py-20 flex relative">
-    <div class="flex flex-col pw-full max-w-lg gap-16">
-      <div class="flex flex-col gap-6">
-        <Heading2 text="Hola, Soy \n Diego Moreno" align="left" />
-        <Paragraph
-          size="md"
-          text="Soy psicólogo y he dedicado mi vida a acompañar procesos de sanación personal y colectiva. Mi experiencia en comunidades, víctimas del conflicto, interculturalidad y salud mental me enseñó que cada persona merece un espacio seguro para reconstruirse. Trabajo con sensibilidad, escucha profunda y respeto absoluto por tu historia."
-          color="text-neutral-100"
-        />
+<section class="my-25">
+  <div class="max-w-[1280px] gap-12 mx-auto py-20 flex flex-col relative items-stretch" >
+
+    <div class="flex gap-12">
+      <div class="about-image-container flex-1">
+        <div class="flex max-h-150 rounded-3xl overflow-hidden">
+          <Image
+            src={AboutPhoto}
+            alt="Imagen de Diego Moreno"
+            class="w-full object-cover object-top"
+          />
+        </div>
       </div>
-      <div>
-        <Button label="Conoce mi perfil completo" />
+
+      <div class="flex flex-col gap-16 flex-1 min-w-0">
+        <div class="flex flex-col gap-6">
+          <LeadText text="Sobre mí" align="left" />
+          <Heading2
+            text="Conoce al"
+            highlight="Dr. Diego \n Moreno"
+            align="left"
+          />
+          <Paragraph
+            size="lg"
+            text="Con más de una década de experiencia en psicología clínica, me dedico a ayudar a adultos a navegar los desafíos de la vida con compasión y atención basada en evidencia. Mi enfoque combina terapia cognitivo-conductual, técnicas de mindfulness y estrategias personalizadas para apoyar tu camino único."
+            color="text-neutral-100"
+            weight="light"
+          />
+          <Paragraph
+            size="lg"
+            text="Creo que la terapia debe sentirse como un espacio seguro donde puedes ser tú mismo, explorar tus pensamientos y desarrollar herramientas prácticas para un cambio duradero. Ya sea que estés lidiando con ansiedad, depresión, problemas de relaciones o buscando crecimiento personal, estoy aquí para apoyarte."
+            weight="light"
+          />
+        </div>
       </div>
+
     </div>
-    <Image
-      src={AboutPhoto}
-      alt="Imagen de Diego Moreno"
-      class="h-[110%] object-cover object-center absolute right-[0%] -top-[5%] transform rotate-6 border-8 border-primary-400"
-    />
+
+    <section class="about-highlight-container">
+      {
+        ABOUT_HIGHLIGHTS.map((highlight) => (
+          <article class="about-highlight-card">
+            <div
+              class="about-highlight-icon-container"
+              style={`background-color: ${highlight.iconBg};`}
+            >
+              <Fragment set:html={highlight.icon} />
+            </div>
+            <div>
+              <Paragraph
+                size="md"
+                text={highlight.title}
+                color="text-neutral-100"
+                weight="regular"
+              />
+              <Paragraph
+                size="sm"
+                text={highlight.description}
+                color="text-neutral-100"
+                weight="light"
+              />
+            </div>
+          </article>
+        ))
+      }
+    </section>
+        <div class="flex justify-center">
+          <Button label="Conoce mi perfil completo" size="lg" />
+        </div>
   </div>
 </section>
+
+<style>
+  .about-image-container {
+    position: relative;
+    isolation: isolate;
+  }
+  .about-image-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    background: linear-gradient(
+      135deg,
+      rgba(211, 224, 254, 0.9) 0%,
+      rgba(236, 211, 254, 0.9) 45%,
+      rgba(166, 231, 190, 0.85) 75%,
+      rgba(211, 224, 254, 0.9) 100%
+    );
+    background-size: 260% 260%;
+    transform: rotate(-3deg);
+    z-index: -1;
+    filter: blur(1px);
+    animation: aboutGradientWave 10s ease-in-out infinite alternate;
+    will-change: transform, background-position;
+  }
+  .about-image-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    background: linear-gradient(
+      45deg,
+      rgba(233, 212, 255, 0.55) 0%,
+      rgba(190, 219, 255, 0.45) 40%,
+      rgba(203, 247, 252, 0.45) 70%,
+      rgba(233, 212, 255, 0.55) 100%
+    );
+    background-size: 220% 220%;
+    transform: rotate(2deg);
+    z-index: -1;
+    filter: blur(4px);
+    opacity: 0.9;
+    animation: aboutGradientDrift 12s ease-in-out infinite;
+    will-change: transform, background-position;
+  }
+  @keyframes aboutGradientWave {
+    0% {
+      background-position: 0% 50%;
+      transform: rotate(-3deg) translateY(0px);
+    }
+    50% {
+      background-position: 100% 50%;
+      transform: rotate(-2deg) translateY(-4px);
+    }
+    100% {
+      background-position: 0% 50%;
+      transform: rotate(-3deg) translateY(0px);
+    }
+  }
+  @keyframes aboutGradientDrift {
+    0% {
+      background-position: 100% 0%;
+      transform: rotate(2deg) translateX(0px) translateY(0px);
+    }
+    50% {
+      background-position: 0% 100%;
+      transform: rotate(3deg) translateX(4px) translateY(2px);
+    }
+    100% {
+      background-position: 100% 0%;
+      transform: rotate(2deg) translateX(0px) translateY(0px);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .about-image-container::before,
+    .about-image-container::after {
+      animation: none;
+    }
+  }
+  .about-highlight-container {
+    display: flex;
+    gap: var(--spacing-800);
+  }
+  .about-highlight-card {
+    display: flex;
+    background-color: rgba(100, 100, 100, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.10), 0 4px 6px -4px rgba(0, 0, 0, 0.10);
+    border-radius: 24px;
+    padding: var(--spacing-600);
+    gap: var(--spacing-400);
+    flex: 1;
+  }
+  .about-highlight-icon-container {
+    background-color: var(--color-primary-400);
+    padding: var(--spacing-300);
+    border-radius: var(--spacing-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--spacing-1200);
+    height: var(--spacing-1200);
+  }
+</style>

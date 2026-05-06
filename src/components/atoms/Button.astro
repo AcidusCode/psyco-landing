@@ -67,7 +67,8 @@ import IconSvg from "./IconSvg.astro";
     transition:
       background-color 0.3s ease,
       border-color 0.3s ease,
-      color 0.3s ease;
+      color 0.3s ease,
+      scale 0.2s ease;
     cursor: pointer;
   }
 
@@ -93,15 +94,16 @@ import IconSvg from "./IconSvg.astro";
 ========================================================== */
 
   [data-variant="solid"] {
-    background: var(--btn-bg);
-    color: var(--btn-text);
-    border: 1px solid var(--btn-border);
+    background: linear-gradient(to right, var(--color-primary-500), var(--color-secondary-500));
+    color: var(--color-white);
+    border: 1px solid var(--color-border-disabled);
   }
 
   [data-variant="solid"]:hover {
-    background: var(--btn-bg-hover);
-    border: 1px solid var(--btn-border-hover);
-    color: var(--btn-text-hover);
+    background: linear-gradient(to right, var(--color-primary-600), var(--color-secondary-500));
+    border: 1px solid var(--color-border-disabled-weak);
+    color: var(--color-white);
+    scale: 1.03;
   }
 
   [data-variant="solid"]:active {
@@ -127,13 +129,13 @@ import IconSvg from "./IconSvg.astro";
 
 
   [data-variant="ghost"] {
-    background: var(--btn-bg-ghost);
+    background: rgba(100,100,100,.2);
     border: 1px solid var(--btn-border-ghost);
-    color: var(--btn-text-ghost);
+    color: var(--color-text-headings);
   }
 
   [data-variant="ghost"]:hover {
-    background: var(--btn-bg-hover);
+    background: rgba(100,100,100,.4);
     border: 1px solid var(--btn-border-hover-ghost);
     color: var(--btn-text-hover-ghost);
   }

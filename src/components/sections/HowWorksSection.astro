@@ -1,0 +1,155 @@
+---
+import Section from "./Section.astro";
+import Paragraph from "../typography/body/Paragraph.astro";
+import PageSubtitle from "../molecules/PageSubtitle.astro";
+
+const HOW_WORKS_DATA = [
+  {
+    number: 1,
+    title: "Reserva tu Sesión",
+    description:
+      "Elige un horario que te funcione - online o presencial. Horarios flexibles que se adaptan a tu vida ocupada.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+      <path d="M10.6667 2.66669V8.00002" stroke="white" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M21.3333 2.66669V8.00002" stroke="white" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M25.3333 5.33331H6.66667C5.19391 5.33331 4 6.52722 4 7.99998V26.6666C4 28.1394 5.19391 29.3333 6.66667 29.3333H25.3333C26.8061 29.3333 28 28.1394 28 26.6666V7.99998C28 6.52722 26.8061 5.33331 25.3333 5.33331Z" stroke="white" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M4 13.3333H28" stroke="white" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`,
+  },
+  {
+    number: 2,
+    title: "Asiste a tu Sesión",
+    description:
+      "Reúnete por videollamada segura o en nuestra cómoda oficina. Tu privacidad y comodidad son nuestra prioridad.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+      <path d="M21.3333 17.3333L28.2973 21.976C28.3976 22.0428 28.5143 22.0811 28.6347 22.0869C28.7552 22.0927 28.8749 22.0656 28.9813 22.0087C29.0876 21.9518 29.1764 21.8671 29.2384 21.7637C29.3004 21.6602 29.3332 21.5419 29.3333 21.4213V10.4933C29.3333 10.376 29.3024 10.2608 29.2436 10.1593C29.1849 10.0577 29.1004 9.9735 28.9987 9.91507C28.897 9.85664 28.7816 9.82608 28.6643 9.82648C28.547 9.82688 28.4319 9.85822 28.3306 9.91734L21.3333 14" stroke="white" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M18.6667 8H5.33341C3.86066 8 2.66675 9.19391 2.66675 10.6667V21.3333C2.66675 22.8061 3.86066 24 5.33341 24H18.6667C20.1395 24 21.3334 22.8061 21.3334 21.3333V10.6667C21.3334 9.19391 20.1395 8 18.6667 8Z" stroke="white" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`,
+  },
+  {
+    number: 3,
+    title: "Inicia tu Camino",
+    description:
+      "Experimenta cambios reales con técnicas basadas en evidencia. Construye resiliencia y mejora tu salud mental.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+      <path d="M13.2493 20.6667C13.1303 20.2052 12.8898 19.7841 12.5528 19.4472C12.2159 19.1102 11.7948 18.8697 11.3333 18.7507L3.15333 16.6413C3.01378 16.6017 2.89095 16.5177 2.80348 16.4019C2.71602 16.2862 2.6687 16.1451 2.6687 16C2.6687 15.8549 2.71602 15.7138 2.80348 15.5981C2.89095 15.4823 3.01378 15.3983 3.15333 15.3587L11.3333 13.248C11.7946 13.1291 12.2156 12.8888 12.5525 12.552C12.8895 12.2153 13.1301 11.7945 13.2493 11.3333L15.3587 3.15332C15.3979 3.01321 15.4818 2.88978 15.5978 2.80185C15.7137 2.71392 15.8552 2.66632 16.0007 2.66632C16.1462 2.66632 16.2877 2.71392 16.4036 2.80185C16.5195 2.88978 16.6035 3.01321 16.6427 3.15332L18.7507 11.3333C18.8697 11.7947 19.1102 12.2158 19.4472 12.5528C19.7841 12.8898 20.2052 13.1303 20.6667 13.2493L28.8467 15.3573C28.9873 15.3961 29.1114 15.48 29.1998 15.5961C29.2882 15.7122 29.3361 15.8541 29.3361 16C29.3361 16.1459 29.2882 16.2878 29.1998 16.4039C29.1114 16.52 28.9873 16.6039 28.8467 16.6427L20.6667 18.7507C20.2052 18.8697 19.7841 19.1102 19.4472 19.4472C19.1102 19.7841 18.8697 20.2052 18.7507 20.6667L16.6413 28.8467C16.6021 28.9868 16.5182 29.1102 16.4022 29.1981C16.2863 29.2861 16.1448 29.3337 15.9993 29.3337C15.8538 29.3337 15.7123 29.2861 15.5964 29.1981C15.4805 29.1102 15.3965 28.9868 15.3573 28.8467L13.2493 20.6667Z" stroke="white" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M26.6666 4V9.33333" stroke="white" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M29.3333 6.66669H24" stroke="white" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M5.33337 22.6667V25.3334" stroke="white" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M6.66667 24H4" stroke="white" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`,
+  },
+];
+---
+
+<Section>
+  <div class="flex flex-col max-w-[1280px] gap-16">
+    <PageSubtitle
+      lead="¿Cómo funciona?"
+      heading="Un proceso claro"
+      body="Descubre cómo mi enfoque terapéutico personalizado puede \n ayudarte a alcanzar tus objetivos de bienestar mental."
+      align="center"
+      highlight="y efectivo"
+    />
+    <div class="how-works-section">
+      {
+        HOW_WORKS_DATA.map((item) => (
+          <div class="how-works-section-content">
+            <div class="how-works-section-header">
+              <div class="how-works-section-icon-container">
+                <Fragment set:html={item.icon} />
+              </div>
+              <p class="how-works-card-number">
+                {item.number.toString().padStart(2, "0")}
+              </p>
+            </div>
+            <Paragraph
+              size="lg"
+              text={item.title}
+              align="center"
+              weight="semibold"
+            />
+            <Paragraph
+              size="sm"
+              text={item.description}
+              align="center"
+              weight="light"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Section>
+
+<style>
+  .how-works-section {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-800, 32px);
+  }
+
+  .how-works-cards-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: var(--spacing-800, 32px);
+  }
+
+  .how-works-section-content {
+    display: flex;
+    padding: var(--spacing-800, 32px);
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-300, 12px);
+    align-self: stretch;
+    border-radius: var(--border-radius-3xl, 24px);
+    border: var(--border-width-sm, 1px) solid var(--border-default, #ebebeb);
+    background: linear-gradient(
+      135deg,
+      var(--surface-page, #fefefe) 0%,
+      var(--surface-primary, #ebebeb) 100%
+    );
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  }
+
+  .how-works-section-header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-300, 12px);
+  }
+
+  .how-works-card-number {
+    color: rgba(21, 93, 252, 0.05);
+    text-align: right;
+    font-size: 120px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120px; /* 100% */
+  }
+
+  .how-works-section-icon-container {
+    display: flex;
+    width: 80px;
+    height: 80px;
+    padding: 24px;
+    align-items: flex-start;
+    border-radius: var(--border-radius-2xl, 16px);
+    background: var(
+      --gradient-alernative,
+      linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      linear-gradient(135deg, #2b7fff 0%, #155dfc 50%, #9810fa 100%)
+    );
+    box-shadow:
+      0 20px 25px -5px rgba(43, 127, 255, 0.3),
+      0 8px 10px -6px rgba(43, 127, 255, 0.3);
+  }
+</style>

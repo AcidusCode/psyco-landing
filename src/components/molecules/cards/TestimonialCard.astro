@@ -13,24 +13,58 @@ const {
   countryIcon = "icon-flag-colombia",
   quote = "Tuve una muy buena experiencia con un profesional sólido en su rol, que me ayudo a ver mi autenticidad, mi capacidad de entrega a instancias comunitarias desde una sanidad individual.",
 } = Astro.props;
+
+const nameParts = String(name)
+  .trim()
+  .split(/\s+/)
+  .filter(Boolean);
+
+const displayName =
+  nameParts.length >= 2
+    ? `${nameParts[0]} ${nameParts[1][0]}.`
+    : nameParts[0] ?? "Nombre testimonio";
 ---
 
-<article
-  class="flex flex-col max-w-[452px] px-8 py-6 gap-2 bg-neutral-800 rounded-xl"
->
-  <header class="flex items-center justify-between gap-4">
-    <div class="flex items-center gap-4">
+<article class="testimonial-card flex justify-between flex-col max-w-[452px]">
+  <main class="flex flex-col gap-4">
+
+    <div class="flex justify-between">
+      <div class="flex gap-2 items-center">
+        <StarsRanking rating={rating} />
+        <Paragraph size="sm" text={rating} class="inline-block ml-2" />
+      </div>
+      <div
+        class="flex items-center justify-center text-gray-100"
+      >
+        <IconSvg name="icon-quotes" size={24} stroke="none" color="#ff0000" />
+      </div>
+    </div>
+
+    <Paragraph
+      size="md"
+      text={quote}
+      weight="light"
+      classes="line-clamp-5"
+      color="text-neutral-200"
+    />
+
+  </main>
+
+  <header class="testimonial-card-header flex items-center justify-between gap-4">
+    <div class="flex items-center justify-center gap-4">
+
       <Image
         src={image}
         alt="Imagen de testimonio"
-        width={80}
-        height={80}
-        class="w-full max-w-20 max-h-20 rounded-lg"
+        width={48}
+        height={48}
+        class="w-full max-w-10 max-h-10 rounded-lg"
       />
-      <div class="flex flex-col mt-4 mb-6">
+
+      <div class="flex flex-col">
         <Paragraph
           size="md"
-          text={name}
+          text={displayName}
           weight="regular"
           color="text-neutral-100"
         />
@@ -40,28 +74,27 @@ const {
           weight="light"
           color="text-neutral-200"
         />
-        <div class="flex gap-2 items-center">
-          <StarsRanking rating={rating} />
-          <Paragraph size="sm" text={rating} class="inline-block ml-2" />
-        </div>
       </div>
+
     </div>
+    
     <div class="flex flex-col gap-4">
-      <IconSvg name={countryIcon} set="flag-icons" size={32} />
-      <div
-        class="flex items-center justify-center w-8 h-8 bg-neutral-700 rounded-full"
-      >
-        <IconSvg name="icon-quotes" size={16} stroke="none" />
-      </div>
+      <IconSvg name={countryIcon} set="flag-icons" size={32} stroke="none" />
     </div>
   </header>
-  <main>
-    <Paragraph
-      size="md"
-      text={quote}
-      weight="light"
-      classes="line-clamp-5"
-      color="text-neutral-200"
-    />
-  </main>
 </article>
+
+<style>
+  .testimonial-card {
+    background-color: rgba(100, 100, 100, 0.1);
+    max-width: 340px;
+    padding: var(--spacing-800);
+    gap: var(--spacing-400);
+    border-radius: 24px;
+  }
+
+  .testimonial-card-header {
+    border-top: 1px solid var(--color-gray-200);
+    padding-top: var(--spacing-400);
+  }
+</style>

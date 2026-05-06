@@ -2,92 +2,114 @@
 
 :root {
   /* ============================================
-     COLOR TOKENS
+     COLOR FOUNDATIONS
   ============================================ */
-  --color-black: #111;
-  --color-white: #fafafa;
+  /* Base Colors */
+  --color-black: #101828;
+  --color-white: #FEFEFE;
+  --color-gray: #444444;
 
-  /* Brand Colors */
-  --color-brand-1-100: #D2F0FF;
-  --color-brand-1-200: #A5E1FF;
-  --color-brand-1-300: #78D2FF;
-  --color-brand-1-400: #4CC3FF;
-  --color-brand-1-500: #1FB4FF;
-  --color-brand-1-600: #1F97D3;
-  --color-brand-1-700: #207AA7;
-  --color-brand-1-800: #215C7A;
-  --color-brand-1-900: #213F4E;
+  /* Semantic Colors */
 
-  --color-brand-2-100: #fff0e0;
-  --color-brand-2-200: #ffd9b3;
-  --color-brand-2-300: #ffbf80;
-  --color-brand-2-400: #ffa64d;
-  --color-brand-2-500: #ff8c1a;
-  --color-brand-2-600: #e67300;
-  --color-brand-2-700: #b35b00;
-  --color-brand-2-800: #804000;
-  --color-brand-2-900: #4d2600;
-
-  --color-brand-3-100: #f0f5ff;
-  --color-brand-3-200: #d9e0ff;
-  --color-brand-3-300: #bfbfff;
-  --color-brand-3-400: #a64dff;
-  --color-brand-3-500: #8c1aff;
-  --color-brand-3-600: #7300e6;
-  --color-brand-3-700: #5b00b3;
-  --color-brand-3-800: #400080;
-  --color-brand-3-900: #26004d;
+  --color-primary: #266AFF;
+  --color-secondary: #A529FF;
+  --color-tertiary: #8c1aff;
 
   /* Status Colors */
-  --color-gray-100: #f5f5f5;
-  --color-gray-200: #e0e0e0;
-  --color-gray-300: #cccccc;
-  --color-gray-400: #999999;
-  --color-gray-500: #777777;
-  --color-gray-600: #555555;
-  --color-gray-700: #444444;
-  --color-gray-800: #333333;
-  --color-gray-900: #111111;
 
-  --color-green-100: #e6f4ea;
-  --color-green-200: #c0e6c3;
-  --color-green-300: #99d799;
-  --color-green-400: #70c96f;
-  --color-green-500: #4dbf4d;
-  --color-green-600: #399b39;
-  --color-green-700: #2d7d2d;
-  --color-green-800: #1f551f;
-  --color-green-900: #113011;
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #00D9F5;
+  --color-disabled: #CFCFCF;
 
-  --color-orange-100: #fff4e6;
-  --color-orange-200: #ffe0b3;
-  --color-orange-300: #ffc180;
-  --color-orange-400: #ffa64d;
-  --color-orange-500: #ff8c1a;
-  --color-orange-600: #e67300;
-  --color-orange-700: #b35900;
-  --color-orange-800: #804000;
-  --color-orange-900: #4d2600;
 
-  --color-red-100: #ffe6e6;
-  --color-red-200: #ffb3b3;
-  --color-red-300: #ff8080;
-  --color-red-400: #ff4d4d;
-  --color-red-500: #ff1a1a;
-  --color-red-600: #e60000;
-  --color-red-700: #b30000;
-  --color-red-800: #800000;
-  --color-red-900: #4d0000;
+  /* ============================================
+     COLOR PRIMITIVES
+  ============================================ */
 
-  --color-blue-100: #e6f0ff;
-  --color-blue-200: #b3d1ff;
-  --color-blue-300: #80b3ff;
-  --color-blue-400: #4d94ff;
-  --color-blue-500: #1a75ff;
-  --color-blue-600: #005ce6;
-  --color-blue-700: #0047b3;
-  --color-blue-800: #003180;
-  --color-blue-900: #001a4d;
+
+
+  /* SCALES COLOR */
+  --scales-color-blue-100: #D3E0FE;
+  --scales-color-blue-200: #A8C3FE;
+  --scales-color-blue-300: #7CA5FF;
+  --scales-color-blue-400: #5188FF;
+  --scales-color-blue-500: #266AFF;
+  --scales-color-blue-600: #225AD4;
+  --scales-color-blue-700: #1D49A9;
+  --scales-color-blue-800: #19397E;
+  --scales-color-blue-900: #142853;
+
+  --scales-color-cyan-100: #CBF7FC;
+  --scales-color-cyan-200: #98EFFB;
+  --scales-color-cyan-300: #66E8F9;
+  --scales-color-cyan-400: #33E0F7;
+  --scales-color-cyan-500: #00D9F5;
+  --scales-color-cyan-600: #03B2CC;
+  --scales-color-cyan-700: #068CA3;
+  --scales-color-cyan-800: #0D3F51;
+  --scales-color-cyan-900: #0D3F51;
+
+  --scales-color-gray-100: #EBEBEB;
+  --scales-color-gray-200: #CFCFCF;
+  --scales-color-gray-300: #B4B4B4;
+  --scales-color-gray-400: #7C7C7C;
+  --scales-color-gray-500: #444444;
+  --scales-color-gray-600: #3A3B3E;
+  --scales-color-gray-700: #2F3239;
+  --scales-color-gray-800: #252A33;
+  --scales-color-gray-900: #1A212E;
+
+  --scales-color-green-100: #D2F3DE;
+  --scales-color-green-200: #A6E7BE;
+  --scales-color-green-300: #7ADC9E;
+  --scales-color-green-400: #4ED07E;
+  --scales-color-green-500: #22C55E;
+  --scales-color-green-600: #1EA253;
+  --scales-color-green-700: #1B8048;
+  --scales-color-green-800: #175D3E;
+  --scales-color-green-900: #143B33;
+
+  --scales-color-orange-100: #FCEBCD;
+  --scales-color-orange-200: #FAD89D;
+  --scales-color-orange-300: #F9C46C;
+  --scales-color-orange-400: #F7B13C;
+  --scales-color-orange-500: #F59E0B;
+  --scales-color-orange-600: #C78311;
+  --scales-color-orange-700: #996817;
+  --scales-color-orange-800: #6C4E1C;
+  --scales-color-orange-900: #3E3322;
+
+  --scales-color-purple-100: #ECD3FE;
+  --scales-color-purple-200: #DBA9FE;
+  --scales-color-purple-300: #C97EFF;
+  --scales-color-purple-400: #B754FF;
+  --scales-color-purple-500: #A529FF;
+  --scales-color-purple-600: #8826D4;
+  --scales-color-purple-700: #6A22A9;
+  --scales-color-purple-800: #4C1F7E;
+  --scales-color-purple-900: #2E1B53;
+
+  --scales-color-red-100: #FBD9D9;
+  --scales-color-red-200: #F8B4B4;
+  --scales-color-red-300: #F58E8E;
+  --scales-color-red-400: #F26969;
+  --scales-color-red-500: #EF4444;
+  --scales-color-red-600: #C23B3E;
+  --scales-color-red-700: #963239;
+  --scales-color-red-800: #692A33;
+  --scales-color-red-900: #3D212E;
+  
+  --scales-color-yellow-100: #F5F6CE;
+  --scales-color-yellow-200: #ECEE9E;
+  --scales-color-yellow-300: #E2E76D;
+  --scales-color-yellow-400: #D9DF3D;
+  --scales-color-yellow-500: #D0D70D;
+  --scales-color-yellow-600: #AAB112;
+  --scales-color-yellow-700: #838B18;
+  --scales-color-yellow-800: #5D641D;
+  --scales-color-yellow-900: #363E23;
 
   /* ============================================
      TYPOGRAPHY TOKENS
@@ -118,6 +140,78 @@
   --typography-letter-spacing-normal: 0;
   --typography-letter-spacing-wide: 0.025;
 
+
+  /* FONT */
+  --font-body-lg-line-height: 32px;
+  --font-body-lg-parragraph-spacing: 32px;
+  --font-body-lg-text-size: 20px;
+
+  --font-body-sm-line-height: 20px;
+  --font-body-sm-parragraph-spacing: 20px;
+  --font-body-sm-text-size: 12px;
+
+  --font-body-line-height: 24px;
+  --font-body-parragraph-spacing: 24px;
+  --font-body-text-size: 16px;
+
+  --font-caption-line-height: 16px;
+  --font-caption-parragraph-spacing: 16px;
+  --font-caption-text-size: 12px;
+
+  --font-headings-h1-line-height: 90px;
+  --font-headings-h1-parragraph-spacing: 90px;
+  --font-headings-h1-text-size: 72px;
+
+  --font-headings-h2-line-height: 56px;
+  --font-headings-h2-parragraph-spacing: 56px;
+  --font-headings-h2-text-size: 48px;
+
+  --font-headings-h3-line-height: 48px;
+  --font-headings-h3-parragraph-spacing: 48px;
+  --font-headings-h3-text-size: 40px;
+
+  --font-headings-h4-line-height: 40px;
+  --font-headings-h4-parragraph-spacing: 40px;
+  --font-headings-h4-text-size: 32px;
+
+  --font-headings-h5-line-height: 28px;
+  --font-headings-h5-parragraph-spacing: 28px;
+  --font-headings-h5-text-size: 24px;
+
+  --font-headings-h6-line-height: 24px;
+  --font-headings-h6-parragraph-spacing: 24px;
+  --font-headings-h6-text-size: 20px;
+
+
+
+  /* INTER */
+  --inter-style-inter: Inter;
+  --inter-weight-bold: bold;
+  --inter-weight-extralight: extralight;
+  --inter-weight-light: light;
+  --inter-weight-regular: regular;
+  --inter-weight-semibold: semibold;
+
+  /* H1 */
+  --h1: 72px;
+  /* H2 */
+  --h2: 48px;
+  /* H3 */
+  --h3: 40px;
+  /* H4 */
+  --h4: 32px;
+  /* H5 */
+  --h5: 24px;
+  /* H6 */
+  --h6: 20px;
+
+  /* LG */
+  --lg: 20px;
+  /* MD */
+  --md: 16px;
+  /* SM */
+  --sm: 12px;
+
   /* ============================================
      SPACING TOKENS (spacing)
   ============================================ */
@@ -136,6 +230,36 @@
   --space-10: 3rem; /* 48px */
   --space-11: 3.5rem; /* 56px */
   --space-12: 4rem; /* 64px */
+
+    /* SPACING */
+  --spacing-0: 0px;
+  --spacing-25: 1px;
+  --spacing-50: 2px;
+  --spacing-100: 4px;
+  --spacing-150: 6px;
+  --spacing-200: 8px;
+  --spacing-300: 12px;
+  --spacing-400: 16px;
+  --spacing-500: 20px;
+  --spacing-600: 24px;
+  --spacing-700: 28px;
+  --spacing-800: 32px;
+  --spacing-900: 36px;
+  --spacing-1000: 40px;
+  --spacing-1200: 48px;
+  --spacing-1600: 64px;
+
+  --spacing-3xs: 2px;
+  --spacing-2xs: 4px;
+  --spacing-xs: 8px;
+
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
 
   /* ============================================
      SIZING TOKENS (sizing)

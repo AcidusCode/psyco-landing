@@ -5,65 +5,75 @@
      COLORS TOKENS
   ============================================ */
 
-  --color-primary-100: var(--color-brand-1-100);
-  --color-primary-200: var(--color-brand-1-200);
-  --color-primary-300: var(--color-brand-1-300);
-  --color-primary-400: var(--color-brand-1-400);
-  --color-primary-500: var(--color-brand-1-500);
-  --color-primary-600: var(--color-brand-1-600);
-  --color-primary-700: var(--color-brand-1-700);
-  --color-primary-800: var(--color-brand-1-800);
-  --color-primary-900: var(--color-brand-1-900);
+  --color-primary-100: var(--scales-color-blue-100);
+  --color-primary-200: var(--scales-color-blue-200);
+  --color-primary-300: var(--scales-color-blue-300);
+  --color-primary-400: var(--scales-color-blue-400);
+  --color-primary-500: var(--scales-color-blue-500);
+  --color-primary-600: var(--scales-color-blue-600);
+  --color-primary-700: var(--scales-color-blue-700);
+  --color-primary-800: var(--scales-color-blue-800);
+  --color-primary-900: var(--scales-color-blue-900);
 
-  --color-success-100: var(--color-green-100);
-  --color-success-200: var(--color-green-200);
-  --color-success-300: var(--color-green-300);
-  --color-success-400: var(--color-green-400);
-  --color-success-500: var(--color-green-500);
-  --color-success-600: var(--color-green-600);
-  --color-success-700: var(--color-green-700);
-  --color-success-800: var(--color-green-800);
-  --color-success-900: var(--color-green-900);
+  --color-secondary-100: var(--scales-color-purple-100);
+  --color-secondary-200: var(--scales-color-purple-200);
+  --color-secondary-300: var(--scales-color-purple-300);
+  --color-secondary-400: var(--scales-color-purple-400);
+  --color-secondary-500: var(--scales-color-purple-500);
+  --color-secondary-600: var(--scales-color-purple-600);
+  --color-secondary-700: var(--scales-color-purple-700);
+  --color-secondary-800: var(--scales-color-purple-800);
+  --color-secondary-900: var(--scales-color-purple-900);
 
-  --color-warning-100: var(--color-orange-100);
-  --color-warning-200: var(--color-orange-200);
-  --color-warning-300: var(--color-orange-300);
-  --color-warning-400: var(--color-orange-400);
-  --color-warning-500: var(--color-orange-500);
-  --color-warning-600: var(--color-orange-600);
-  --color-warning-700: var(--color-orange-700);
-  --color-warning-800: var(--color-orange-800);
-  --color-warning-900: var(--color-orange-900);
+  --color-success-100: var(--scales-color-green-100);
+  --color-success-200: var(--scales-color-green-200);
+  --color-success-300: var(--scales-color-green-300);
+  --color-success-400: var(--scales-color-green-400);
+  --color-success-500: var(--scales-color-green-500);
+  --color-success-600: var(--scales-color-green-600);
+  --color-success-700: var(--scales-color-green-700);
+  --color-success-800: var(--scales-color-green-800);
+  --color-success-900: var(--scales-color-green-900);
 
-  --color-error-100: var(--color-red-100);
-  --color-error-200: var(--color-red-200);
-  --color-error-300: var(--color-red-300);
-  --color-error-400: var(--color-red-400);
-  --color-error-500: var(--color-red-500);
-  --color-error-600: var(--color-red-600);
-  --color-error-700: var(--color-red-700);
-  --color-error-800: var(--color-red-800);
-  --color-error-900: var(--color-red-900);
+  --color-warning-100: var(--scales-color-orange-100);
+  --color-warning-200: var(--scales-color-orange-200);
+  --color-warning-300: var(--scales-color-orange-300);
+  --color-warning-400: var(--scales-color-orange-400);
+  --color-warning-500: var(--scales-color-orange-500);
+  --color-warning-600: var(--scales-color-orange-600);
+  --color-warning-700: var(--scales-color-orange-700);
+  --color-warning-800: var(--scales-color-orange-800);
+  --color-warning-900: var(--scales-color-orange-900);
 
-  --color-info-100: var(--color-blue-100);
-  --color-info-200: var(--color-blue-200);
-  --color-info-300: var(--color-blue-300);
-  --color-info-400: var(--color-blue-400);
-  --color-info-500: var(--color-blue-500);
-  --color-info-600: var(--color-blue-600);
-  --color-info-700: var(--color-blue-700);
-  --color-info-800: var(--color-blue-800);
-  --color-info-900: var(--color-blue-900);
+  --color-error-100: var(--scales-color-red-100);
+  --color-error-200: var(--scales-color-red-200);
+  --color-error-300: var(--scales-color-red-300);
+  --color-error-400: var(--scales-color-red-400);
+  --color-error-500: var(--scales-color-red-500);
+  --color-error-600: var(--scales-color-red-600);
+  --color-error-700: var(--scales-color-red-700);
+  --color-error-800: var(--scales-color-red-800);
+  --color-error-900: var(--scales-color-red-900);
 
-  --color-neutral-100: var(--color-gray-100);
-  --color-neutral-200: var(--color-gray-200);
-  --color-neutral-300: var(--color-gray-300);
-  --color-neutral-400: var(--color-gray-400);
-  --color-neutral-500: var(--color-gray-500);
-  --color-neutral-600: var(--color-gray-600);
-  --color-neutral-700: var(--color-gray-700);
-  --color-neutral-800: var(--color-gray-800);
-  --color-neutral-900: var(--color-gray-900);
+  --color-info-100: var(--scales-color-cyan-100);
+  --color-info-200: var(--scales-color-cyan-200);
+  --color-info-300: var(--scales-color-cyan-300);
+  --color-info-400: var(--scales-color-cyan-400);
+  --color-info-500: var(--scales-color-cyan-500);
+  --color-info-600: var(--scales-color-cyan-600);
+  --color-info-700: var(--scales-color-cyan-700);
+  --color-info-800: var(--scales-color-cyan-800);
+  --color-info-900: var(--scales-color-cyan-900);
+
+  --color-neutral-100: var(--scales-color-gray-100);
+  --color-neutral-200: var(--scales-color-gray-200);
+  --color-neutral-300: var(--scales-color-gray-300);
+  --color-neutral-400: var(--scales-color-gray-400);
+  --color-neutral-500: var(--scales-color-gray-500);
+  --color-neutral-600: var(--scales-color-gray-600);
+  --color-neutral-700: var(--scales-color-gray-700);
+  --color-neutral-800: var(--scales-color-gray-800);
+  --color-neutral-900: var(--scales-color-gray-900);
 
   /* ============================================
      BORDER TOKENS
@@ -97,9 +107,9 @@
   --text-h4: var(--typography-size-2xl);
   --text-h5: var(--typography-size-xl);
   --text-h6: var(--typography-size-lg);
-  --text-paragraph-lg: var(--typography-size-lg);
-  --text-paragraph-md: var(--typography-size-md);
-  --text-paragraph-sm: var(--typography-size-sm);
+  --text-paragraph-lg: var(--font-body-lg-text-size);
+  --text-paragraph-md: var(--font-body-md-text-size);
+  --text-paragraph-sm: var(--font-body-sm-text-size);
   --text-lead: var(--typography-size-lg);
 
   --leading-h1: var(--typography-line-height-tight);
@@ -108,9 +118,9 @@
   --leading-h4: var(--typography-line-height-tight);
   --leading-h5: var(--typography-line-height-tight);
   --leading-h6: var(--typography-line-height-tight);
-  --leading-paragraph-lg: var(--typography-line-height-normal);
-  --leading-paragraph-md: var(--typography-line-height-normal);
-  --leading-paragraph-sm: var(--typography-line-height-normal);
+  --leading-paragraph-lg: var(--font-body-lg-line-height);
+  --leading-paragraph-md: var(--font-body-md-line-height);
+  --leading-paragraph-sm: var(--font-body-sm-line-height);
   --leading-lead: var(--typography-line-height-normal);
 
   --font-weight-thin: var(--typography-weight-thin);
@@ -119,92 +129,75 @@
   --font-weight-bold: var(--typography-weight-bold);
 
   /* ============================================
-     TEXT COLORS TOKENS
-  ============================================ */
-  --color-text-primary: var(--color-neutral-900);
-  --color-text-secondary: var(--color-neutral-700);
-  --color-text-tertiary: var(--color-neutral-500);
-  --color-text-disabled: var(--color-neutral-300);
-  --color-text-link: var(--color-primary-500);
-  --color-text-link-hover: var(--color-primary-600);
-  --color-text-success: var(--color-success-500);
-  --color-text-warning: var(--color-warning-500);
-  --color-text-error: var(--color-error-500);
-  --color-text-info: var(--color-info-500);
-  --color-text-on-color: var(--color-neutral-50);
-  --color-text-on-disabled: var(--color-neutral-500);
-
-  /* ============================================
      SURFACE COLORS TOKENS
   ============================================ */
-  --color-surface-page: var(--color-black);
+  --color-surface-page: var(--color-white);
   --color-surface-primary: var(--color-neutral-100);
   --color-surface-disabled: var(--color-neutral-200);
   --color-surface-disabled-weak: var(--color-neutral-300);
+
   --color-surface-action: var(--color-primary-500);
   --color-surface-action-hover: var(--color-primary-600);
   --color-surface-action-hover-weak: var(--color-primary-200);
+
   --color-surface-press: var(--color-primary-700);
   --color-surface-press-weak: var(--color-primary-300);
+
   --color-surface-focus: var(--color-primary-500);
   --color-surface-focus-weak: var(--color-primary-100);
+
   --color-surface-success: var(--color-success-500);
   --color-surface-success-weak: var(--color-success-100);
+
   --color-surface-warning: var(--color-warning-500);
   --color-surface-warning-weak: var(--color-warning-100);
+
   --color-surface-error: var(--color-error-500);
   --color-surface-error-weak: var(--color-error-100);
+
   --color-surface-info: var(--color-info-500);
   --color-surface-info-weak: var(--color-info-100);
+
   --color-surface-loading: var(--color-neutral-100);
   --color-surface-loading-weak: var(--color-neutral-300);
+
   --color-surface-neutral: var(--color-neutral-100);
   --color-surface-neutral-weak: var(--color-neutral-700);
+
+  --color-surface-glass: rgba(255, 255, 255, 0.3);
 
   /* ============================================
      ICON COLORS TOKENS
   ============================================ */
   --color-icon-primary: var(--color-neutral-900);
-  --color-icon-disabled: var(--color-neutral-300);
-  --color-icon-link: var(--color-primary-500);
-  --color-icon-link-hover: var(--color-primary-600);
-  --color-icon-success: var(--color-success-500);
-  --color-icon-warning: var(--color-warning-500);
-  --color-icon-error: var(--color-error-500);
-  --color-icon-info: var(--color-info-500);
+  --color-icon-disabled: var(--color-neutral-100);
+  --color-icon-link: var(--color-primary-600);
+  --color-icon-link-hover: var(--color-primary-700);
+  --color-icon-success: var(--color-success-600);
+  --color-icon-warning: var(--color-warning-600);
+  --color-icon-error: var(--color-error-600);
+  --color-icon-info: var(--color-info-600);
   --color-icon-on-color: var(--color-neutral-50);
-  --color-icon-on-disabled: var(--color-neutral-500);
+  --color-icon-on-disabled: var(--color-neutral-600);
 
   /* ============================================
      TEXT COLORS TOKENS
   ============================================ */
-  --color-text-primary: var(--color-neutral-900);
-  --color-text-secondary: var(--color-neutral-700);
-  --color-text-tertiary: var(--color-neutral-500);
+  --color-text-headings: var(--color-neutral-900);
+  --color-text-body: var(--color-neutral-700);
+
   --color-text-disabled: var(--color-neutral-300);
   --color-text-link: var(--color-primary-500);
   --color-text-link-hover: var(--color-primary-600);
-  --color-text-success: var(--color-success-700);
-  --color-text-warning: var(--color-warning-500);
-  --color-text-error: var(--color-error-500);
-  --color-text-info: var(--color-info-500);
-  --color-text-on-color: var(--color-neutral-50);
+
+  --color-text-success: var(--color-success-600);
+  --color-text-warning: var(--color-warning-600);
+  --color-text-error: var(--color-error-600);
+  --color-text-info: var(--color-info-600);
+
+  --color-text-on-color: var(--color-white);
   --color-text-on-disabled: var(--color-neutral-700);
   --color-text-neutral: var(--color-neutral-300);
-
-  /* ============================================
-     ICON COLORS TOKENS
-  ============================================ */
-  --color-icon-primary: var(--color-neutral-900);
-  --color-icon-disabled: var(--color-neutral-300);
-  --color-icon-link: var(--color-primary-500);
-  --color-icon-link-hover: var(--color-primary-600);
-  --color-icon-success: var(--color-success-500);
-  --color-icon-warning: var(--color-warning-500);
-  --color-icon-error: var(--color-error-500);
-  --color-icon-info: var(--color-info-500);
-  --color-icon-on-color: var(--color-neutral-50);
-  --color-icon-on-disabled: var(--color-neutral-500);
 
   /* ============================================
      BORDER COLORS TOKENS

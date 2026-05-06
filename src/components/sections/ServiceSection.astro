@@ -8,27 +8,50 @@ import serviceData from "../../data/services/servicesData.json";
 ---
 
 <Section>
-  <PageSubtitle
-    lead="Atención psicológica personalizada"
-    heading="Elige el servicio adecuado para ti"
-    body="Cada proceso es único. Mi objetivo es ayudarte a comprenderte, \n sanar y crecer con herramientas adaptadas a ti."
-    align="left"
-  />
-  <div class="grid grid-cols-3 gap-10">
-    {
-      serviceData.map((service) => (
-        <ServiceCard
-          image={service.image}
-          title={service.title}
-          lead={service.lead}
-          description={service.description}
-        />
-      ))
-    }
+  <div class="max-w-7xl">
+    <PageSubtitle
+      lead="Atención psicológica personalizada"
+      heading="Atención especializada para"
+      highlight="tus necesidades"
+      body="Enfoques terapéuticos personalizados para ayudarte a superar desafíos y prosperar"
+    />
+    <div class="flex flex-col my-16 gap-10">
+      <div class="grid grid-cols-2 gap-10">
+        {
+          serviceData
+            .slice(0, 2)
+            .map((service) => (
+              <ServiceCard
+                image={service.image}
+                title={service.title}
+                lead={service.lead}
+                description={service.description}
+              />
+            ))
+        }
+      </div>
+      <div class="grid grid-cols-3 gap-10">
+        {
+          serviceData
+            .slice(2)
+            .map((service) => (
+              <ServiceCard
+                image={service.image}
+                title={service.title}
+                lead={service.lead}
+                description={service.description}
+              />
+            ))
+        }
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <Button
+        label="Conoce más acerca de mis servicios"
+        iconRight="icon-right-arrow"
+        type="button"
+        size="lg"
+      />
+    </div>
   </div>
-  <Button
-    label="Conoce más acerca de mis servicios"
-    iconRight="icon-right-arrow"
-    type="button"
-  />
 </Section>

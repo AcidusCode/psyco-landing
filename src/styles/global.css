@@ -3,3 +3,9 @@
 @import "../tokens/tokens.tailwind.css";
 @import "../tokens/tokens.components.css";
 @import "./typography.css";
+
+body {
+  background-color: var(--color-surface-page);
+  color: var(--color-text-headings);
+  font-family: var(--inter-style-inter), sans-serif;
+}

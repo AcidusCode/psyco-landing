@@ -6,9 +6,12 @@ import avatar3 from "../../assets/image/testimonials/avatar3.png";
 ---
 
 <div
-  class="flex text-[rgb(255,255,255)] pl-4 pr-8 py-4 rounded-full font-medium"
+  class="flex testimonials-badge pl-4 pr-8 py-4 rounded-full font-medium items-center gap-2"
 >
-  <div class="flex items-center w-30">
+  <p>
+    10+ Años de Expericia
+  </p>
+  <div class="flex testimonials-badge-container-images items-center translate-x-[15%]">
     <Image
       src={avatar}
       alt="Avatar"
@@ -32,3 +35,14 @@ import avatar3 from "../../assets/image/testimonials/avatar3.png";
     <p class="font-thin">Unete y comencemos a transformar tu vida.</p>
   </div>
 </div>
+
+<style>
+  .testimonials-badge {
+    color: var(--color-black);
+  }
+  .testimonials-badge-container-images {
+    color: var(--color-white);
+    border-left: 2px solid var(--color-gray-300);
+    padding-left: var(--spacing-600);
+  }
+</style>

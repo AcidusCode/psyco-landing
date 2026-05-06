@@ -1,7 +1,22 @@
 ---
-const { text = "No setting text", align = "center" } = Astro.props
+const { text = "No setting text", align = "center", highlight } = Astro.props
 ---
 
-<h2 class={`text-h2 leading-h2 font-bold title-gradient bg-red-400 whitespace-pre-line text-${align}`}>
-    { text }
+<h2 class={`text-h2 header-h2 text-${align}`}>
+  {text}
+  <span class="title-gradient span-header">
+    {highlight}
+  </span>
 </h2>
+
+<style>
+  .header-h2 {
+    font-size: var(--font-headings-h2-text-size);
+    line-height: var(--font-headings-h2-line-height);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-color-headings);
+  }
+  .span-header {
+    white-space: pre-line;
+  }
+</style>

@@ -29,7 +29,6 @@ const weightClasses = {
   semibold: "font-semibold",
   bold: "font-bold",
 };
-
 ---
 
 <p
@@ -37,3 +36,16 @@ const weightClasses = {
 >
   {text}
 </p>
+
+<style>
+  p {
+    color: var(--color-primary-700);
+    background-color: var(--color-primary-100);
+    padding: var(--spacing-300) var(--spacing-600);
+    border-radius: 999px;
+    display: inline-flex;
+    width: fit-content;
+    font-weight: var(--font-weight-semibold);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.10), 0 4px 6px -4px rgba(0, 0, 0, 0.10);
+  }
+</style>
