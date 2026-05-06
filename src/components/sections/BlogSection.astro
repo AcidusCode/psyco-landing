@@ -2,6 +2,7 @@
 import Section from "./Section.astro";
 import Paragraph from "../typography/body/Paragraph.astro";
 import PageSubtitle from "../molecules/PageSubtitle.astro";
+import Button from "../atoms/Button.astro";
 
 const BLOG_POSTS = [
   {
@@ -50,13 +51,13 @@ const BLOG_POSTS = [
       {
         BLOG_POSTS.map((post) => (
           <a href={post.link} class="blog-card">
-            <div class="relative w-full">
+            <div class="blog-card-image relative w-full flex-1">
               <div class="blog-label">
                 <span>{post.tag}</span>
               </div>
               <img src={post.image} alt={post.title} class="blog-card-image" />
             </div>
-            <div class="blog-card-content">
+            <div class="blog-card-content flex-1">
               <div class="flex gap-4">
                 <div class="blog-tag">
                   <svg
@@ -131,18 +132,8 @@ const BLOG_POSTS = [
                 </div>
               </div>
               <div>
-                <Paragraph
-                  size="lg"
-                  text={post.title}
-                  color="text-neutral-100"
-                  weight="regular"
-                />
-                <Paragraph
-                  size="sm"
-                  text={post.description}
-                  color="text-neutral-300"
-                  weight="light"
-                />
+                <p class="blog-card-title">{post.title}</p>
+                <p class="blog-card-description">{post.description}</p>
               </div>
 
               <Paragraph
@@ -156,6 +147,9 @@ const BLOG_POSTS = [
         ))
       }
     </div>
+  </div>
+  <div class="flex justify-center">
+    <Button label="Ver Todos los Artículos" size="lg" />
   </div>
 </Section>
 
@@ -179,10 +173,18 @@ const BLOG_POSTS = [
     transition: all 0.3s ease-in-out;
     text-decoration: none;
   }
-  
+
   .blog-card:first-child {
     grid-column: 1 / -1;
-    flex-direction: column;
+    flex-direction: row;
+  }
+
+  .blog-card:first-child .blog-card-image img {
+    height: 100%;
+  }
+
+  .blog-card:first-child .blog-card-content {
+    padding: var(--spacing-1200, 32px);
   }
 
   @media (max-width: 1024px) {
@@ -216,7 +218,7 @@ const BLOG_POSTS = [
     height: auto;
     object-fit: cover;
     object-position: center;
-    max-height: 250px;
+    max-height: 370px;
     background: red;
   }
 
@@ -224,7 +226,28 @@ const BLOG_POSTS = [
     display: flex;
     flex-direction: column;
     padding: var(--spacing-600, 24px);
-    gap: var(--spacing-300, 12px);
+    gap: var(--spacing-600, 12px);
+  }
+
+  .blog-card-title {
+    color: var(--text-on-disable, #2f3239);
+    font-size: var(--fontsize-heading-md, 20px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: var(--line-height-heading-md, 28px); /* 140% */
+  }
+
+  .blog-card:first-child .blog-card-title {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    color: var(--text-headings, #1a212e);
+    font-size: var(--fontsize-heading-h4, 32px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: var(--line-height-heading-h4, 40px); /* 125% */
   }
 
   .blog-tag {
