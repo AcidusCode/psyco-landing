@@ -1,0 +1,249 @@
+---
+import Section from "./Section.astro";
+import Paragraph from "../typography/body/Paragraph.astro";
+import PageSubtitle from "../molecules/PageSubtitle.astro";
+import Button from "../atoms/Button.astro";
+
+const FAQS = [
+  {
+    question: "¿Cómo puedo reservar una sesión contigo?",
+    answer:
+      "Puedes reservar una sesión a través de mi sitio web, donde encontrarás un calendario con mis disponibilidades. Simplemente selecciona el horario que mejor te convenga y sigue las instrucciones para completar tu reserva.",
+  },
+  {
+    question: "¿Ofreces sesiones en línea o solo presenciales?",
+    answer:
+      "Ofrezco ambas opciones para adaptarme a tus necesidades. Puedes elegir entre sesiones en línea a través de videollamada o sesiones presenciales en mi consulta, dependiendo de tu preferencia y ubicación.",
+  },
+  {
+    question: "¿Cuál es tu enfoque terapéutico?",
+    answer:
+      "Mi enfoque terapéutico es integrativo, lo que significa que utilizo una combinación de técnicas y teorías psicológicas para adaptarme a las necesidades individuales de cada cliente. Esto puede incluir terapia cognitivo-conductual, terapia humanista, terapia de aceptación y compromiso, entre otras.",
+  },
+  {
+    question: "¿Cuánto duran las sesiones y con qué frecuencia debo asistir?",
+    answer:
+      "Las sesiones suelen durar entre 50 y 60 minutos. La frecuencia de las sesiones puede variar según tus necesidades y objetivos, pero generalmente recomiendo comenzar con sesiones semanales o quincenales para establecer un ritmo de trabajo efectivo.",
+  },
+  {
+    question: "¿Cómo puedo saber si la terapia es adecuada para mí?",
+    answer:
+      "La terapia puede ser beneficiosa para una amplia variedad de desafíos emocionales y mentales. Si estás experimentando estrés, ansiedad, depresión, dificultades en tus relaciones o simplemente quieres mejorar tu bienestar general, la terapia puede ser una herramienta valiosa. Te animo a que te pongas en contacto conmigo para una consulta inicial, donde podremos discutir tus necesidades y determinar si mi enfoque terapéutico es adecuado para ti.",
+  },
+];
+---
+
+<Section>
+  <div class="flex flex-col max-w-[1280px] gap-16 items-center">
+    <PageSubtitle
+      lead="Preguntas Frecuentes"
+      heading="Todo lo que"
+      body="Respuestas claras a tus preguntas más comunes sobre mis servicios, mi enfoque terapéutico y cómo puedo ayudarte a alcanzar tus objetivos de bienestar mental."
+      align="center"
+      highlight="necesitas saber"
+    />
+    <div class="faq-section-container">
+      {
+        FAQS.map((faq, index) => (
+          <div class="faq-card" data-faq-item>
+            <header class="faq-card-header">
+              <Paragraph
+                size="lg"
+                text={faq.question}
+                weight="regular"
+                color="text-neutral-100"
+              />
+              <button
+                class="faq-card-header-icon-container faq-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls={`faq-answer-${index}`}
+              >
+                <svg
+                  class="faq-arrow"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <path
+                    d="M15 12.5L10 7.5L5 12.5"
+                    stroke="#FEFEFE"
+                    stroke-width="1.66667"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </header>
+
+            <main class="faq-card-main" id={`faq-answer-${index}`}>
+              <Paragraph
+                size="md"
+                text={faq.answer}
+                weight="light"
+                color="text-neutral-300"
+              />
+            </main>
+          </div>
+        ))
+      }
+    </div>
+    <div class="faq-section-final-message">
+      <Paragraph
+        size="lg"
+        text="¿Todavía tienes preguntas?"
+        weight="semibold"
+        align="center"
+        color="text-neutral-100"
+      />
+      <Paragraph
+        size="md"
+        text="Estoy aquí para ayudarte. Contáctame y te respondere lo antes posible."
+        align="center"
+        color="text-neutral-300"
+      />
+      <Button label="Contáctame" variant="solid" size="md" intent="primary" />
+    </div>
+  </div>
+</Section>
+
+<style>
+  .faq-section-container {
+    max-width: 960px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    justify-content: center;
+  }
+
+  .faq-card {
+    display: flex;
+    padding: var(--spacing-600);
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    border-radius: 16px;
+    border: 1px solid var(--border-default, #ebebeb);
+    background: var(--surface-page, #fefefe);
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  }
+
+  .faq-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+  }
+
+  .faq-card-header-icon-container {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 33554400px;
+    background: var(--color-surface-disabled-weak, #ebebeb);
+    transition: background 0.3s ease;
+  }
+
+  .faq-card-main {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: var(--spacing-300);
+    border-top: 1px solid transparent;
+    padding-top: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition:
+      max-height 0.35s ease,
+      opacity 0.28s ease,
+      padding-top 0.35s ease,
+      border-color 0.35s ease;
+  }
+
+  .faq-toggle {
+    border: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .faq-arrow {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+  }
+
+  .faq-card.is-open .faq-card-main {
+    margin-top: var(--spacing-300);
+    border-top: 1px solid var(--color-border-disabled-weak, #ebebeb);
+    padding-top: var(--spacing-300);
+    opacity: 1;
+  }
+
+  .faq-card.is-open .faq-arrow {
+    transform: rotate(0deg);
+  }
+
+  .faq-card.is-open .faq-card-header-icon-container {
+    background: var(
+      --gradient-default,
+      linear-gradient(
+        115deg,
+        var(--primary-default, #266aff) 16.63%,
+        var(--secondary-default, #a529ff) 83.71%
+      )
+    );
+  }
+
+  .faq-section-final-message {
+    display: flex;
+    padding: 33px;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-600, 24px);
+    align-self: stretch;
+    border-radius: 16px;
+    border: 1px solid var(--border-default, #ebebeb);
+    background: var(--surface-page, rgba(16, 24, 40, 0.03));
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+<script>
+  const faqCards = document.querySelectorAll("[data-faq-item]");
+
+  faqCards.forEach((card) => {
+    const toggle = card.querySelector<HTMLButtonElement>(".faq-toggle");
+    const answer = card.querySelector<HTMLElement>(".faq-card-main");
+
+    if (!toggle || !answer) return;
+
+    answer.style.maxHeight = "0px";
+
+    toggle.addEventListener("click", () => {
+      const isOpen = card.classList.contains("is-open");
+
+      if (isOpen) {
+        card.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+        answer.style.maxHeight = "0px";
+        return;
+      }
+
+      card.classList.add("is-open");
+      toggle.setAttribute("aria-expanded", "true");
+      answer.style.maxHeight = `${answer.scrollHeight + 48}px`;
+    });
+  });
+</script>

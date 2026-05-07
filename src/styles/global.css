@@ -4,6 +4,11 @@
 @import "../tokens/tokens.components.css";
 @import "./typography.css";
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--color-surface-page);
   color: var(--color-text-headings);

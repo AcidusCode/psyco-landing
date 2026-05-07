@@ -1,0 +1,215 @@
+---
+import Section from "./Section.astro";
+import Paragraph from "../typography/body/Paragraph.astro";
+import PageSubtitle from "../molecules/PageSubtitle.astro";
+import Button from "../atoms/Button.astro";
+import Heading2 from "../typography/headings/Heading2.astro";
+import LeadText from "../typography/specials/LeadText.astro";
+---
+
+<Section class="banner-section-container">
+  <div
+    class="banner-anim-root relative flex flex-col max-w-[1280px] gap-16 items-center"
+  >
+    <div class="banner-anim-item">
+      <LeadText
+        text="Disponibilidad Limitada - Agenda Hoy"
+        align="center"
+        color="text-primary-500"
+      />
+    </div>
+
+    <div class="banner-anim-item banner-anim-title">
+      <p class="banner-section-title">No Tienes que</p>
+      <p class="banner-section-title title-gradient-2">Enfrentar Esto Solo</p>
+    </div>
+
+    <div class="banner-anim-item flex gap-8">
+      <Button
+        label="Agenda tu consulta"
+        iconRight="icon-right-arrow"
+        variant="solid"
+        size="lg"
+        intent="primary"
+      />
+      <Button
+        label="Contáctame"
+        iconRight="icon-document"
+        variant="ghost"
+        size="lg"
+        intent="primary"
+      />
+    </div>
+
+    <section class="banner-anim-item flex gap-10">
+      <div class="flex gap-1 items-center">
+        <div class="h-2 w-2 rounded-full bg-green-500"></div>
+        <Paragraph
+          size="sm"
+          text="Consulta gratuita de 15 minutos"
+          align="center"
+          color="text-neutral-300"
+        />
+      </div>
+      <div class="flex gap-1 items-center">
+        <div class="h-2 w-2 rounded-full bg-green-500"></div>
+        <Paragraph
+          size="sm"
+          text="Citas nocturnas y fines de semanaz"
+          align="center"
+          color="text-neutral-300"
+        />
+      </div>
+      <div class="flex gap-1 items-center">
+        <div class="h-2 w-2 rounded-full bg-green-500"></div>
+        <Paragraph
+          size="sm"
+          text="Disponibilidad la misma semana"
+          align="center"
+          color="text-neutral-300"
+        />
+      </div>
+    </section>
+
+    <section class="banner-anim-item flex gap-25">
+      <div class="banner-stat-item flex flex-col gap-1 items-center">
+        <p class="banner-highlight-number">10.000+</p>
+        <Paragraph
+          size="sm"
+          text="Clientes ayudados"
+          align="center"
+          color="text-neutral-300"
+        />
+      </div>
+      <div class="banner-stat-item flex flex-col gap-1 items-center">
+        <p class="banner-highlight-number">10+</p>
+        <Paragraph
+          size="sm"
+          text="Años de experiencia"
+          align="center"
+          color="text-neutral-300"
+        />
+      </div>
+      <div class="banner-stat-item flex flex-col gap-1 items-center">
+        <p class="banner-highlight-number">4.9★</p>
+        <Paragraph
+          size="sm"
+          text="Calificación promedio"
+          align="center"
+          color="text-neutral-300"
+        />
+      </div>
+    </section>
+  </div>
+  <div class="absolute bottom-0">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1911"
+      height="64"
+      viewBox="0 0 1911 64"
+      fill="none"
+    >
+      <path
+        d="M0 63.6649L79.6217 52.7417C159.243 41.8185 318.487 19.9722 477.731 9.04905C636.974 -1.87412 796.218 -1.87412 955.461 3.58746C1114.7 9.04905 1273.95 19.9722 1433.19 25.4338C1592.44 30.8954 1751.68 30.8954 1831.3 30.8954H1910.92V63.6649H1831.3C1751.68 63.6649 1592.44 63.6649 1433.19 63.6649C1273.95 63.6649 1114.7 63.6649 955.461 63.6649C796.218 63.6649 636.974 63.6649 477.731 63.6649C318.487 63.6649 159.243 63.6649 79.6217 63.6649H0Z"
+        fill="white"
+        fill-opacity="0.1"></path>
+    </svg>
+  </div>
+</Section>
+
+<style>
+  .banner-section-container {
+    padding: 180px 0;
+    color: var(--color-white);
+    background:
+      radial-gradient(
+        33.63% 51.17% at 57.06% 26.45%,
+        var(--scales-color-purple-700, rgba(106, 34, 169, 0.5)) 0%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      radial-gradient(
+        114.48% 81.71% at 83.2% 67.45%,
+        var(--scales-color-purple-600, #8826d4) 0%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      radial-gradient(
+        68.96% 95.61% at 21.04% 45.52%,
+        var(--scales-color-purple-800, #4c1f7e) 0%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      var(--scales-color-blue-500, #266aff);
+  }
+  .banner-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .banner-highlight-number {
+    text-align: center;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px; /* 100% */
+    letter-spacing: 0.352px;
+  }
+  .banner-section-title {
+    color: #fff;
+    text-align: center;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 90px; /* 125% */
+    letter-spacing: 0.123px;
+    white-space: pre-line;
+  }
+  .title-gradient-2 {
+    background: linear-gradient(90deg, #fff085 0%, #fef9c2 50%, #fff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const bannerSection = document.querySelector(".banner-section-container");
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  if (bannerSection && !reduceMotion) {
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: bannerSection,
+        start: "top 78%",
+        once: true,
+      },
+    });
+
+    timeline.from(bannerSection.querySelectorAll(".banner-anim-item"), {
+      opacity: 0,
+      y: 44,
+      duration: 0.75,
+      stagger: 0.14,
+      ease: "power3.out",
+    });
+
+    timeline.from(
+      bannerSection.querySelectorAll(".banner-stat-item"),
+      {
+        opacity: 0,
+        y: 20,
+        scale: 0.96,
+        duration: 0.45,
+        stagger: 0.09,
+        ease: "back.out(1.4)",
+      },
+      "-=0.35",
+    );
+  }
+</script>

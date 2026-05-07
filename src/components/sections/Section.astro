@@ -1,6 +1,10 @@
 ---
-
+const { class: className = "", ...rest } = Astro.props;
 ---
-<section class="flex relative flex-col gap-20 w-full max-w-[1420px] items-center mx-auto ">
+
+<section
+    class={`flex relative flex-col gap-20 w-full items-center mx-auto ${className}`}
+    {...rest}
+>
     <slot />
 </section>

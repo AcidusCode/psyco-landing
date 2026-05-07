@@ -9,24 +9,28 @@ import SectionHeaderHero from "../molecules/SectionHeaderHero.astro";
 import Paragraph from "../typography/body/Paragraph.astro";
 import CertificatedBadge from "../molecules/badges/CertificatedBadge.astro";
 ---
-<section class="flex relative flex-col items-center">
+<section class="flex relative flex-col items-center max-w-screen overflow-hidden">
   <Image
     src={coverImage}
     alt="Cover Image"
     class="absolute bottom-0 left-1/2 z-0 h-full w-auto max-w-none -translate-x-1/2 object-center select-none pointer-events-none"
   />
 
-  <div class="flex flex-col z-10 gap-12 pt-40 pb-20 w-full max-w-[1600px]">
-    <SectionHeaderHero
+  <div
+    class="main-hero-container flex flex-col z-10 gap-12 pt-40 pb-20 w-full max-w-[1600px]"
+  >
+    <div class="main-hero-anim-item">
+      <SectionHeaderHero
       lead={MainHeroData.Lead}
       heading={MainHeroData.Title}
       body={MainHeroData.Description}
       highlight={MainHeroData.Highlight}
       align="left"
-    />
+      />
+    </div>
 
-    <div class="flex flex-col gap-4">
-      <div class="flex gap-4 items-center">
+    <div class="main-hero-anim-item flex flex-col gap-4">
+      <div class="main-hero-anim-item flex gap-4 items-center">
         <Button
           intent="primary"
           variant="solid"
@@ -44,8 +48,55 @@ import CertificatedBadge from "../molecules/badges/CertificatedBadge.astro";
         />
       </div>
 
-      <TestimonialsBadge />
-      <CertificatedBadge />
+      <div class="main-hero-badge-item">
+        <TestimonialsBadge />
+      </div>
+      <div class="main-hero-badge-item">
+        <CertificatedBadge />
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const mainHero = document.querySelector(".main-hero-container");
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  if (mainHero && !reduceMotion) {
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: mainHero,
+        start: "top 78%",
+        once: true,
+      },
+    });
+
+    timeline.from(mainHero.querySelectorAll(".main-hero-anim-item"), {
+      opacity: 0,
+      y: 28,
+      duration: 1,
+      stagger: 0.12,
+      ease: "power2.out",
+    });
+
+    timeline.from(
+      mainHero.querySelectorAll(".main-hero-badge-item"),
+      {
+        opacity: 0,
+        y: 14,
+        scale: 0.985,
+        duration: 0.7,
+        stagger: 0.1,
+        ease: "power2.out",
+      },
+      "-=0.45",
+    );
+  }
+</script>
