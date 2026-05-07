@@ -13,11 +13,11 @@ import CertificatedBadge from "../molecules/badges/CertificatedBadge.astro";
   <Image
     src={coverImage}
     alt="Cover Image"
-    class="absolute bottom-0 left-1/2 z-0 h-full w-auto max-w-none -translate-x-1/2 object-center select-none pointer-events-none"
+    class="absolute bottom-0 left-1/2 z-0 h-full w-auto max-w-none -translate-x-1/2 object-center select-none pointer-events-none max-md:h-[115%]"
   />
 
   <div
-    class="main-hero-container flex flex-col z-10 gap-12 pt-40 pb-20 w-full max-w-[1600px]"
+    class="main-hero-container flex flex-col z-10 gap-12 md:gap-10 max-md:gap-7 pt-40 md:pt-32 max-md:pt-24 pb-20 md:pb-16 max-md:pb-12 w-full max-w-[1600px] px-8 md:px-7 max-md:px-4"
   >
     <div class="main-hero-anim-item">
       <SectionHeaderHero
@@ -29,8 +29,8 @@ import CertificatedBadge from "../molecules/badges/CertificatedBadge.astro";
       />
     </div>
 
-    <div class="main-hero-anim-item flex flex-col gap-4">
-      <div class="main-hero-anim-item flex gap-4 items-center">
+    <div class="main-hero-anim-item flex flex-col gap-4 md:gap-3.5 max-md:gap-3">
+      <div class="main-hero-anim-item flex gap-4 max-md:flex-col max-md:items-start max-md:gap-3 items-center">
         <Button
           intent="primary"
           variant="solid"
@@ -38,20 +38,21 @@ import CertificatedBadge from "../molecules/badges/CertificatedBadge.astro";
           size="lg"
           label={MainHeroData.Cta}
           area-disabled="true"
+          href="https://calendly.com/dmoreno9-unab/30min?month=2026-05&date=2026-05-08"
         />
-        <Button
+        <!--Button
           intent="primary"
           variant="outline"
           size="lg"
           label={MainHeroData.AuxCta}
           area-disabled="true"
-        />
+        /-->
       </div>
 
-      <div class="main-hero-badge-item">
+      <div class="main-hero-badge-item max-md:w-full max-md:overflow-x-auto">
         <TestimonialsBadge />
       </div>
-      <div class="main-hero-badge-item">
+      <div class="main-hero-badge-item max-md:w-full">
         <CertificatedBadge />
       </div>
     </div>

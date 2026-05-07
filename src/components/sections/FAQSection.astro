@@ -8,12 +8,12 @@ const FAQS = [
   {
     question: "¿Cómo puedo reservar una sesión contigo?",
     answer:
-      "Puedes reservar una sesión a través de mi sitio web, donde encontrarás un calendario con mis disponibilidades. Simplemente selecciona el horario que mejor te convenga y sigue las instrucciones para completar tu reserva.",
+      "Puedes reservar una sesión a través de mi sitio web, donde encontrarás un calendario con mi disponibilidad. Simplemente selecciona el horario que mejor te convenga y sigue las instrucciones para completar tu reserva.",
   },
   {
     question: "¿Ofreces sesiones en línea o solo presenciales?",
     answer:
-      "Ofrezco ambas opciones para adaptarme a tus necesidades. Puedes elegir entre sesiones en línea a través de videollamada o sesiones presenciales en mi consulta, dependiendo de tu preferencia y ubicación.",
+      "Ofrezco ambas opciones para adaptarme a tus necesidades. Puedes elegir entre sesiones en línea a través de videollamada o sesiones presenciales, dependiendo de tu preferencia y ubicación.",
   },
   {
     question: "¿Cuál es tu enfoque terapéutico?",
@@ -33,8 +33,8 @@ const FAQS = [
 ];
 ---
 
-<Section class="py-30">
-  <div class="flex flex-col max-w-[1280px] gap-16 items-center">
+<Section class="py-30 md:py-24 max-md:py-16">
+  <div class="flex flex-col max-w-7xl w-full gap-16 md:gap-12 max-md:gap-8 items-center px-6 max-md:px-4">
     <PageSubtitle
       lead="Preguntas Frecuentes"
       heading="Todo lo que"
@@ -42,11 +42,11 @@ const FAQS = [
       align="center"
       highlight="necesitas saber"
     />
-    <div class="faq-section-container">
+    <div class="faq-section-container w-full md:gap-5 max-md:gap-4">
       {
         FAQS.map((faq, index) => (
-          <div class="faq-card" data-faq-item>
-            <header class="faq-card-header">
+          <div class="faq-card w-full md:p-5 max-md:p-4" data-faq-item>
+            <header class="faq-card-header gap-3">
               <Paragraph
                 size="lg"
                 text={faq.question}
@@ -90,7 +90,7 @@ const FAQS = [
         ))
       }
     </div>
-    <div class="faq-section-final-message">
+    <div class="faq-section-final-message w-full md:px-7 md:py-7 max-md:px-4 max-md:py-5 max-md:gap-4">
       <Paragraph
         size="lg"
         text="¿Todavía tienes preguntas?"
@@ -104,7 +104,7 @@ const FAQS = [
         align="center"
         color="text-neutral-300"
       />
-      <Button label="Contáctame" variant="solid" size="md" intent="primary" />
+      <Button label="Hablemos 15 minutos" variant="solid" size="md" intent="primary" href="https://calendly.com/dmoreno9-unab/sesion-de-guia" />
     </div>
   </div>
 </Section>
@@ -158,6 +158,7 @@ const FAQS = [
     gap: var(--spacing-300);
     border-top: 1px solid transparent;
     padding-top: 0;
+    margin-bottom: var(--spacing-300);
     max-height: 0;
     opacity: 0;
     overflow: hidden;
@@ -218,6 +219,35 @@ const FAQS = [
       0 10px 15px -3px rgba(0, 0, 0, 0.1),
       0 4px 6px -4px rgba(0, 0, 0, 0.1);
   }
+
+  @media (max-width: 1024px) {
+    .faq-card-header p {
+      font-size: 17px;
+      line-height: 28px;
+    }
+
+    .faq-section-final-message p {
+      font-size: 17px;
+      line-height: 28px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .faq-card-header p {
+      font-size: 15px;
+      line-height: 24px;
+    }
+
+    .faq-card-main p {
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    .faq-section-final-message p {
+      font-size: 15px;
+      line-height: 24px;
+    }
+  }
 </style>
 
 <script>
@@ -243,7 +273,7 @@ const FAQS = [
 
       card.classList.add("is-open");
       toggle.setAttribute("aria-expanded", "true");
-      answer.style.maxHeight = `${answer.scrollHeight + 48}px`;
+      answer.style.maxHeight = `${answer.scrollHeight + 96}px`;
     });
   });
 </script>

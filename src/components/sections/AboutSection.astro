@@ -28,7 +28,7 @@ const ABOUT_HIGHLIGHTS = [
   },
   {
     title: "Amplia Experiencia",
-    description: "10+ años ayudando a 500+ clientes a alcanzar sus metas",
+    description: "Mas de 10 años ayudando a 10.000+ pacientes a alcanzar sus metas",
     iconBg: "var(--scales-color-green-500)",
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H6C4.93913 15 3.92172 15.4214 3.17157 16.1716C2.42143 16.9217 2 17.9391 2 19V21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -49,12 +49,12 @@ const ABOUT_HIGHLIGHTS = [
 ];
 ---
 
-<section class="my-25 py-15">
-  <div class="max-w-[1280px] gap-12 mx-auto py-20 flex flex-col relative items-stretch" >
+<section class="my-25 md:my-20 max-md:my-14 py-15 md:py-12 max-md:py-8">
+  <div class="max-w-7xl gap-12 md:gap-10 max-md:gap-8 mx-auto py-20 md:py-14 max-md:py-8 px-6 md:px-5 max-md:px-4 flex flex-col relative items-stretch" >
 
-    <div class="flex gap-12">
+    <div class="about-main-content flex gap-12 md:gap-8 max-md:gap-6 max-md:flex-col">
       <div class="about-image-container flex-1">
-        <div class="flex max-h-150 rounded-3xl overflow-hidden">
+        <div class="flex max-h-150 md:max-h-[540px] max-md:max-h-[420px] rounded-3xl max-md:rounded-2xl overflow-hidden">
           <Image
             src={AboutPhoto}
             alt="Imagen de Diego Moreno"
@@ -63,8 +63,8 @@ const ABOUT_HIGHLIGHTS = [
         </div>
       </div>
 
-      <div class="flex flex-col gap-16 flex-1 min-w-0">
-        <div class="flex flex-col gap-6">
+      <div class="flex flex-col gap-16 md:gap-10 max-md:gap-7 flex-1 min-w-0">
+        <div class="flex flex-col gap-6 md:gap-5 max-md:gap-4">
           <LeadText text="Sobre mí" align="left" />
           <Heading2
             text="Conoce al"
@@ -76,11 +76,13 @@ const ABOUT_HIGHLIGHTS = [
             text="Con más de una década de experiencia en psicología clínica, me dedico a ayudar a adultos a navegar los desafíos de la vida con compasión y atención basada en evidencia. Mi enfoque combina terapia cognitivo-conductual, técnicas de mindfulness y estrategias personalizadas para apoyar tu camino único."
             color="text-neutral-100"
             weight="light"
+            classes="about-body-copy md:text-paragraph-md md:leading-paragraph-md max-md:text-paragraph-md max-md:leading-paragraph-md"
           />
           <Paragraph
             size="lg"
             text="Creo que la terapia debe sentirse como un espacio seguro donde puedes ser tú mismo, explorar tus pensamientos y desarrollar herramientas prácticas para un cambio duradero. Ya sea que estés lidiando con ansiedad, depresión, problemas de relaciones o buscando crecimiento personal, estoy aquí para apoyarte."
             weight="light"
+            classes="about-body-copy md:text-paragraph-md md:leading-paragraph-md max-md:text-paragraph-md max-md:leading-paragraph-md"
           />
         </div>
       </div>
@@ -103,20 +105,22 @@ const ABOUT_HIGHLIGHTS = [
                 text={highlight.title}
                 color="text-neutral-100"
                 weight="regular"
+                classes="about-highlight-title md:text-paragraph-sm md:leading-paragraph-sm"
               />
               <Paragraph
                 size="sm"
                 text={highlight.description}
                 color="text-neutral-100"
                 weight="light"
+                classes="about-highlight-description max-md:text-[11px] max-md:leading-[16px]"
               />
             </div>
           </article>
         ))
       }
     </section>
-        <div class="flex justify-center">
-          <Button label="Conoce mi perfil completo" size="lg" />
+        <div class="flex justify-center max-md:w-full">
+          <Button label="Contactame ahora" size="lg" />
         </div>
   </div>
 </section>
@@ -200,7 +204,8 @@ const ABOUT_HIGHLIGHTS = [
     }
   }
   .about-highlight-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: var(--spacing-800);
   }
   .about-highlight-card {
@@ -221,5 +226,59 @@ const ABOUT_HIGHLIGHTS = [
     justify-content: center;
     width: var(--spacing-1200);
     height: var(--spacing-1200);
+  }
+
+  @media (max-width: 1024px) {
+    .about-main-content {
+      align-items: stretch;
+    }
+
+    .about-highlight-container {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .about-highlight-card {
+      padding: 20px;
+      border-radius: 20px;
+      gap: 12px;
+    }
+
+    .about-highlight-icon-container {
+      width: 40px;
+      height: 40px;
+      padding: 10px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about-highlight-container {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .about-highlight-card {
+      padding: 16px;
+      border-radius: 16px;
+      gap: 10px;
+    }
+
+    .about-highlight-icon-container {
+      width: 36px;
+      height: 36px;
+      padding: 8px;
+      border-radius: 8px;
+    }
+
+    .about-highlight-icon-container :global(svg) {
+      width: 18px;
+      height: 18px;
+    }
+
+    .about-body-copy,
+    .about-highlight-title,
+    .about-highlight-description {
+      max-width: 44ch;
+    }
   }
 </style>

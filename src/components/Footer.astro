@@ -1,23 +1,30 @@
 ---
 import Paragraph from "./typography/body/Paragraph.astro";
-import navigationData from "../data/navigationData.json";
-import TextLink from "./atoms/TextLink.astro";
-import IconSvg from "./atoms/IconSvg.astro";
 ---
 
 <footer
-  class="relative flex flex-col w-full max-w-[1420px] mx-auto py-8 mb-10 gap-8"
+  class="footer-root relative flex flex-col w-full max-w-7xl mx-auto px-6 md:px-5 max-md:px-4 pt-16 md:pt-12 max-md:pt-10 pb-8 md:pb-6 max-md:pb-5 mb-10 md:mb-8 max-md:mb-6 gap-8 md:gap-6 max-md:gap-5"
 >
-  <div class="relative flex justify-between">
-    <div class="flex flex-col gap-4">
-      <Paragraph text="Psicólogo Diego Moreno" weight="semibold" />
+  <div class="footer-top relative grid grid-cols-3 md:grid-cols-2 max-md:grid-cols-1 gap-10 md:gap-8 max-md:gap-6">
+    <div class="flex flex-col gap-4 md:gap-3 max-md:gap-2.5">
       <Paragraph
-        text="Psicóloga especializado en salud \n mental, esta aquí para ayudarte a \n alcanzar el bienestar mental."
+        text="Psicólogo Diego Moreno"
+        weight="semibold"
+        classes="md:text-paragraph-md md:leading-paragraph-md max-md:text-paragraph-md max-md:leading-paragraph-md"
+      />
+      <Paragraph
+        text="Psicólogo especializado en salud \n mental, esta aquí para ayudarte a \n alcanzar el bienestar mental."
+        classes="footer-description max-md:text-paragraph-sm max-md:leading-paragraph-sm"
       />
     </div>
-    <div class="flex flex-col gap-4">
-      <Paragraph text="Horario de Oficina" size="md" weight="semibold" />
-      <div display="flex" class="flex gap-2">
+    <div class="flex flex-col gap-4 md:gap-3 max-md:gap-2.5">
+      <Paragraph
+        text="Horario de Oficina"
+        size="md"
+        weight="semibold"
+        classes="max-md:text-paragraph-sm max-md:leading-paragraph-sm"
+      />
+      <div class="flex gap-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="18"
@@ -38,7 +45,7 @@ import IconSvg from "./atoms/IconSvg.astro";
             stroke-linecap="round"
             stroke-linejoin="round"></path>
         </svg>
-        <ul class="flex flex-col gap-2">
+        <ul class="footer-list flex flex-col gap-2 max-md:gap-1.5">
           <li>Lunes - Viernes: 9am - 7pm</li>
           <li>Sábado: 10am - 4pm</li>
           <li>Domingo: Cerrado</li>
@@ -46,9 +53,14 @@ import IconSvg from "./atoms/IconSvg.astro";
         </ul>
       </div>
     </div>
-    <div class="flex flex-col gap-4">
-      <Paragraph text="Ubicación" size="md" weight="semibold" />
-      <div display="flex" class="flex gap-2">
+    <div class="flex flex-col gap-4 md:gap-3 max-md:gap-2.5">
+      <Paragraph
+        text="Ubicación"
+        size="md"
+        weight="semibold"
+        classes="max-md:text-paragraph-sm max-md:leading-paragraph-sm"
+      />
+      <div class="flex gap-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="18"
@@ -69,7 +81,7 @@ import IconSvg from "./atoms/IconSvg.astro";
             stroke-linecap="round"
             stroke-linejoin="round"></path>
         </svg>
-        <ul class="flex flex-col gap-2">
+        <ul class="footer-list flex flex-col gap-2 max-md:gap-1.5">
           <li>Bogota</li>
           <li>Cundinamarca</li>
           <li>Colombia</li>
@@ -77,13 +89,46 @@ import IconSvg from "./atoms/IconSvg.astro";
       </div>
     </div>
   </div>
-  <div class="p-8 border-t border-gray-300">
+  <div class="p-8 md:p-6 max-md:p-4 border-t border-gray-300">
     <Paragraph
       text="Diseñado y desarrollado por AcidusLabs"
       size="sm"
       align="center"
+      classes="max-md:text-[11px] max-md:leading-[16px]"
     />
   </div>
 </footer>
 
-<style></style>
+<style>
+  .footer-list {
+    color: var(--color-text-body);
+    font-size: var(--font-body-text-size);
+    line-height: var(--font-body-line-height);
+  }
+
+  @media (max-width: 1024px) {
+    .footer-list {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .footer-description {
+      max-width: 52ch;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer-top {
+      gap: 20px;
+    }
+
+    .footer-list {
+      font-size: 13px;
+      line-height: 18px;
+    }
+
+    .footer-description {
+      max-width: 42ch;
+    }
+  }
+</style>

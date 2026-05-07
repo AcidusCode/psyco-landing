@@ -7,8 +7,8 @@ import Button from "../atoms/Button.astro";
 import serviceData from "../../data/services/servicesData.json";
 ---
 
-<Section class="py-25">
-  <div class="service-section-root max-w-7xl">
+<Section class="py-25 md:py-20 max-md:py-14">
+  <div class="service-section-root max-w-7xl w-full px-6 md:px-5 max-md:px-4">
     <div class="service-anim-item">
       <PageSubtitle
         lead="Atención psicológica personalizada"
@@ -17,13 +17,13 @@ import serviceData from "../../data/services/servicesData.json";
         body="Enfoques terapéuticos personalizados para ayudarte a superar desafíos y prosperar"
       />
     </div>
-    <div class="flex flex-col my-16 gap-10">
-      <div class="grid grid-cols-2 gap-10">
+    <div class="flex flex-col my-16 md:my-12 max-md:my-8 gap-10 md:gap-7 max-md:gap-5">
+      <div class="grid grid-cols-2 max-md:grid-cols-1 gap-10 md:gap-6 max-md:gap-4">
         {
           serviceData
             .slice(0, 2)
             .map((service) => (
-              <div class="service-card-anim-item">
+              <div class="service-card-anim-item h-full">
                 <ServiceCard
                   image={service.image}
                   title={service.title}
@@ -34,12 +34,12 @@ import serviceData from "../../data/services/servicesData.json";
             ))
         }
       </div>
-      <div class="grid grid-cols-3 gap-10">
+      <div class="grid grid-cols-3 md:grid-cols-2 max-md:grid-cols-1 gap-10 md:gap-6 max-md:gap-4">
         {
           serviceData
             .slice(2)
             .map((service) => (
-              <div class="service-card-anim-item">
+              <div class="service-card-anim-item h-full">
                 <ServiceCard
                   image={service.image}
                   title={service.title}
@@ -51,14 +51,14 @@ import serviceData from "../../data/services/servicesData.json";
         }
       </div>
     </div>
-    <div class="service-anim-item flex justify-center">
+    <!--div class="service-anim-item flex justify-center max-md:justify-stretch">
       <Button
         label="Conoce más acerca de mis servicios"
         iconRight="icon-right-arrow"
         type="button"
         size="lg"
       />
-    </div>
+    </div-->
   </div>
 </Section>
 

@@ -13,7 +13,8 @@ const PACKAGES = [
     cta: "Reservar ahora",
     time: "50 minutos",
     features: [
-      "Sesiones de terapia uno a uno",
+      "Una sesión de 50 minutos",
+      "Sesión de terapia uno a uno",
       "En persona o en línea",
       "Agenda flexible para adaptarse a tu horario",
       "Seguridad y confidencialidad garantizadas",
@@ -53,8 +54,8 @@ const PACKAGES = [
 ];
 ---
 
-<Section class="py-30">
-  <div class="package-section-root flex flex-col max-w-[1280px] gap-16">
+<Section class="pt-1 pb-30 md:pb-24 max-md:pb-16">
+  <div class="package-section-root flex flex-col max-w-7xl w-full px-6 md:px-5 max-md:px-4 gap-16 md:gap-12 max-md:gap-8">
     <div class="package-anim-item">
       <PageSubtitle
         lead="Precios Transparentes"
@@ -110,7 +111,8 @@ const PACKAGES = [
                         : "none",
                   }}
                 >
-                  {packageCard.price} <span class="text-xl mb-2 ml-1">COP</span>
+                  {packageCard.price}
+                  <span class="package-card-price-currency">COP</span>
                 </p>
                 <p class="package-card-discount">{packageCard.discount}</p>
               </div>
@@ -148,7 +150,7 @@ const PACKAGES = [
                 <p>{packageCard.time}</p>
               </div>
 
-              <div class="flex justify-center mt-2 w-full">
+              <div class="flex justify-center mt-2 w-full max-md:mt-1">
                 <Button
                   label={packageCard.cta}
                   variant={
@@ -156,10 +158,11 @@ const PACKAGES = [
                   }
                   size="lg"
                   intent="primary"
+                  href="https://calendly.com/dmoreno9-unab/30min?month=2026-05&date=2026-05-08"
                 />
               </div>
 
-              <ul class="flex flex-col gap-4">
+              <ul class="flex flex-col gap-4 md:gap-3 max-md:gap-2.5">
                 {packageCard.features.map((feature) => (
                   <li class="flex items-center gap-2">
                     <div class="package-card-features-item-icon-container">
@@ -195,9 +198,9 @@ const PACKAGES = [
       }
     </div>
     <div class="package-card-final-message">
-      <p>✓ Seguro aceptado • ✓ HSA/FSA elegible • ✓ Escala móvil disponible</p>
-      <a href="#" class="text-primary-500 font-medium">
-        ¿Preguntas sobre precios? Contáctanos
+      <!--p>✓ Seguro aceptado • ✓ HSA/FSA elegible • ✓ Escala móvil disponible</p-->
+      <a href="https://calendly.com/dmoreno9-unab/sesion-de-guia" class="text-primary-500 font-medium">
+        ¿Preguntas sobre precios? Contáctanos en una sesión rápida
       </a>
     </div>
   </div>
@@ -233,16 +236,19 @@ const PACKAGES = [
 
   <style>
     .package-section {
-      display: flex;
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       justify-content: center;
-      align-items: center;
+      align-items: stretch;
       gap: var(--spacing-800, 32px);
     }
 
     .package-card {
       position: relative;
       display: flex;
-      width: 380px;
+      width: 100%;
+      max-width: 380px;
       height: 620px;
       flex-direction: column;
       justify-content: space-between;
@@ -254,6 +260,12 @@ const PACKAGES = [
         0 0 0 4.2px #dbeafe,
         0 10.5px 15.75px -3.15px rgba(0, 0, 0, 0.1),
         0 4.2px 6.3px -4.2px rgba(0, 0, 0, 0.1);
+    }
+
+    .package-card-price-currency {
+      font-size: 20px;
+      margin: 0 0 8px 4px;
+      line-height: 1;
     }
 
     .package-card-content {
@@ -362,6 +374,116 @@ const PACKAGES = [
       box-shadow:
         0 10px 15px -3px rgba(0, 0, 0, 0.1),
         0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 1200px) {
+      .package-section {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .package-card {
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .package-card {
+        height: auto;
+        min-height: 560px;
+      }
+
+      .package-card-content {
+        padding: 28px 24px;
+        gap: 18px;
+      }
+
+      .package-card-tag {
+        left: 50%;
+        transform: translateX(-50%);
+        top: -16px;
+      }
+
+      .package-card-name {
+        font-size: 18px;
+        line-height: 26px;
+      }
+
+      .package-card-price {
+        font-size: 40px;
+        line-height: 50px;
+      }
+
+      .package-card-discount {
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .package-card-features-item-text,
+      .package-card-time-container p {
+        font-size: 14px;
+        line-height: 21px;
+      }
+
+      .package-card-price-currency {
+        font-size: 16px;
+        margin-bottom: 6px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .package-section {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .package-card {
+        max-width: 100%;
+        min-height: 0;
+        border-radius: 20px;
+        transform: none !important;
+      }
+
+      .package-card-content {
+        padding: 22px 18px;
+        gap: 14px;
+      }
+
+      .package-card-tag {
+        padding: 6px 16px;
+        top: -14px;
+      }
+
+      .package-card-tag span {
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .package-card-name {
+        font-size: 17px;
+        line-height: 24px;
+      }
+
+      .package-card-price {
+        font-size: 34px;
+        line-height: 42px;
+      }
+
+      .package-card-price-currency {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+
+      .package-card-features-item-icon-container {
+        width: 22px;
+        height: 22px;
+      }
+
+      .package-card-final-message {
+        width: 100%;
+        padding: 20px 16px;
+        font-size: 14px;
+        line-height: 21px;
+      }
     }
   </style>
 </Section>

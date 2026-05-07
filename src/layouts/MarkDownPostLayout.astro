@@ -3,7 +3,36 @@ import Footer from "../components/Footer.astro";
 import Navigation from "../components/Navigation.astro";
 import Section from "../components/sections/Section.astro";
 import Layout from "./Layout.astro";
+import blogPost1 from "../assets/image/blog/blog-post-1.jpg";
+import blogPost2 from "../assets/image/blog/blog-post-2.jpg";
+import blogPost3 from "../assets/image/blog/blog-post-3.jpg";
+
 const { frontmatter } = Astro.props;
+
+const BLOG_IMAGE_MAP = {
+  "blog-post-1.jpg": blogPost1,
+  "blog-post-2.jpg": blogPost2,
+  "blog-post-3.jpg": blogPost3,
+};
+
+const resolvePostImage = () => {
+  const imageSrc = frontmatter?.image?.src;
+
+  if (!imageSrc) {
+    return blogPost1.src;
+  }
+
+  if (typeof imageSrc === "string" && imageSrc.startsWith("/src/assets/image/blog/")) {
+    const fileName = imageSrc.split("/").pop() ?? "";
+    const importedImage = BLOG_IMAGE_MAP[fileName as keyof typeof BLOG_IMAGE_MAP];
+
+    if (importedImage) {
+      return importedImage.src;
+    }
+  }
+
+  return imageSrc;
+};
 ---
 
 <Layout>
@@ -11,9 +40,9 @@ const { frontmatter } = Astro.props;
   <Section class="mb-0" }>
     <div class="w-full relative">
       <img
-        src={frontmatter.image.src}
+        src={resolvePostImage()}
         width="300"
-        alt={frontmatter.image.alt}
+        alt={frontmatter?.image?.alt ?? frontmatter?.title ?? "Imagen del artículo"}
       />
     </div>
 
@@ -51,7 +80,7 @@ const { frontmatter } = Astro.props;
             stroke-linecap="round"
             stroke-linejoin="round"></path>
         </svg>
-        <p>{frontmatter.pubDate.slice(0, 10)}</p>
+        <p>{frontmatter.pubDate?.toString().slice(0, 10)}</p>
       </div>
       <div class="custom-tag">
         <svg

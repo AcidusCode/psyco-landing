@@ -9,7 +9,7 @@ import LeadText from "../typography/specials/LeadText.astro";
 
 <Section class="banner-section-container">
   <div
-    class="banner-anim-root relative flex flex-col max-w-[1280px] gap-16 items-center"
+    class="banner-anim-root relative flex flex-col max-w-7xl w-full px-6 md:px-5 max-md:px-4 gap-16 md:gap-12 max-md:gap-8 items-center"
   >
     <div class="banner-anim-item">
       <LeadText
@@ -24,61 +24,66 @@ import LeadText from "../typography/specials/LeadText.astro";
       <p class="banner-section-title title-gradient-2">Enfrentar Esto Solo</p>
     </div>
 
-    <div class="banner-anim-item flex gap-8">
+    <div class="banner-anim-item banner-actions flex gap-8 md:gap-5 max-md:gap-3">
       <Button
-        label="Agenda tu consulta"
+        label="Agenda tu consulta hoy"
         iconRight="icon-right-arrow"
         variant="solid"
         size="lg"
         intent="on-action"
+        href="https://calendly.com/dmoreno9-unab/30min?month=2026-05&date=2026-05-08"
       />
       <Button
-        label="Contáctame"
-        iconRight="icon-document"
+        label="Agenda una sesión de guía"
         variant="outline"
         size="lg"
         intent="on-action"
+        href="https://calendly.com/dmoreno9-unab/sesion-de-guia"
       />
     </div>
 
-    <section class="banner-anim-item flex gap-10">
-      <div class="flex gap-1 items-center">
+    <section class="banner-anim-item banner-benefits flex gap-10 md:gap-6 max-md:gap-3">
+      <div class="banner-benefit-item flex gap-1 items-center">
         <div class="h-2 w-2 rounded-full bg-green-500"></div>
         <Paragraph
           size="sm"
           text="Consulta gratuita de 15 minutos"
           align="center"
           color="text-neutral-300"
+          classes="banner-benefit-text"
         />
       </div>
-      <div class="flex gap-1 items-center">
+      <div class="banner-benefit-item flex gap-1 items-center">
         <div class="h-2 w-2 rounded-full bg-green-500"></div>
         <Paragraph
           size="sm"
-          text="Citas nocturnas y fines de semanaz"
+          text="Consultas nocturnas y fines de semanaz"
           align="center"
           color="text-neutral-300"
+          classes="banner-benefit-text"
         />
       </div>
-      <div class="flex gap-1 items-center">
+      <div class="banner-benefit-item flex gap-1 items-center">
         <div class="h-2 w-2 rounded-full bg-green-500"></div>
         <Paragraph
           size="sm"
           text="Disponibilidad la misma semana"
           align="center"
           color="text-neutral-300"
+          classes="banner-benefit-text"
         />
       </div>
     </section>
 
-    <section class="banner-anim-item flex gap-25">
+    <section class="banner-anim-item banner-stats flex gap-25 md:gap-14 max-md:gap-6">
       <div class="banner-stat-item flex flex-col gap-1 items-center">
         <p class="banner-highlight-number">10.000+</p>
         <Paragraph
           size="sm"
-          text="Clientes ayudados"
+          text="Paciente ayudados"
           align="center"
           color="text-neutral-300"
+          classes="banner-stat-label"
         />
       </div>
       <div class="banner-stat-item flex flex-col gap-1 items-center">
@@ -88,20 +93,22 @@ import LeadText from "../typography/specials/LeadText.astro";
           text="Años de experiencia"
           align="center"
           color="text-neutral-300"
+          classes="banner-stat-label"
         />
       </div>
       <div class="banner-stat-item flex flex-col gap-1 items-center">
-        <p class="banner-highlight-number">4.9★</p>
+        <p class="banner-highlight-number">5★</p>
         <Paragraph
           size="sm"
           text="Calificación promedio"
           align="center"
           color="text-neutral-300"
+          classes="banner-stat-label"
         />
       </div>
     </section>
   </div>
-  <div class="absolute bottom-0">
+  <div class="banner-wave absolute bottom-0 w-full overflow-hidden">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="1911"
@@ -139,6 +146,11 @@ import LeadText from "../typography/specials/LeadText.astro";
       ),
       var(--scales-color-blue-500, #266aff);
   }
+
+  .banner-anim-title {
+    text-align: center;
+  }
+
   .banner-section {
     display: flex;
     flex-direction: column;
@@ -168,6 +180,77 @@ import LeadText from "../typography/specials/LeadText.astro";
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  @media (max-width: 1024px) {
+    .banner-section-container {
+      padding: 140px 0;
+    }
+
+    .banner-section-title {
+      font-size: 56px;
+      line-height: 68px;
+    }
+
+    .banner-highlight-number {
+      font-size: 40px;
+      line-height: 44px;
+    }
+
+    .banner-benefit-text,
+    .banner-stat-label {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .banner-section-container {
+      padding: 110px 0 90px;
+    }
+
+    .banner-section-title {
+      font-size: 38px;
+      line-height: 46px;
+      letter-spacing: 0;
+    }
+
+    .banner-actions {
+      width: 100%;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .banner-benefits {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .banner-benefit-item {
+      justify-content: flex-start;
+    }
+
+    .banner-stats {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .banner-highlight-number {
+      font-size: 30px;
+      line-height: 34px;
+    }
+
+    .banner-benefit-text,
+    .banner-stat-label {
+      font-size: 13px;
+      line-height: 18px;
+      text-align: left;
+    }
+
+    .banner-wave {
+      display: none;
+    }
   }
 </style>
 

@@ -6,12 +6,18 @@ import Paragraph from "../typography/body/Paragraph.astro";
 const { lead, heading, highlight, body, align } = Astro.props;
 ---
 
-<div class=`flex flex-col gap-4 justify-center z-10`>
+<div class=`flex flex-col gap-4 max-md:gap-3 justify-center z-10 w-full`>
   <div class=`flex justify-${align}`>
     <LeadText text={lead} align={align} />
   </div>
   <div>
     <Heading1 text={heading} align={align} highlight={highlight} />
   </div>
-  <Paragraph size="lg" text={body} align={align} weight="light" />
+  <Paragraph
+    size="lg"
+    text={body}
+    align={align}
+    weight="light"
+    classes="max-w-[60ch] md:max-w-[56ch] max-md:max-w-[45ch] max-md:text-paragraph-md max-md:leading-paragraph-md"
+  />
 </div>

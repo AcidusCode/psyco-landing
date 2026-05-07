@@ -17,7 +17,7 @@ const bottomRow = testimonialData.filter((_, index) => index % 2 !== 0);
     heading="Lo que dicen"
     body="Experiencia real de personas que encontraron claridad y paz mental."
     align="center"
-    highlight="mis clientes"
+    highlight="mis pacientes"
   />
   <div class="testimonial-marquee">
     <div class="marquee-row">
@@ -31,7 +31,7 @@ const bottomRow = testimonialData.filter((_, index) => index % 2 !== 0);
                 service={testimonial.service}
                 rating={testimonial.rating}
                 countryIcon={testimonial.countryIcon}
-                quote={testimonial.quote.slice(0, 120)}
+                quote={testimonial.quote.slice(0, 120)+"..."}
               />
             ))
           }
@@ -45,7 +45,7 @@ const bottomRow = testimonialData.filter((_, index) => index % 2 !== 0);
                 service={testimonial.service}
                 rating={testimonial.rating}
                 countryIcon={testimonial.countryIcon}
-                quote={testimonial.quote.slice(0, 120)}
+                quote={testimonial.quote.slice(0, 120)+"..."}
               />
             ))
           }
@@ -64,7 +64,7 @@ const bottomRow = testimonialData.filter((_, index) => index % 2 !== 0);
                 service={testimonial.service}
                 rating={testimonial.rating}
                 countryIcon={testimonial.countryIcon}
-                quote={testimonial.quote.slice(0, 120)}
+                quote={testimonial.quote.slice(0, 120)+"..." }
               />
             ))
           }
@@ -78,7 +78,7 @@ const bottomRow = testimonialData.filter((_, index) => index % 2 !== 0);
                 service={testimonial.service}
                 rating={testimonial.rating}
                 countryIcon={testimonial.countryIcon}
-                quote={testimonial.quote.slice(0, 120)}
+                quote={testimonial.quote.slice(0, 120)+"..." }
               />
             ))
           }
@@ -86,7 +86,7 @@ const bottomRow = testimonialData.filter((_, index) => index % 2 !== 0);
       </div>
     </div>
   </div>
-  <div class="flex flex-col gap-8">
+  <!--div class="flex flex-col gap-8">
     <Paragraph
       size="lg"
       text=" ¡TÚ PODRÍAS SER EL SIGUIENTE!"
@@ -100,7 +100,7 @@ const bottomRow = testimonialData.filter((_, index) => index % 2 !== 0);
       size="lg"
       intent="primary"
     />
-  </div>
+  </div-->
 </Section>
 
 <style>

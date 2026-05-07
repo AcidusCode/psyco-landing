@@ -15,16 +15,29 @@ const {
 ---
 
 <article
-  class="w-full max-w-[950px] mx-auto flex gap-30 odd:flex-row-reverse items-center"
+  class="w-full max-w-[950px] px-6 md:px-5 max-md:px-4 mx-auto flex gap-30 md:gap-14 max-md:gap-8 odd:flex-row-reverse max-md:flex-col odd:max-md:flex-col items-center"
 >
-  <img src={image} alt="Imagen de psicologia" class="max-h-[350px]" />
-  <div class="flex flex-col gap-12 max-w-[500px]">
+  <img
+    src={image}
+    alt="Imagen de psicologia"
+    class="w-full max-w-[390px] md:max-w-[340px] max-md:max-w-full max-md:h-60 object-cover rounded-2xl"
+  />
+  <div class="flex flex-col gap-12 md:gap-8 max-md:gap-6 max-w-[500px] max-md:max-w-full">
     <div>
-      <Paragraph size="lg" text={title} color="text-neutral-100" />
+      <Paragraph
+        size="lg"
+        text={title}
+        color="text-neutral-100"
+        classes="md:text-paragraph-md md:leading-paragraph-md max-md:text-paragraph-md max-md:leading-paragraph-md"
+      />
       <LeadText text={lead} />
-      <Paragraph size="md" text={description} />
+      <Paragraph
+        size="md"
+        text={description}
+        classes="max-md:text-paragraph-sm max-md:leading-paragraph-sm"
+      />
     </div>
-    <div>
+    <div class="max-md:w-full">
       <Button label={cta} variant="outline" size="md" />
     </div>
   </div>

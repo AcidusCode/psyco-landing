@@ -1,11 +1,21 @@
 ---
 import navigationData from "../data/navigationData.json";
 import Button from "./atoms/Button.astro";
+import logo from "../assets/image/logo.jpg";
+
+const bookingUrl =
+  "https://calendly.com/dmoreno9-unab/30min?month=2026-05&date=2026-05-08";
 ---
 
 <div class="container-navigation">
   <nav class="backdrop-blur-md">
-    <a href="/" class="logo">PSICOSOFÍA</a>
+    <a href="/" class="logo flex gap-2 items-center">
+      <img
+        src="../assets/image/logo.jpg"
+        alt="Logo de Psicosofía"
+        class="logo"
+      />PSICOSOFÍA</a
+    >
 
     <button
       class="nav-toggle"
@@ -36,6 +46,7 @@ import Button from "./atoms/Button.astro";
         label="Reserva tu sesión"
         variant="solid"
         size="md"
+        href={bookingUrl}
       />
     </div>
 
@@ -56,6 +67,7 @@ import Button from "./atoms/Button.astro";
           label="Reserva tu sesión"
           variant="solid"
           size="md"
+          href={bookingUrl}
         />
       </div>
     </div>
@@ -63,6 +75,12 @@ import Button from "./atoms/Button.astro";
 </div>
 
 <style>
+  .logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
   .container-navigation {
     background-color: var(--color-surface-page);
     border-bottom: 1px solid var(--color-border-disabled-press);
@@ -129,7 +147,9 @@ import Button from "./atoms/Button.astro";
     height: 2px;
     background: var(--color-text-headings);
     border-radius: 4px;
-    transition: transform 0.25s ease, opacity 0.2s ease;
+    transition:
+      transform 0.25s ease,
+      opacity 0.2s ease;
   }
 
   .nav-mobile {
@@ -144,7 +164,10 @@ import Button from "./atoms/Button.astro";
     overflow: hidden;
     pointer-events: none;
     transform: translateY(-8px);
-    transition: max-height 0.28s ease, opacity 0.2s ease, transform 0.28s ease;
+    transition:
+      max-height 0.28s ease,
+      opacity 0.2s ease,
+      transform 0.28s ease;
     background: var(--color-surface-page);
     border: 1px solid var(--color-border-disabled);
     border-radius: 16px;

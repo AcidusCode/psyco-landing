@@ -1,5 +1,4 @@
 ---
-import LeadText from "../../typography/specials/LeadText.astro";
 import Paragraph from "../../typography/body/Paragraph.astro";
 
 const {
@@ -11,31 +10,54 @@ const {
 ---
 
 <article
-  class="service-card flex flex-col overflow-hidden"
+  class="service-card flex flex-col h-full overflow-hidden"
 >
   <img
     src={image}
     alt="Imagen de consultoría psicológica"
-    class="max-h-[250px] object-cover object-center"
+    class="w-full h-[250px] md:h-[220px] max-md:h-[200px] object-cover object-center"
   />
-  <div class="flex flex-col px-6 py-4">
-    <Paragraph size="lg" text={title} color="text-neutral-100"/>
-    <Paragraph size="md" text={description} color="text-neutral-300" weight="light" />
+  <div class="flex flex-col gap-2 px-6 py-4 md:px-5 max-md:px-4 max-md:py-3">
+    <Paragraph
+      size="lg"
+      text={title}
+      color="text-neutral-100"
+      classes="md:text-paragraph-md md:leading-paragraph-md max-md:text-paragraph-md max-md:leading-paragraph-md"
+    />
+    <Paragraph
+      size="md"
+      text={description}
+      color="text-neutral-300"
+      weight="light"
+      classes="max-md:text-paragraph-sm max-md:leading-paragraph-sm"
+    />
   </div>
 </article>
 
 <style>
   .service-card {
-    background-color: rgba(100,100,100,.05);
+    background-color: rgba(100, 100, 100, 0.05);
     border-radius: 24px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.10), 0 4px 6px -4px rgba(0, 0, 0, 0.10);
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -4px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
     border: 3px solid transparent;
   }
-  .service-card:hover {
-    transform: scale(1.04);
-    border: 3px solid var(--color-primary-400);
+
+  @media (hover: hover) and (pointer: fine) {
+    .service-card:hover {
+      transform: scale(1.04);
+      border: 3px solid var(--color-primary-400);
+    }
   }
+
+  @media (max-width: 768px) {
+    .service-card {
+      border-radius: 20px;
+    }
+  }
+
   .service-card-title {
     color: var(--color-text-headings);
   }

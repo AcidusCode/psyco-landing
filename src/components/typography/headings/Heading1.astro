@@ -2,7 +2,7 @@
 const { text = "No setting text", align = "left", highlight } = Astro.props;
 ---
 
-<h1 class={`text-h1 header-h1`}>
+<h1 class={`text-h1 header-h1 text-7xl md:text-[90px] text-${align}`}>
   {text}
   <span class="title-gradient span-header">
     {highlight}
@@ -11,11 +11,11 @@ const { text = "No setting text", align = "left", highlight } = Astro.props;
 
 <style>
   .header-h1 {
-    font-size: var(--font-headings-h1-text-size);
-    line-height: var(--font-headings-h1-line-height);
+    line-height: 1.2;
     font-weight: var(--font-weight-bold);
     color: var(--text-color-headings);
   }
+
   .span-header {
     white-space: pre-line;
   }

@@ -17,6 +17,7 @@ interface Props {
   iconRight?: string;
   type?: "button" | "submit" | "reset";
   label?: string;
+  href?: string;
 }
 
 const {
@@ -29,25 +30,46 @@ const {
   iconRight,
   type = "button",
   label = "Label Button",
+  href,
 } = Astro.props;
 
 const state = disabled ? "disabled" : isLoading ? "loading" : "default";
 import IconSvg from "./IconSvg.astro";
+const isLink = typeof href === "string" && href.length > 0;
 ---
 
-<button
-  type={type}
-  class="button-base"
-  data-variant={variant}
-  data-intent={intent}
-  data-size={size}
-  data-state={state}
-  disabled={disabled}
->
-  {iconLeft && <IconSvg name={iconLeft} />}
-  {label}
-  {iconRight && <IconSvg name={iconRight} />}
-</button>
+{
+  isLink ? (
+    <a
+      href={disabled ? undefined : href}
+      class="button-base"
+      data-variant={variant}
+      data-intent={intent}
+      data-size={size}
+      data-state={state}
+      aria-disabled={disabled ? "true" : "false"}
+      tabindex={disabled ? -1 : undefined}
+    >
+      {iconLeft && <IconSvg name={iconLeft} />}
+      {label}
+      {iconRight && <IconSvg name={iconRight} />}
+    </a>
+  ) : (
+    <button
+      type={type}
+      class="button-base"
+      data-variant={variant}
+      data-intent={intent}
+      data-size={size}
+      data-state={state}
+      disabled={disabled}
+    >
+      {iconLeft && <IconSvg name={iconLeft} />}
+      {label}
+      {iconRight && <IconSvg name={iconRight} />}
+    </button>
+  )
+}
 
 <style>
   /* ==========================================================
@@ -71,7 +93,12 @@ import IconSvg from "./IconSvg.astro";
       color 0.3s ease,
       scale 0.2s ease;
     cursor: pointer;
+    text-decoration: none;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.10), 0 4px 6px -4px rgba(0, 0, 0, 0.10);
+  }
+
+  .button-base[aria-disabled="true"] {
+    pointer-events: none;
   }
 
   /* ==========================================================
