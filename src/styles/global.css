@@ -4,6 +4,10 @@
 @import "../tokens/tokens.components.css";
 @import "./typography.css";
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   overflow-x: hidden;

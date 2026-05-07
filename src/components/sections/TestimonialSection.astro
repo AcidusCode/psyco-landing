@@ -6,6 +6,9 @@ import Button from "../atoms/Button.astro";
 import Paragraph from "../typography/body/Paragraph.astro";
 
 import testimonialData from "../../data/testimonials/testimonialData.json";
+
+const topRow = testimonialData.filter((_, index) => index % 2 === 0);
+const bottomRow = testimonialData.filter((_, index) => index % 2 !== 0);
 ---
 
 <Section>
@@ -16,19 +19,72 @@ import testimonialData from "../../data/testimonials/testimonialData.json";
     align="center"
     highlight="mis clientes"
   />
-  <div class="grid lg:grid-cols-5 md:grid-cols-2 sm:grid-cols-1 auto-cols-max justify-center gap-8">
-    {
-      testimonialData.map((testimonial) => (
-        <TestimonialCard
-          image={testimonial.testimonialImage}
-          name={testimonial.name}
-          service={testimonial.service}
-          rating={testimonial.rating}
-          countryIcon={testimonial.countryIcon}
-          quote={testimonial.quote.slice(0, 120)}
-        />
-      ))
-    }
+  <div class="testimonial-marquee">
+    <div class="marquee-row">
+      <div class="marquee-track marquee-track-left">
+        <div class="marquee-group">
+          {
+            topRow.map((testimonial) => (
+              <TestimonialCard
+                image={testimonial.testimonialImage}
+                name={testimonial.name}
+                service={testimonial.service}
+                rating={testimonial.rating}
+                countryIcon={testimonial.countryIcon}
+                quote={testimonial.quote.slice(0, 120)}
+              />
+            ))
+          }
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          {
+            topRow.map((testimonial) => (
+              <TestimonialCard
+                image={testimonial.testimonialImage}
+                name={testimonial.name}
+                service={testimonial.service}
+                rating={testimonial.rating}
+                countryIcon={testimonial.countryIcon}
+                quote={testimonial.quote.slice(0, 120)}
+              />
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee-row">
+      <div class="marquee-track marquee-track-right">
+        <div class="marquee-group">
+          {
+            bottomRow.map((testimonial) => (
+              <TestimonialCard
+                image={testimonial.testimonialImage}
+                name={testimonial.name}
+                service={testimonial.service}
+                rating={testimonial.rating}
+                countryIcon={testimonial.countryIcon}
+                quote={testimonial.quote.slice(0, 120)}
+              />
+            ))
+          }
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          {
+            bottomRow.map((testimonial) => (
+              <TestimonialCard
+                image={testimonial.testimonialImage}
+                name={testimonial.name}
+                service={testimonial.service}
+                rating={testimonial.rating}
+                countryIcon={testimonial.countryIcon}
+                quote={testimonial.quote.slice(0, 120)}
+              />
+            ))
+          }
+        </div>
+      </div>
+    </div>
   </div>
   <div class="flex flex-col gap-8">
     <Paragraph
@@ -46,3 +102,75 @@ import testimonialData from "../../data/testimonials/testimonialData.json";
     />
   </div>
 </Section>
+
+<style>
+  .testimonial-marquee {
+    --marquee-gap: var(--spacing-800);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-600);
+  }
+
+  .marquee-row {
+    position: relative;
+    padding: var(--spacing-400) 0;
+    overflow: hidden;
+    width: 100%;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      rgba(0, 0, 0, 1) 8%,
+      rgba(0, 0, 0, 1) 92%,
+      transparent
+    );
+  }
+
+  .marquee-track {
+    width: max-content;
+    display: flex;
+    flex-wrap: nowrap;
+    will-change: transform;
+  }
+
+  .marquee-group {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: var(--marquee-gap);
+    padding-right: var(--marquee-gap);
+  }
+
+  .marquee-track-left {
+    animation: testimonial-marquee-left 40s linear infinite;
+  }
+
+  .marquee-track-right {
+    animation: testimonial-marquee-right 46s linear infinite;
+  }
+
+  @keyframes testimonial-marquee-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes testimonial-marquee-right {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track-left,
+    .marquee-track-right {
+      animation: none;
+      transform: translateX(0);
+    }
+  }
+</style>

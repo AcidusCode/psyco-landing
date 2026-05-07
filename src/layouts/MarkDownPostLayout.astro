@@ -1,0 +1,229 @@
+---
+import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
+import Section from "../components/sections/Section.astro";
+import Layout from "./Layout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<Layout>
+  <Navigation />
+  <Section class="mb-0" }>
+    <div class="w-full relative">
+      <img
+        src={frontmatter.image.src}
+        width="300"
+        alt={frontmatter.image.alt}
+      />
+    </div>
+
+    <div class="flex gap-4 max-w-200 items-start w-full">
+      <div class="custom-tag">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+        >
+          <path
+            d="M5.33301 1.3335V4.00016"
+            stroke="#2F3239"
+            stroke-width="1.33333"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+          <path
+            d="M10.667 1.3335V4.00016"
+            stroke="#2F3239"
+            stroke-width="1.33333"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+          <path
+            d="M12.6667 2.6665H3.33333C2.59695 2.6665 2 3.26346 2 3.99984V13.3332C2 14.0696 2.59695 14.6665 3.33333 14.6665H12.6667C13.403 14.6665 14 14.0696 14 13.3332V3.99984C14 3.26346 13.403 2.6665 12.6667 2.6665Z"
+            stroke="#2F3239"
+            stroke-width="1.33333"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+          <path
+            d="M2 6.6665H14"
+            stroke="#2F3239"
+            stroke-width="1.33333"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+        <p>{frontmatter.pubDate.slice(0, 10)}</p>
+      </div>
+      <div class="custom-tag">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+        >
+          <g clip-path="url(#clip0_242_5162)">
+            <path
+              d="M7.99967 14.6668C11.6816 14.6668 14.6663 11.6821 14.6663 8.00016C14.6663 4.31826 11.6816 1.3335 7.99967 1.3335C4.31778 1.3335 1.33301 4.31826 1.33301 8.00016C1.33301 11.6821 4.31778 14.6668 7.99967 14.6668Z"
+              stroke="#2F3239"
+              stroke-width="1.33333"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+            <path
+              d="M8 4V8L10.6667 9.33333"
+              stroke="#2F3239"
+              stroke-width="1.33333"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </g>
+          <defs>
+            <clipPath id="clip0_242_5162">
+              <rect width="16" height="16" fill="white"></rect>
+            </clipPath>
+          </defs>
+        </svg>
+        <p>{frontmatter.readingTime}</p>
+      </div>
+      <div class="custom-tag">
+        <p>Por: {frontmatter.author}</p>
+      </div>
+    </div>
+    <div>
+      <div class="markdown-content">
+        <slot />
+      </div>
+    </div>
+  </Section>
+  <Footer />
+</Layout>
+
+<style>
+  img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    z-index: 1;
+  }
+  img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    pointer-events: none;
+    z-index: 10;
+  }
+  .custom-tag {
+    display: flex;
+    padding: var(--spacing-200, 4px) var(--spacing-400, 8px);
+    align-items: center;
+    gap: 8px;
+    border-radius: var(--border-radius-lg, 8px);
+    background: var(--surface-primary, #ebebeb);
+  }
+  .markdown-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-600);
+  }
+  .markdown-content :global(h1) {
+    font-size: var(--font-headings-h1-text-size);
+    line-height: var(--font-headings-h1-line-height);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-color-headings);
+  }
+  .markdown-content :global(h2) {
+    font-size: var(--font-headings-h2-text-size);
+    line-height: var(--font-headings-h2-line-height);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-color-headings);
+  }
+  .markdown-content :global(h3) {
+    font-size: var(--font-headings-h3-text-size);
+    line-height: var(--font-headings-h3-line-height);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-color-headings);
+  }
+  .markdown-content :global(h4) {
+    font-size: var(--font-headings-h4-text-size);
+    line-height: var(--font-headings-h4-line-height);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-color-headings);
+  }
+  .markdown-content :global(h5) {
+    font-size: var(--font-headings-h5-text-size);
+    line-height: var(--font-headings-h5-line-height);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-color-headings);
+  }
+  .markdown-content :global(h6) {
+    font-size: var(--font-headings-h6-text-size);
+    line-height: var(--font-headings-h6-line-height);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-color-headings);
+  }
+  .markdown-content :global(p) {
+    color: var(--text-color-body);
+    line-height: 32px;
+    font-size: 20px;
+    font-weight: 300;
+  }
+  .markdown-content :global(pre) {
+    overflow-x: auto;
+    padding: 1rem;
+    border-radius: 16px;
+  }
+  .markdown-content :global(code) {
+    font-family: monospace;
+  }
+  .markdown-content :global(img) {
+    border-radius: 20px;
+    margin: 2rem 0;
+  }
+  .markdown-content :global(blockquote) {
+    border-left: 4px solid var(--color-primary-400);
+    padding-left: 1rem;
+    color: var(--text-color-body);
+    font-style: italic;
+    margin: 1.5rem 0;
+  }
+  .markdown-content :global(blockquote p) {
+    margin: 0;
+  }
+  .markdown-content :global(mark) {
+    background-color: var(--color-primary-400);
+    color: var(--text-color-body);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+  }
+  .markdown-content :global(code) {
+    background-color: var(--color-surface-primary);
+    color: var(--text-color-body);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size:;
+  }
+  .markdown-content :global(ul) {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+  .markdown-content :global(ol) {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+  .markdown-content :global(li) {
+    margin: 0.5rem 0;
+  }
+  .markdown-content :global(hr) {
+    border: none;
+    border-top: 1px solid var(--color-gray-200);
+    margin: 2rem 0;
+  }
+</style>

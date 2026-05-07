@@ -457,4 +457,76 @@
   --button-neutral-ghost-border-focus: transparent;
   --button-neutral-ghost-border-disabled: transparent;
   --button-neutral-ghost-border-loading: transparent;
+
+    /* ============================================
+            on-action
+    ============================================ */
+
+    /* on-action */
+    --button-on-action-bg: var(--color-white);
+    --button-on-action-bg-hover: var(--scales-color-gray-100);
+    --button-on-action-bg-press: var(--scales-color-gray-200);
+    --button-on-action-bg-focus: var(--color-white);
+    --button-on-action-bg-disabled: var(--color-surface-disabled);
+    --button-on-action-bg-loading: var(--color-surface-loading);
+
+    --button-on-action-text: var(--color-black);
+    --button-on-action-text-hover: var(--color-black);
+    --button-on-action-text-press: var(--color-black);
+    --button-on-action-text-focus: var(--color-black);
+    --button-on-action-text-disabled: var(--color-text-disabled);
+    --button-on-action-text-loading: var(--color-text-disabled);
+
+    --button-on-action-border: var(--color-white);
+    --button-on-action-border-hover: var(--scales-color-gray-200);
+    --button-on-action-border-press: var(--scales-color-gray-300);
+    --button-on-action-border-focus: var(--color-white);
+    --button-on-action-border-disabled: var(--color-border-disabled);
+    --button-on-action-border-loading: var(--color-border-disabled);
+
+    --button-on-action-focus-ring: var(--color-border-primary-focus);
+
+    /* OUTLINE */
+    --button-on-action-outline-bg: transparent;
+    --button-on-action-outline-bg-hover: var(--color-white);
+    --button-on-action-outline-bg-press: var(--scales-color-gray-100);
+    --button-on-action-outline-bg-focus: transparent;
+    --button-on-action-outline-bg-disabled: var(--color-surface-disabled-weak);
+    --button-on-action-outline-bg-loading: var(--color-surface-loading);
+
+    --button-on-action-outline-text: var(--color-white);
+    --button-on-action-outline-text-hover: var(--color-black);
+    --button-on-action-outline-text-press: var(--color-black);
+    --button-on-action-outline-text-focus: var(--color-white);
+    --button-on-action-outline-text-disabled: var(--color-text-disabled);
+    --button-on-action-outline-text-loading: var(--color-text-disabled);
+
+    --button-on-action-outline-border: var(--color-white);
+    --button-on-action-outline-border-hover: var(--color-white);
+    --button-on-action-outline-border-press: var(--scales-color-gray-200);
+    --button-on-action-outline-border-focus: var(--color-white);
+    --button-on-action-outline-border-disabled: var(--color-border-disabled);
+    --button-on-action-outline-border-loading: var(--color-border-disabled);
+
+    /* GHOST */
+    --button-on-action-ghost-bg: transparent;
+    --button-on-action-ghost-bg-hover: rgba(255, 255, 255, 0.14);
+    --button-on-action-ghost-bg-press: rgba(255, 255, 255, 0.22);
+    --button-on-action-ghost-bg-focus: transparent;
+    --button-on-action-ghost-bg-disabled: transparent;
+    --button-on-action-ghost-bg-loading: transparent;
+
+    --button-on-action-ghost-text: var(--color-white);
+    --button-on-action-ghost-text-hover: var(--color-white);
+    --button-on-action-ghost-text-press: var(--color-white);
+    --button-on-action-ghost-text-focus: var(--color-white);
+    --button-on-action-ghost-text-disabled: var(--color-text-disabled);
+    --button-on-action-ghost-text-loading: var(--color-text-disabled);
+
+    --button-on-action-ghost-border: transparent;
+    --button-on-action-ghost-border-hover: transparent;
+    --button-on-action-ghost-border-press: transparent;
+    --button-on-action-ghost-border-focus: transparent;
+    --button-on-action-ghost-border-disabled: transparent;
+    --button-on-action-ghost-border-loading: transparent;
 }

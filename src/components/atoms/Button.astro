@@ -8,7 +8,8 @@ interface Props {
     | "warning"
     | "error"
     | "info"
-    | "neutral";
+    | "neutral"
+    | "on-action";
   size?: "sm" | "md" | "lg";
   isLoading?: boolean;
   disabled?: boolean;
@@ -70,6 +71,7 @@ import IconSvg from "./IconSvg.astro";
       color 0.3s ease,
       scale 0.2s ease;
     cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.10), 0 4px 6px -4px rgba(0, 0, 0, 0.10);
   }
 
   /* ==========================================================
@@ -99,10 +101,23 @@ import IconSvg from "./IconSvg.astro";
     border: 1px solid var(--color-border-disabled);
   }
 
+  [data-variant="solid"][data-intent="on-action"] {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    border: 1px solid var(--btn-border);
+  }
+
   [data-variant="solid"]:hover {
     background: linear-gradient(to right, var(--color-primary-600), var(--color-secondary-500));
     border: 1px solid var(--color-border-disabled-weak);
     color: var(--color-white);
+    scale: 1.03;
+  }
+
+  [data-variant="solid"][data-intent="on-action"]:hover {
+    background: var(--btn-bg-hover);
+    color: var(--btn-text-hover);
+    border: 1px solid var(--btn-border-hover);
     scale: 1.03;
   }
 
@@ -281,6 +296,48 @@ import IconSvg from "./IconSvg.astro";
     --btn-bg-loading: var(--button-neutral-bg-loading);
     --btn-text-loading: var(--button-neutral-text-loading);
     --btn-border-loading: var(--button-neutral-border-loading);
+  }
+
+  [data-intent="on-action"] {
+    --btn-bg: var(--button-on-action-bg);
+    --btn-bg-ghost: var(--button-on-action-ghost-bg);
+    --btn-bg-outline: var(--button-on-action-outline-bg);
+    --btn-text: var(--button-on-action-text);
+    --btn-text-ghost: var(--button-on-action-ghost-text);
+    --btn-text-outline: var(--button-on-action-outline-text);
+    --btn-border: var(--button-on-action-border);
+    --btn-border-ghost: var(--button-on-action-ghost-border-focus);
+    --btn-border-outline: var(--button-on-action-outline-border-focus);
+
+    --btn-bg-hover: var(--button-on-action-bg-hover);
+    --btn-text-hover: var(--button-on-action-text-hover);
+    --btn-text-hover-outline: var(--button-on-action-outline-text-hover);
+    --btn-text-hover-ghost: var(--button-on-action-ghost-text-hover);
+    --btn-border-hover: var(--button-on-action-border-hover);
+    --btn-border-hover-ghost: var(--button-on-action-ghost-border-hover);
+    --btn-border-hover-outline: var(--button-on-action-outline-border-hover);
+
+    --btn-bg-active: var(--button-on-action-bg-press);
+    --btn-text-active: var(--button-on-action-text-press);
+    --btn-border-active: var(--button-on-action-border-press);
+
+    --btn-bg-focus: var(--button-on-action-bg-focus);
+    --btn-bg-focus-outline: var(--button-on-action-outline-bg-focus);
+    --btn-text-focus: var(--button-on-action-text-focus);
+    --btn-text-focus-ghost: var(--button-on-action-ghost-text-focus);
+    --btn-text-focus-outline: var(--button-on-action-outline-text-focus);
+    --btn-border-focus: var(--button-on-action-border-focus);
+    --btn-border-focus-outline: var(--button-on-action-outline-border-focus);
+
+    --btn-focus-ring: var(--button-on-action-focus-ring);
+
+    --btn-bg-disabled: var(--button-on-action-bg-disabled);
+    --btn-text-disabled: var(--button-on-action-text-disabled);
+    --btn-border-disabled: var(--button-on-action-border-disabled);
+
+    --btn-bg-loading: var(--button-on-action-bg-loading);
+    --btn-text-loading: var(--button-on-action-text-loading);
+    --btn-border-loading: var(--button-on-action-border-loading);
   }
 
   /* Repetir SOLO variables:

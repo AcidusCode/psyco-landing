@@ -7,9 +7,9 @@ import Button from "../atoms/Button.astro";
 const PACKAGES = [
   {
     name: "Paquete Básico",
-    price: "$150",
+    price: "120.000",
     variant: "normal",
-    discount: "$200",
+    discount: "",
     cta: "Reservar ahora",
     time: "50 minutos",
     features: [
@@ -21,9 +21,9 @@ const PACKAGES = [
   },
   {
     name: "Paquete Premium",
-    price: "$540",
+    price: "440.000",
     variant: "popular",
-    discount: "$600",
+    discount: "480.000",
     cta: "Reservar ahora",
     time: "4 sesiones",
     features: [
@@ -31,14 +31,14 @@ const PACKAGES = [
       "En persona o en línea",
       "Agenda prioritaria",
       "Soporte por correo electrónico entre sesiones",
-      "Ahorras $50.000 COP",
+      "Ahorras 40.000 COP",
     ],
   },
   {
     name: "Paquete Completo",
-    price: "$1260",
+    price: "1.000.000",
     variant: "normal",
-    discount: "$1500",
+    discount: "1.200.000",
     cta: "Reservar ahora",
     time: "10 sesiones",
     features: [
@@ -47,7 +47,7 @@ const PACKAGES = [
       "Agenda prioritaria",
       "Soporte por correo electrónico entre sesiones",
       "Herramientas para medir el progreso",
-      "Ahorras $250.000 COP",
+      "Ahorras 200.000 COP",
     ],
   },
 ];
@@ -108,7 +108,7 @@ const PACKAGES = [
                         : "none",
                   }}
                 >
-                  {packageCard.price}
+                  {packageCard.price} <span class="text-xl mb-2 ml-1">COP</span>
                 </p>
                 <p class="package-card-discount">{packageCard.discount}</p>
               </div>
@@ -267,10 +267,12 @@ const PACKAGES = [
     }
 
     .package-card-price {
-      font-size: var(--spacing-1200, 48px);
+      font-size: var(--spacing-1000, 48px);
       font-style: normal;
       font-weight: 700;
       line-height: var(--spacing-1600, 64px); /* 133.333% */
+      display: inline-flex;
+      align-items: end;
     }
     .package-card-discount {
       color: var(--text-disabled, #b4b4b4);
