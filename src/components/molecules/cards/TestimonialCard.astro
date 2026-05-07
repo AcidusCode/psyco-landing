@@ -86,7 +86,8 @@ const displayName =
 
 <style>
   .testimonial-card {
-    background-color: var(--color-surface-glass)
+    background-color: var(--color-surface-glass);
+    width: min(340px, calc(100vw - 48px));
     max-width: 340px;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.10), 0 4px 6px -4px rgba(0, 0, 0, 0.10);
     padding: var(--spacing-800);
@@ -97,5 +98,28 @@ const displayName =
   .testimonial-card-header {
     border-top: 1px solid var(--color-gray-200);
     padding-top: var(--spacing-400);
+  }
+
+  @media (max-width: 1024px) {
+    .testimonial-card {
+      width: min(320px, calc(100vw - 40px));
+      max-width: 320px;
+      padding: var(--spacing-600);
+      gap: var(--spacing-300);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .testimonial-card {
+      width: min(288px, calc(100vw - 24px));
+      max-width: 288px;
+      padding: var(--spacing-500);
+      border-radius: 20px;
+    }
+
+    .testimonial-card-header {
+      gap: var(--spacing-200);
+      padding-top: var(--spacing-300);
+    }
   }
 </style>

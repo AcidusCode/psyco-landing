@@ -3,6 +3,9 @@ import Section from "./Section.astro";
 import Paragraph from "../typography/body/Paragraph.astro";
 import PageSubtitle from "../molecules/PageSubtitle.astro";
 import Button from "../atoms/Button.astro";
+import blogPost1 from "../../assets/image/blog/blog-post-1.jpg";
+import blogPost2 from "../../assets/image/blog/blog-post-2.jpg";
+import blogPost3 from "../../assets/image/blog/blog-post-3.jpg";
 
 const BLOG_POSTS = [
   {
@@ -40,29 +43,56 @@ const BLOG_POSTS = [
 const allPosts = Object.values(
   import.meta.glob("../../pages/posts/*.md", { eager: true }),
 );
+
+const BLOG_IMAGE_MAP = {
+  "blog-post-1.jpg": blogPost1,
+  "blog-post-2.jpg": blogPost2,
+  "blog-post-3.jpg": blogPost3,
+};
+
+const resolvePostImage = (post: any) => {
+  const imageSrc = post?.frontmatter?.image?.src;
+
+  if (!imageSrc) {
+    return blogPost1.src;
+  }
+
+  if (imageSrc.startsWith("/src/assets/image/blog/")) {
+    const fileName = imageSrc.split("/").pop() ?? "";
+    const importedImage =
+      BLOG_IMAGE_MAP[fileName as keyof typeof BLOG_IMAGE_MAP];
+
+    if (importedImage) {
+      return importedImage.src;
+    }
+  }
+
+  return imageSrc;
+};
 ---
 
-<Section>
-  <div class="flex flex-col max-w-[1280px] gap-16">
-    <PageSubtitle
-      lead="Mi Blog Personal"
-      heading="Últimas"
-      body="Orientación experta y consejos prácticos para apoyar tu camino de salud mental"
-      align="center"
-      highlight="Perspectivas"
-    />
+<Section class="py-30">
+  <div class="blog-section-root flex flex-col max-w-7xl gap-16">
+    <div class="blog-anim-item">
+      <PageSubtitle
+        lead="Mi Blog Personal"
+        heading="Últimas"
+        body="Orientación experta y consejos prácticos para apoyar tu camino de salud mental"
+        align="center"
+        highlight="Perspectivas"
+      />
+    </div>
     <div class="blog-section">
-
       {
         allPosts.map((post: any) => {
           return (
-            <a href={'/posts/'+ post.frontmatter.url} class="blog-card">
-              <div class="blog-card-image relative w-full flex-1">
+            <a href={"/posts/" + post.frontmatter.url} class="blog-card">
+              <div class="blog-card-image-wrapper relative w-full flex-1">
                 <div class="blog-label">
                   <span>{post.frontmatter.tags}</span>
                 </div>
                 <img
-                  src={post.frontmatter.image.src}
+                  src={resolvePostImage(post)}
                   alt={post.frontmatter.title}
                   class="blog-card-image"
                 />
@@ -106,7 +136,7 @@ const allPosts = Object.values(
                         stroke-linejoin="round"
                       />
                     </svg>
-                    <p>{post.frontmatter.pubDate.slice(0,10)}</p>
+                    <p>{post.frontmatter.pubDate.toString().slice(0, 10)}</p>
                   </div>
                   <div class="blog-tag">
                     <svg
@@ -143,7 +173,9 @@ const allPosts = Object.values(
                 </div>
                 <div>
                   <p class="blog-card-title">{post.frontmatter.title}</p>
-                  <p class="blog-card-description">{post.frontmatter.description}</p>
+                  <p class="blog-card-description">
+                    {post.frontmatter.description}
+                  </p>
                 </div>
 
                 <Paragraph
@@ -160,10 +192,42 @@ const allPosts = Object.values(
     </div>
   </div>
 
-  <div class="flex justify-center">
+  <div class="blog-anim-item flex justify-center">
     <Button label="Ver Todos los Artículos" size="lg" />
   </div>
 </Section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const root = document.querySelector(".blog-section-root");
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  if (root && !reduceMotion) {
+    const tl = gsap.timeline({
+      scrollTrigger: { trigger: root, start: "top 78%", once: true },
+    });
+
+    tl.from(root.querySelectorAll(".blog-anim-item"), {
+      opacity: 0,
+      y: 28,
+      duration: 1,
+      stagger: 0.12,
+      ease: "power2.out",
+    });
+
+    tl.from(
+      root.querySelectorAll(".blog-card"),
+      { opacity: 0, y: 36, duration: 0.8, stagger: 0.1, ease: "power2.out",},
+      "-=0.55",
+    );
+  }
+</script>
 
 <style>
   .blog-section {
@@ -177,24 +241,25 @@ const allPosts = Object.values(
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    opacity: 1;
     width: 100%;
     border-radius: var(--border-radius-3xl, 24px);
     border: 3px solid transparent;
     background: var(--surface-glass, rgba(16, 24, 40, 0.03));
     overflow: hidden;
-    transition: all 0.3s ease-in-out;
+    transition: border 0.3s ease-in-out;
     text-decoration: none;
     box-shadow:
       0 10px 15px -3px rgba(0, 0, 0, 0.1),
       0 4px 6px -4px rgba(0, 0, 0, 0.1);
   }
 
-  .blog-card:first-child {
+  .blog-card:first-child, .blog-card:nth-child(2) {
     grid-column: 1 / -1;
     flex-direction: row;
   }
 
-  .blog-card:first-child .blog-card-image img {
+  .blog-card:first-child .blog-card-image-wrapper img {
     height: 100%;
   }
 

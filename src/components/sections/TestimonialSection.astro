@@ -11,7 +11,7 @@ const topRow = testimonialData.filter((_, index) => index % 2 === 0);
 const bottomRow = testimonialData.filter((_, index) => index % 2 !== 0);
 ---
 
-<Section>
+<Section class="py-25">
   <PageSubtitle
     lead="Testimonios"
     heading="Lo que dicen"
@@ -171,6 +171,52 @@ const bottomRow = testimonialData.filter((_, index) => index % 2 !== 0);
     .marquee-track-right {
       animation: none;
       transform: translateX(0);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .testimonial-marquee {
+      --marquee-gap: var(--spacing-600);
+      gap: var(--spacing-400);
+    }
+
+    .marquee-row {
+      padding: var(--spacing-300) 0;
+      mask-image: linear-gradient(
+        to right,
+        transparent,
+        rgba(0, 0, 0, 1) 4%,
+        rgba(0, 0, 0, 1) 96%,
+        transparent
+      );
+    }
+
+    .marquee-track-left {
+      animation-duration: 34s;
+    }
+
+    .marquee-track-right {
+      animation-duration: 38s;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .testimonial-marquee {
+      --marquee-gap: var(--spacing-400);
+      gap: var(--spacing-300);
+    }
+
+    .marquee-row {
+      padding: var(--spacing-200) 0;
+      mask-image: none;
+    }
+
+    .marquee-track-left {
+      animation-duration: 30s;
+    }
+
+    .marquee-track-right {
+      animation-duration: 34s;
     }
   }
 </style>

@@ -8,7 +8,7 @@ image:
   alt: "La palabra 'astro' contra una ilustración de planetas y estrellas."
 pubDate: 2025-05-07
 readingTime: 8 min de lectura
-tags: ["astro", "éxitos"]
+tags: ["Angustia"]
 url: post-2
 ---
 # Cuando el suelo se afloja: pensar la angustia

@@ -8,7 +8,7 @@ image:
   alt: "La palabra 'astro' contra una ilustración de planetas y estrellas."
 pubDate: 2025-05-05
 readingTime: 5 min de lectura
-tags: ["astro", "éxitos"]
+tags: ["Resiliciencia"]
 url: post-1
 ---
 # Existir, resistir

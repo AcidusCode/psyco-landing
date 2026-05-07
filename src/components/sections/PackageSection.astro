@@ -53,20 +53,22 @@ const PACKAGES = [
 ];
 ---
 
-<Section>
-  <div class="flex flex-col max-w-[1280px] gap-16">
-    <PageSubtitle
-      lead="Precios Transparentes"
-      heading="Invierte en tu"
-      body="Opciones flexibles que se adaptan a tus necesidades"
-      align="center"
-      highlight="Salud Mental"
-    />
+<Section class="py-30">
+  <div class="package-section-root flex flex-col max-w-[1280px] gap-16">
+    <div class="package-anim-item">
+      <PageSubtitle
+        lead="Precios Transparentes"
+        heading="Invierte en tu"
+        body="Opciones flexibles que se adaptan a tus necesidades"
+        align="center"
+        highlight="Salud Mental"
+      />
+    </div>
     <div class="package-section">
       {
         PACKAGES.map((packageCard) => (
           <div
-            class="package-card"
+            class="package-card-anim-item package-card"
             style={{
               borderColor:
                 packageCard.variant === "popular"
@@ -199,6 +201,35 @@ const PACKAGES = [
       </a>
     </div>
   </div>
+
+  <script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const root = document.querySelector(".package-section-root");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (root && !reduceMotion) {
+      const tl = gsap.timeline({
+        scrollTrigger: { trigger: root, start: "top 78%", once: true },
+      });
+
+      tl.from(root.querySelectorAll(".package-anim-item"), {
+        opacity: 0,
+        y: 28,
+        duration: 1,
+        ease: "power2.out",
+      });
+
+      tl.from(
+        root.querySelectorAll(".package-card-anim-item"),
+        { opacity: 0, y: 40, duration: 0.8, stagger: 0.12, ease: "power2.out" },
+        "-=0.55",
+      );
+    }
+  </script>
 
   <style>
     .package-section {

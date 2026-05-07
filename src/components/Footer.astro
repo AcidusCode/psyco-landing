@@ -6,38 +6,84 @@ import IconSvg from "./atoms/IconSvg.astro";
 ---
 
 <footer
-  class="relative flex flex-col w-full max-w-[1420px] mx-auto text-white py-8 mb-10 gap-8"
+  class="relative flex flex-col w-full max-w-[1420px] mx-auto py-8 mb-10 gap-8"
 >
   <div class="relative flex justify-between">
-    <p>Logo</p>
-    <ul class="absolute left-0 right-0 flex gap-8 justify-center align-center text-neutral-400 ">
-      {
-        navigationData.map((link) => (
-          <li>
-            <TextLink
-              href={link.url}
-              content={link.title}
-              classes="text-neutral-300 font-light"
-            />
-          </li>
-        ))
-      }
-    </ul>
-    <div class="flex flex-col items-center gap-4 text-neutral-400 ">
-      <p> Puedes sergirme en mis redes sociales! </p>
-      <div class="flex gap-8 text-neutral-500">
-        <IconSvg set="social-icons" name="icon-instagram" size="32" stroke="none" />
-        <IconSvg set="social-icons" name="icon-twitter" size="32" stroke="none" />
-        <IconSvg set="social-icons" name="icon-youtube" size="32" stroke="none"/>
-        <IconSvg set="social-icons" name="icon-tiktok" size="32" stroke="none"/>
+    <div class="flex flex-col gap-4">
+      <Paragraph text="Psicólogo Diego Moreno" weight="semibold" />
+      <Paragraph
+        text="Psicóloga especializado en salud \n mental, esta aquí para ayudarte a \n alcanzar el bienestar mental."
+      />
+    </div>
+    <div class="flex flex-col gap-4">
+      <Paragraph text="Horario de Oficina" size="md" weight="semibold" />
+      <div display="flex" class="flex gap-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 18 18"
+          fill="none"
+        >
+          <path
+            d="M15 7.5C15 11.2448 10.8457 15.1447 9.45075 16.3492C9.32079 16.447 9.1626 16.4998 9 16.4998C8.8374 16.4998 8.67921 16.447 8.54925 16.3492C7.15425 15.1447 3 11.2448 3 7.5C3 5.9087 3.63214 4.38258 4.75736 3.25736C5.88258 2.13214 7.4087 1.5 9 1.5C10.5913 1.5 12.1174 2.13214 13.2426 3.25736C14.3679 4.38258 15 5.9087 15 7.5Z"
+            stroke="#101828"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+          <path
+            d="M9 9.75C10.2426 9.75 11.25 8.74264 11.25 7.5C11.25 6.25736 10.2426 5.25 9 5.25C7.75736 5.25 6.75 6.25736 6.75 7.5C6.75 8.74264 7.75736 9.75 9 9.75Z"
+            stroke="#101828"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+        <ul class="flex flex-col gap-2">
+          <li>Lunes - Viernes: 9am - 7pm</li>
+          <li>Sábado: 10am - 4pm</li>
+          <li>Domingo: Cerrado</li>
+          <li>Citas nocturnas disponibles</li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex flex-col gap-4">
+      <Paragraph text="Ubicación" size="md" weight="semibold" />
+      <div display="flex" class="flex gap-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 18 18"
+          fill="none"
+        >
+          <path
+            d="M15 7.5C15 11.2448 10.8457 15.1447 9.45075 16.3492C9.32079 16.447 9.1626 16.4998 9 16.4998C8.8374 16.4998 8.67921 16.447 8.54925 16.3492C7.15425 15.1447 3 11.2448 3 7.5C3 5.9087 3.63214 4.38258 4.75736 3.25736C5.88258 2.13214 7.4087 1.5 9 1.5C10.5913 1.5 12.1174 2.13214 13.2426 3.25736C14.3679 4.38258 15 5.9087 15 7.5Z"
+            stroke="#101828"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+          <path
+            d="M9 9.75C10.2426 9.75 11.25 8.74264 11.25 7.5C11.25 6.25736 10.2426 5.25 9 5.25C7.75736 5.25 6.75 6.25736 6.75 7.5C6.75 8.74264 7.75736 9.75 9 9.75Z"
+            stroke="#101828"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+        <ul class="flex flex-col gap-2">
+          <li>Bogota</li>
+          <li>Cundinamarca</li>
+          <li>Colombia</li>
+        </ul>
       </div>
     </div>
   </div>
-  <div class="container mx-auto px-4 text-center">
+  <div class="p-8 border-t border-gray-300">
     <Paragraph
-      size="md"
-      text="© 2025 Diego Moreno. Todos los derechos reservados."
+      text="Diseñado y desarrollado por AcidusLabs"
+      size="sm"
       align="center"
     />
   </div>
 </footer>
+
+<style></style>

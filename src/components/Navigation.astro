@@ -1,6 +1,5 @@
 ---
 import navigationData from "../data/navigationData.json";
-import TextLink from "./atoms/TextLink.astro";
 import Button from "./atoms/Button.astro";
 ---
 
@@ -8,8 +7,20 @@ import Button from "./atoms/Button.astro";
   <nav class="backdrop-blur-md">
     <a href="/" class="logo">PSICOSOFÍA</a>
 
-    <div class="flex gap-12 items-center justify-center">
-      <ul class="flex gap-8 justify-center align-center">
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Abrir menú de navegación"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+    >
+      <span class="nav-toggle-line"></span>
+      <span class="nav-toggle-line"></span>
+      <span class="nav-toggle-line"></span>
+    </button>
+
+    <div class="nav-desktop flex gap-12 items-center justify-center">
+      <ul class="flex gap-8 justify-center items-center">
         {
           navigationData.map((link) => (
             <li>
@@ -26,6 +37,27 @@ import Button from "./atoms/Button.astro";
         variant="solid"
         size="md"
       />
+    </div>
+
+    <div id="mobile-menu" class="nav-mobile">
+      <ul class="nav-mobile-links">
+        {
+          navigationData.map((link) => (
+            <li>
+              <a href={link.url} class="navigation-link nav-mobile-link">
+                {link.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="nav-mobile-cta">
+        <Button
+          label="Reserva tu sesión"
+          variant="solid"
+          size="md"
+        />
+      </div>
     </div>
   </nav>
 </div>
@@ -61,14 +93,156 @@ import Button from "./atoms/Button.astro";
     max-width: 100rem;
     padding: var(--spacing-400) var(--spacing-800);
     display: flex;
+    position: relative;
     z-index: 50;
     justify-content: space-between;
     align-items: center;
   }
 
   .logo {
-    font-size: var(--);
+    font-size: var(--font-headings-h6-text-size);
     font-weight: bold;
     color: var(--color-text-headings);
+    text-decoration: none;
+  }
+
+  .nav-desktop {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    border: 1px solid var(--color-border-disabled);
+    background: var(--color-surface-page);
+    cursor: pointer;
+  }
+
+  .nav-toggle-line {
+    width: 20px;
+    height: 2px;
+    background: var(--color-text-headings);
+    border-radius: 4px;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+  }
+
+  .nav-mobile {
+    position: absolute;
+    top: 100%;
+    right: var(--spacing-800);
+    left: var(--spacing-800);
+    display: grid;
+    gap: var(--spacing-500);
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: max-height 0.28s ease, opacity 0.2s ease, transform 0.28s ease;
+    background: var(--color-surface-page);
+    border: 1px solid var(--color-border-disabled);
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  }
+
+  .nav-mobile-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: var(--spacing-500) var(--spacing-500) 0;
+    gap: var(--spacing-200);
+  }
+
+  .nav-mobile-link {
+    display: block;
+    padding: var(--spacing-200) var(--spacing-300);
+    border-radius: 8px;
+    text-decoration: none;
+  }
+
+  .nav-mobile-link:hover {
+    background: var(--color-surface-neutral);
+  }
+
+  .nav-mobile-cta {
+    padding: 0 var(--spacing-500) var(--spacing-500);
+  }
+
+  .nav-mobile.is-open {
+    max-height: 420px;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-toggle.is-open .nav-toggle-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .nav-toggle.is-open .nav-toggle-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.is-open .nav-toggle-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  @media (max-width: 1024px) {
+    nav {
+      padding: var(--spacing-300) var(--spacing-500);
+    }
+
+    .nav-desktop {
+      display: none;
+    }
+
+    .nav-toggle {
+      display: flex;
+    }
+
+    .nav-mobile {
+      right: var(--spacing-500);
+      left: var(--spacing-500);
+    }
   }
 </style>
+
+<script>
+  const navToggle = document.querySelector(".nav-toggle");
+  const mobileMenu = document.querySelector("#mobile-menu");
+
+  const closeMenu = () => {
+    if (!navToggle || !mobileMenu) {
+      return;
+    }
+
+    navToggle.classList.remove("is-open");
+    mobileMenu.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded", "false");
+  };
+
+  if (navToggle && mobileMenu) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = navToggle.classList.toggle("is-open");
+      mobileMenu.classList.toggle("is-open", isOpen);
+      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 1024) {
+        closeMenu();
+      }
+    });
+  }
+</script>

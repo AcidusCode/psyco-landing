@@ -42,19 +42,21 @@ const HOW_WORKS_DATA = [
 ];
 ---
 
-<Section>
-  <div class="flex flex-col max-w-[1280px] gap-16">
-    <PageSubtitle
-      lead="¿Cómo funciona?"
-      heading="Un proceso claro"
-      body="Descubre cómo mi enfoque terapéutico personalizado puede \n ayudarte a alcanzar tus objetivos de bienestar mental."
-      align="center"
-      highlight="y efectivo"
-    />
+<Section class="py-30"}>
+  <div class="how-works-root flex flex-col max-w-[1280px] gap-16">
+    <div class="how-works-anim-item">
+      <PageSubtitle
+        lead="¿Cómo funciona?"
+        heading="Un proceso claro"
+        body="Descubre cómo mi enfoque terapéutico personalizado puede \n ayudarte a alcanzar tus objetivos de bienestar mental."
+        align="center"
+        highlight="y efectivo"
+      />
+    </div>
     <div class="how-works-section">
       {
         HOW_WORKS_DATA.map((item) => (
-          <div class="how-works-section-content">
+          <div class="how-works-card-anim-item how-works-section-content">
             <div class="how-works-section-header">
               <div class="how-works-section-icon-container">
                 <Fragment set:html={item.icon} />
@@ -81,6 +83,35 @@ const HOW_WORKS_DATA = [
     </div>
   </div>
 </Section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const root = document.querySelector(".how-works-root");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (root && !reduceMotion) {
+    const tl = gsap.timeline({
+      scrollTrigger: { trigger: root, start: "top 78%", once: true },
+    });
+
+    tl.from(root.querySelectorAll(".how-works-anim-item"), {
+      opacity: 0,
+      y: 28,
+      duration: 1,
+      ease: "power2.out",
+    });
+
+    tl.from(
+      root.querySelectorAll(".how-works-card-anim-item"),
+      { opacity: 0, y: 36, duration: 0.8, stagger: 0.14, ease: "power2.out" },
+      "-=0.55",
+    );
+  }
+</script>
 
 <style>
   .how-works-section {

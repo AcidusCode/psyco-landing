@@ -1,22 +1,22 @@
 [
-    {
-        "title": "Acerca de",
-        "url": "/about"
-    },
-    {
-        "title": "Servicios",
-        "url": "/services"
-    },
-    {
-        "title": "Precios",
-        "url": "/pricing"
-    },
-    {
-        "title": "Blog",
-        "url": "/blog"
-    },
-    {
-        "title": "FAQ",
-        "url": "/faq"
-    }
+  {
+    "title": "Servicios",
+    "url": "#services"
+  },
+  {
+    "title": "Blog",
+    "url": "#blog"
+  },
+  {
+    "title": "Acerca de",
+    "url": "#about"
+  },
+  {
+    "title": "Precios",
+    "url": "#pricing"
+  },
+  {
+    "title": "FAQ",
+    "url": "#faq"
+  }
 ]

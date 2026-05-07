@@ -7,26 +7,30 @@ import Button from "../atoms/Button.astro";
 import serviceData from "../../data/services/servicesData.json";
 ---
 
-<Section>
-  <div class="max-w-7xl">
-    <PageSubtitle
-      lead="Atención psicológica personalizada"
-      heading="Atención especializada para"
-      highlight="tus necesidades"
-      body="Enfoques terapéuticos personalizados para ayudarte a superar desafíos y prosperar"
-    />
+<Section class="py-25">
+  <div class="service-section-root max-w-7xl">
+    <div class="service-anim-item">
+      <PageSubtitle
+        lead="Atención psicológica personalizada"
+        heading="Atención especializada para"
+        highlight="tus necesidades"
+        body="Enfoques terapéuticos personalizados para ayudarte a superar desafíos y prosperar"
+      />
+    </div>
     <div class="flex flex-col my-16 gap-10">
       <div class="grid grid-cols-2 gap-10">
         {
           serviceData
             .slice(0, 2)
             .map((service) => (
-              <ServiceCard
-                image={service.image}
-                title={service.title}
-                lead={service.lead}
-                description={service.description}
-              />
+              <div class="service-card-anim-item">
+                <ServiceCard
+                  image={service.image}
+                  title={service.title}
+                  lead={service.lead}
+                  description={service.description}
+                />
+              </div>
             ))
         }
       </div>
@@ -35,17 +39,19 @@ import serviceData from "../../data/services/servicesData.json";
           serviceData
             .slice(2)
             .map((service) => (
-              <ServiceCard
-                image={service.image}
-                title={service.title}
-                lead={service.lead}
-                description={service.description}
-              />
+              <div class="service-card-anim-item">
+                <ServiceCard
+                  image={service.image}
+                  title={service.title}
+                  lead={service.lead}
+                  description={service.description}
+                />
+              </div>
             ))
         }
       </div>
     </div>
-    <div class="flex justify-center">
+    <div class="service-anim-item flex justify-center">
       <Button
         label="Conoce más acerca de mis servicios"
         iconRight="icon-right-arrow"
@@ -55,3 +61,33 @@ import serviceData from "../../data/services/servicesData.json";
     </div>
   </div>
 </Section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const root = document.querySelector(".service-section-root");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (root && !reduceMotion) {
+    const tl = gsap.timeline({
+      scrollTrigger: { trigger: root, start: "top 78%", once: true },
+    });
+
+    tl.from(root.querySelectorAll(".service-anim-item"), {
+      opacity: 0,
+      y: 28,
+      duration: 1,
+      stagger: 0.12,
+      ease: "power2.out",
+    });
+
+    tl.from(
+      root.querySelectorAll(".service-card-anim-item"),
+      { opacity: 0, y: 36, duration: 0.8, stagger: 0.1, ease: "power2.out" },
+      "-=0.6",
+    );
+  }
+</script>
